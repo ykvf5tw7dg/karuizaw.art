@@ -2,6 +2,7 @@
 import { useLanguage,LanguageSwitcher,LanguageProvider } from "./language";
 import type { Locale } from "@/lib/locales";
 import { useEffect, useState } from "react";
+import { FooterUtilities } from "./footer-utilities";
 import { SeasonalHero } from "./seasonal-hero";
 import { Button } from "@/components/ui/button";
 import { ApplicationDialog, type ApplicationKind } from "./application-dialog";
@@ -49,7 +50,7 @@ function HomeContent(){
  <section className="center section-wrap" id="center"><div className="section-label"><span>04 / BEHIND THE VILLAGE</span><span>{t("关于我们")}</span></div><div className="center-grid"><div><p className="eyebrow">KARUIZAWA INTERNATIONAL ART CENTER</p><h2>{t("以艺术连接人与自然，")}<br/>{t("也连接彼此。")}</h2></div><div className="center-copy"><h3>{t("轻井泽国际艺术中心（筹）")}</h3><p>{t("轻井泽国际艺术中心拟在日本设立为一般社团法人，以轻井泽为基地，致力于支持艺术创作、促进国际文化交流与推动公众艺术教育。")}</p><p>{t("中心计划通过艺术家驻留、展览、工作坊及文化交流活动，连接国内外艺术家、文化机构与当地社区，让艺术融入自然与日常生活，逐步建立开放、多元、可持续的艺术交流平台。")}</p><p>{t("目前，中心正处于筹备阶段，组织治理与具体事业安排将以正式设立后的章程为准。")}</p></div></div></section>
  <section className="closing"><span>CREATE. STAY. CONNECT.</span><p>{t("下一段创作，从这里开始。")}</p><a href="#participate">{t("探索参与方式")}<span aria-hidden="true">↗</span></a></section>
  </main>
- <footer><div className="footer-top"><a className="footer-name" href="#top">{t("轻井泽国际艺术村")}</a><p>{t("日本 · 轻井泽")}<br/>{t("艺术家驻留 / 国际交流 / 艺术教育")}</p><a href="#top">{t("回到顶部 ↑")}</a></div><div className="footer-bottom"><span>{t("© 2026 轻井泽国际艺术中心（筹） 版权所有")}</span><span>{t("网站图片为概念意境图，非实际项目场地实拍。")}</span></div></footer>
+ <footer><div className="footer-top"><a className="footer-name" href="#top">{t("轻井泽国际艺术村")}</a><p>{t("日本 · 轻井泽")}<br/>{t("艺术家驻留 / 国际交流 / 艺术教育")}</p><a href="#top">{t("回到顶部 ↑")}</a></div><div className="footer-bottom"><span>{t("© 2026 轻井泽国际艺术中心（筹） 版权所有")}</span><span>{t("网站图片为概念意境图，非实际项目场地实拍。")}</span></div><FooterUtilities/></footer>
  <ApplicationDialog key={formKey} kind={kind} onClose={()=>setKind(null)}/>
  </>;
 }

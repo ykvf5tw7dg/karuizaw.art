@@ -15,6 +15,13 @@
       "when": 1790304380986,
       "tag": "0001_tiny_susan_delgado",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1790307486371,
+      "tag": "0002_many_iron_man",
+      "breakpoints": true
     }
   ]
 }

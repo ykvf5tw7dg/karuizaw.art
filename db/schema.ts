@@ -1,4 +1,4 @@
-import { sqliteTable,text,index } from "drizzle-orm/sqlite-core";
+import { sqliteTable,text,index,integer } from "drizzle-orm/sqlite-core";
 export const applications=sqliteTable("applications",{
  id:text("id").primaryKey(),
  type:text("type").notNull(),
@@ -18,3 +18,8 @@ export const applicationNotifications=sqliteTable('application_notifications',{
  lastError:text('last_error'),
  createdAt:text('created_at').notNull()
 },t=>[index('idx_notifications_status_created').on(t.status,t.createdAt)]);
+
+export const siteCounters=sqliteTable('site_counters',{
+ name:text('name').primaryKey(),
+ total:integer('total').notNull().default(0)
+});

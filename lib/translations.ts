@@ -1,5 +1,10 @@
 export const translations: Record<string, Record<string,string>> = {
   "ja": {
+    "访问次数": "閲覧回数",
+    "管理员入口": "管理者ログイン",
+    "计数启用后的首页浏览次数": "集計開始以降のホームページ閲覧回数",
+    "访问计数暂不可用": "現在、閲覧回数を取得できません",
+
     "艺术家驻留": "アーティスト・イン・レジデンス",
     "将一段时间留给创作。计划为不同领域的艺术家连接驻留空间，支持独立创作、跨界交流与在地探索。": "創作に向き合う時間を。さまざまな分野のアーティストと滞在空間をつなぎ、自主制作、分野を越えた交流、地域での探究を支える計画です。",
     "绘画 / 雕塑 / 影像 / 设计 / 更多领域": "絵画 / 彫刻 / 映像 / デザイン / その他",
@@ -205,6 +210,11 @@ export const translations: Record<string, Record<string,string>> = {
     "选择图片": "画像を選択"
   },
   "en": {
+    "访问次数": "Page views",
+    "管理员入口": "Administrator login",
+    "计数启用后的首页浏览次数": "Homepage views since counting began",
+    "访问计数暂不可用": "Page count is currently unavailable",
+
     "艺术家驻留": "Artist residencies",
     "将一段时间留给创作。计划为不同领域的艺术家连接驻留空间，支持独立创作、跨界交流与在地探索。": "Make time for your practice. We plan to connect artists across disciplines with places to stay, supporting independent work, collaboration and local exploration.",
     "绘画 / 雕塑 / 影像 / 设计 / 更多领域": "Painting / Sculpture / Film / Design / More",
@@ -410,6 +420,11 @@ export const translations: Record<string, Record<string,string>> = {
     "选择图片": "Choose photos"
   },
   "zh-Hant": {
+    "访问次数": "訪問次數",
+    "管理员入口": "管理員入口",
+    "计数启用后的首页浏览次数": "計數啟用後的首頁瀏覽次數",
+    "访问计数暂不可用": "訪問計數暫不可用",
+
     "艺术家驻留": "藝術家駐留",
     "将一段时间留给创作。计划为不同领域的艺术家连接驻留空间，支持独立创作、跨界交流与在地探索。": "將一段時間留給創作。計劃爲不同領域的藝術家連接駐留空間，支持獨立創作、跨界交流與在地探索。",
     "绘画 / 雕塑 / 影像 / 设计 / 更多领域": "繪畫 / 雕塑 / 影像 / 設計 / 更多領域",
