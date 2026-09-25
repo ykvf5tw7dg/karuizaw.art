@@ -1,0 +1,3 @@
+"use client";
+import { useState } from 'react';
+export function NotificationRetry(){const [busy,setBusy]=useState(false);const [message,setMessage]=useState('');return <div><button className="manage-button" disabled={busy} onClick={async()=>{setBusy(true);try{const response=await fetch('/api/manage/notifications/retry',{method:'POST'});const result=await response.json() as {error?:string;sent?:number};if(!response.ok)throw new Error(result.error??'暂时无法发送。');setMessage(`本次已发送 ${result.sent} 封通知。可刷新列表查看最新状态。`);}catch(error){setMessage(error instanceof Error?error.message:'网络连接失败，请重试。');}finally{setBusy(false);}}}>{busy?'正在发送…':'发送待处理通知'}</button><p role="status">{message}</p></div>;}
