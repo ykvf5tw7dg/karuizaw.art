@@ -12,9 +12,9 @@ import { validatePhotoSelection } from "@/lib/space-photos";
 import { applicationSchema } from "@/lib/application";
 export type ApplicationKind="artist"|"sponsor"|"space";
 const info={
- artist:{title:"艺术家申请",en:"ARTIST APPLICATION",intro:"首批计划招募100位各类艺术家，年度驻留目标为30–50位。欢迎介绍你的创作实践。",categories:["绘画","雕塑与装置","摄影与影像","音乐与表演","设计与建筑","文学与跨学科","其他艺术领域"],category:"主要艺术领域",message:"艺术经历与驻留创作意向",placeholder:"请简要介绍艺术经历，以及希望在轻井泽开展的创作……"},
- sponsor:{title:"赞助合作申请",en:"PARTNERSHIP APPLICATION",intro:"期待与认同艺术与文化交流价值的伙伴，共同支持艺术家与艺术计划。",categories:["资金支持","物资与设备","专业服务","传播与媒体","综合合作"],category:"希望提供的支持",message:"合作意向",placeholder:"请介绍可提供的支持、合作方向或希望了解的事项……"},
- space:{title:"别墅及空间加入申请",en:"SPACE PARTNERSHIP",intro:"面向轻井泽及周边的别墅、露营地和艺术活动空间。请介绍你的空间与合作想法。",categories:["别墅","露营地","艺术工作室","展览与活动空间","其他空间"],category:"空间类型",message:"空间介绍与合作意向",placeholder:"请介绍空间面积、可容纳人数、设施及希望开展的合作……"}
+ artist:{title:"登记驻留意向",en:"RESIDENCY INTEREST",intro:"首批计划招募100位各类艺术家，年度驻留目标为30–50位。欢迎介绍你的创作实践。",categories:["绘画","雕塑与装置","摄影与影像","音乐与表演","设计与建筑","文学与跨学科","其他艺术领域"],category:"主要艺术领域",message:"艺术经历与驻留创作意向",placeholder:"请简要介绍艺术经历，以及希望在轻井泽开展的创作……"},
+ sponsor:{title:"登记赞助意向",en:"SPONSORSHIP INTEREST",intro:"期待与认同艺术与文化交流价值的伙伴，共同支持艺术家与艺术计划。",categories:["资金支持","物资与设备","专业服务","传播与媒体","综合合作"],category:"希望提供的支持",message:"合作意向",placeholder:"请介绍可提供的支持、合作方向或希望了解的事项……"},
+ space:{title:"登记空间意向",en:"SPACE PARTNERSHIP INTEREST",intro:"面向轻井泽及周边的别墅、露营地和艺术活动空间。请介绍你的空间与合作想法。",categories:["别墅","露营地","艺术工作室","展览与活动空间","其他空间"],category:"空间类型",message:"空间介绍与合作意向",placeholder:"请介绍空间面积、可容纳人数、设施及希望开展的合作……"}
 };
 export function ApplicationDialog({kind,onClose}:{kind:ApplicationKind|null;onClose:()=>void}){
  const {t,locale}=useLanguage();
@@ -37,8 +37,9 @@ export function ApplicationDialog({kind,onClose}:{kind:ApplicationKind|null;onCl
  }
  return <Dialog open={kind!==null} onOpenChange={open=>{if(!open&&!pending)onClose();}}><DialogContent className="application-dialog" showCloseButton={false} onEscapeKeyDown={e=>{if(pending)e.preventDefault();}} onPointerDownOutside={e=>{e.preventDefault();}}>
  <DialogClose asChild><button type="button" className="dialog-close" disabled={pending} aria-label={t("关闭申请表")}>×</button></DialogClose>
- <span className="form-eyebrow">{content.en}</span><DialogTitle className="form-title">{receipt?t("申请已收到"):t(content.title)}</DialogTitle><DialogDescription className="form-description">{receipt?t("感谢你参与轻井泽国际艺术村的共建。"):t(content.intro)}</DialogDescription>
- {receipt?<div className="receipt" role="status"><span>{t("申请编号")}</span><strong>{receipt}</strong><p>{t("你的申请已保存。请保留此编号，筹备团队可通过你填写的邮箱与你沟通。")}</p><p>{t("本次提交为合作意向，不代表录取或合作确认。")}</p><Button className="submit-button" onClick={onClose}>{t("返回艺术村")}</Button></div>:<form onSubmit={submit} className="application-form">
+ <span className="form-eyebrow">{content.en}</span><DialogTitle className="form-title">{receipt?t("意向已收到"):t(content.title)}</DialogTitle><DialogDescription className="form-description">{receipt?t("感谢你参与轻井泽国际艺术村的共建。"):t(content.intro)}</DialogDescription>
+ {receipt?<div className="receipt" role="status"><span>{t("登记编号")}</span><strong>{receipt}</strong><p>{t("已收到您的合作意向。请保留此编号，筹备团队将根据所填信息与您进一步联络。")}</p><p>{t("本次提交为合作意向，不代表录取或合作确认。")}</p><Button className="submit-button" onClick={onClose}>{t("返回艺术村")}</Button></div>:<form onSubmit={submit} className="application-form">
+ <p className="form-help">{t("这些信息将帮助我们匹配适合的计划、档期与合作方式。")}</p>
  <p className="form-help">{t("标有 * 的项目为必填。无需提交证件、银行或付款信息。")}</p>
  <fieldset disabled={pending}>
  <div className="form-grid">
@@ -57,7 +58,7 @@ export function ApplicationDialog({kind,onClose}:{kind:ApplicationKind|null;onCl
  <div className="consent-row"><Checkbox id="consent" checked={consent} onCheckedChange={v=>setConsent(v===true)}/><label htmlFor="consent">{t("我已阅读上述说明，同意保存申请资料并用于本次申请评估及联络。*")}</label></div>
  <p className="form-help">{t("提交申请不产生付款义务，也不代表录取、赞助承诺或空间合作成立。具体条件另行协商。")}</p>
  {error&&<p className="form-error" role="alert">{t(error)}</p>}
- <Button type="submit" className="submit-button" disabled={pending}>{pending?(kind==="space"?t("正在上传图片并保存，请稍候…"):t("正在保存申请…")):t("提交意向申请")}<span aria-hidden="true">↗</span></Button>
+ <Button type="submit" className="submit-button" disabled={pending}>{pending?(kind==="space"?t("正在上传图片并保存，请稍候…"):t("正在保存申请…")):t("提交意向登记")}<span aria-hidden="true">↗</span></Button>
  </fieldset></form>}
  </DialogContent></Dialog>;
 }
