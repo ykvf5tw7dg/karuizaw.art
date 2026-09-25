@@ -1,4 +1,5 @@
 "use client";
+import { useLanguage } from "./language";
 import { useEffect, useState } from "react";
 import { Carousel,CarouselContent,CarouselItem,type CarouselApi } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
@@ -9,6 +10,7 @@ const seasons=[
  {key:"winter",name:"冬",en:"WINTER",villa:"雪见山间别墅",alt:"冬日雪林中的尖顶木屋别墅，窗内透出暖光，AI 概念图"},
 ];
 export function SeasonalHero({onApply}:{onApply:()=>void}){
+ const {t,locale}=useLanguage();
  const [api,setApi]=useState<CarouselApi>();
  const [selected,setSelected]=useState(0);
  const [paused,setPaused]=useState(false);
@@ -18,13 +20,13 @@ export function SeasonalHero({onApply}:{onApply:()=>void}){
  useEffect(()=>{if(!api||paused)return;const timer=setInterval(()=>{if(!document.hidden)api.scrollNext(reduced);},6500);return()=>clearInterval(timer);},[api,paused,reduced]);
  function choose(index:number){setPaused(true);api?.scrollTo(index,reduced);}
  return <section className="hero seasonal-hero" id="top" aria-labelledby="hero-title">
- <Carousel className="season-carousel" setApi={setApi} opts={{loop:true,duration:45}} aria-label="四季别墅背景轮播">
- <CarouselContent className="season-track">{seasons.map((s,i)=><CarouselItem className="season-slide" key={s.key} aria-label={`${i+1} / 4：${s.name}季 ${s.villa}`} aria-hidden={selected!==i}><img src={`/seasons/${s.key}.png`} alt={s.alt} fetchPriority={i===0?'high':'auto'} decoding="async"/></CarouselItem>)}</CarouselContent>
+ <Carousel className="season-carousel" setApi={setApi} opts={{loop:true,duration:45}} aria-label={t("四季别墅背景轮播")}>
+ <CarouselContent className="season-track">{seasons.map((s,i)=><CarouselItem className="season-slide" key={s.key} aria-label={`${i+1} / 4: ${t(s.name)} · ${t(s.villa)}`} aria-hidden={selected!==i}><img src={`/seasons/${s.key}.png`} alt={t(s.alt)} fetchPriority={i===0?'high':'auto'} decoding="async"/></CarouselItem>)}</CarouselContent>
  </Carousel>
  <div className="hero-shade"/>
- <div className="hero-topline"><span>JAPAN · KARUIZAWA</span><span>首批艺术家招募计划</span></div>
- <div className="hero-content"><p className="eyebrow">ART · NATURE · CONNECTION</p><h1 id="hero-title">在自然中创作，<br/>在艺术中相遇。</h1><p className="hero-description">让森林成为灵感，让相遇成为作品。<br/>邀请 100 位艺术家，共同开启轻井泽的创作旅程。</p><div className="hero-actions"><Button className="light-button" onClick={onApply}>艺术家申请 <span aria-hidden="true">↗</span></Button><a className="hero-secondary" href="#about">了解艺术村 <span aria-hidden="true">↓</span></a></div></div>
- <div className="season-controls" aria-label="轮播控制"><div className="season-switches">{seasons.map((s,i)=><Button key={s.key} className="season-button" variant="ghost" aria-label={`切换到${s.name}季别墅`} aria-pressed={selected===i} onClick={()=>choose(i)}><span>{s.name}</span><small>{s.en}</small></Button>)}</div><Button className="season-pause" variant="ghost" aria-label={paused?'播放四季轮播':'暂停四季轮播'} onClick={()=>setPaused(!paused)}>{paused?'播放 ▷':'暂停 Ⅱ'}</Button></div>
- <div className="hero-bottom"><span className="season-caption" aria-live={paused?'polite':'off'}>{String(selected+1).padStart(2,'0')} / 04 <span>{seasons[selected].name} · {seasons[selected].villa}</span></span><span className="image-caption">四季别墅 · AI 概念意境图</span></div>
+ <div className="hero-topline"><span>JAPAN · KARUIZAWA</span><span>{t("首批艺术家招募计划")}</span></div>
+ <div className="hero-content"><p className="eyebrow">ART · NATURE · CONNECTION</p><h1 id="hero-title">{t("在自然中创作，")}<br/>{t("在艺术中相遇。")}</h1><p className="hero-description">{t("让森林成为灵感，让相遇成为作品。")}<br/>{t("邀请 100 位艺术家，共同开启轻井泽的创作旅程。")}</p><div className="hero-actions"><Button className="light-button" onClick={onApply}>{t("艺术家申请")}<span aria-hidden="true">↗</span></Button><a className="hero-secondary" href="#about">{t("了解艺术村")}<span aria-hidden="true">↓</span></a></div></div>
+ <div className="season-controls" aria-label={t("轮播控制")}><div className="season-switches">{seasons.map((s,i)=><Button key={s.key} className="season-button" variant="ghost" aria-label={`${t("切换到")} ${t(s.name)}`} aria-pressed={selected===i} onClick={()=>choose(i)}><span>{t(s.name)}</span><small>{s.en}</small></Button>)}</div><Button className="season-pause" variant="ghost" aria-label={paused?t("播放四季轮播"):t("暂停四季轮播")} onClick={()=>setPaused(!paused)}>{paused?t("播放 ▷"):t("暂停 Ⅱ")}</Button></div>
+ <div className="hero-bottom"><span className="season-caption" aria-live={paused?'polite':'off'}>{String(selected+1).padStart(2,'0')} / 04 <span>{t(seasons[selected].name)} · {t(seasons[selected].villa)}</span></span><span className="image-caption">{t("四季别墅 · AI 概念意境图")}</span></div>
  </section>;
 }
