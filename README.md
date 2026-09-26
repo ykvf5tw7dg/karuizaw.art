@@ -18,7 +18,7 @@
 
 运行时为 Next.js / Node.js 24，SQLite 保存申请与计数，磁盘保存私有图片。原 Sites 项目配置仅保留历史标识；当前代码使用独立服务器运行时，旧 Vinext / Workers 发布命令不适用于此版本。GitHub 推送不会自动部署。
 
-服务器目录 `/home/dev2/apps/karuizawa-art`，监听 `127.0.0.1:12002`，由现有反向代理提供 HTTPS。
+服务器目录 `/home/dev2/apps/karuizawa-art`，发布宿主机端口 `12002`，供独立网关访问，由现有反向代理提供 HTTPS。主机防火墙应将该应用端口的入站来源限制为网关。
 
 1. 将源码上传到项目目录，排除 `.git`、`node_modules`、`data`、`deploy/private`、`.env*`。
 2. 复制 `.env.example` 为服务器 `.env.production`，设置正式域名、管理员邮箱和凭据。可运行 `node deploy/create-admin.mjs admin@example.com` 生成凭据文件，再安全合并至环境配置；不要提交或公开凭据。
