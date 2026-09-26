@@ -6,10 +6,10 @@ node_modules
 .codex
 .agents
 .env*
-!.env.example
 data
 deploy/private
 output
 outputs
 dist
 *.tsbuildinfo
+backups
