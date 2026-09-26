@@ -27,3 +27,22 @@
 
 /* Keep one content-aligned divider between participation and the center. */
 @media(max-width:760px){.invitation{padding-bottom:40px}.center{padding-top:32px}}
+
+/* Balance editorial text so narrow screens do not leave orphan characters. */
+#main :is(h1,h2,h3,p,.program-tags){line-break:strict;word-break:normal;text-wrap:balance}
+#main :is(.about-content,.center-grid,.section-heading)>*,.program,.join-card{min-width:0}
+.heading-phrase,.copy-line{display:block}
+@media(max-width:760px){
+  #main h2{font-size:clamp(28px,7.2vw,32px)}
+}
+
+@media(max-width:900px){
+  .program-list,.join-grid{grid-template-columns:1fr}
+  .join-card{min-height:0}
+}
+@media(max-width:760px){
+  .goals{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .goals>div{min-width:0}
+  .goals strong{font-size:clamp(38px,10vw,50px)}
+  .goals strong span{display:block;margin-top:10px}
+}
