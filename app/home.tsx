@@ -35,7 +35,7 @@ function HomeContent(){
  <nav id="mobile-nav" className="mobile-nav" aria-label={t("移动端导航")} hidden={!menu} onClick={()=>setMenu(false)}><a href="#about">{t("关于艺术村")}</a><a href="#programs">{t("艺术计划")}</a><a href="#center">{t("关于我们")}</a><a href="#participate">{t("参与共建")}</a></nav>
  </header>
  <main id="main">
- <SeasonalHero onApply={()=>apply("artist")}/>
+ <SeasonalHero/>
  <section className="about section-wrap" id="about">
  <div className="section-label"><span>01 / OUR VISION</span><span>{t("关于艺术村")}</span></div>
  <div className="about-content"><h2><span className="heading-phrase">{t("一座艺术村，")}</span>{locale==="en"?" ":null}<span className="heading-phrase">{t("一种与世界相遇的方式。")}</span></h2><div className="about-copy"><p>{t("我们希望在轻井泽的自然与人文之间，为艺术家、创作者与热爱艺术的人，建立一个可以停留、交流、持续创作的地方。")}</p><p>{t("从艺术家驻留到开放工作室，从展览到艺术教育，轻井泽国际艺术村计划连接别墅、露营地及其他适合艺术活动的空间，让创作走进日常，也让不同文化在这里相遇。")}</p></div></div>
