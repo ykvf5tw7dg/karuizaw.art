@@ -48,3 +48,6 @@ next-env.d.ts
 # Local caches and environment values
 *.tsbuildinfo
 !.env.example
+
+/data/
+/deploy/private/

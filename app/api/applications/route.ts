@@ -20,7 +20,7 @@ function boundedBody(request:Request,limit:number,contentType:string){
 }
 export async function POST(request:Request){
  const origin=request.headers.get("origin");
- if(origin&&origin!==new URL(request.url).origin)return json({error:"请从本站申请入口提交。"},403);
+ if(origin&&origin!==new URL(process.env.SITE_ORIGIN||request.url).origin)return json({error:"请从本站申请入口提交。"},403);
  const contentType=request.headers.get('content-type')??'';
  const multipart=contentType.toLowerCase().startsWith('multipart/form-data;');
  if(!multipart&&!contentType.toLowerCase().includes('application/json'))return json({error:"不支持的提交格式。"},415);

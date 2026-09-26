@@ -1,0 +1,1 @@
+CREATE TABLE auth_attempts (id TEXT PRIMARY KEY, failures INTEGER NOT NULL DEFAULT 0, blocked_until INTEGER NOT NULL DEFAULT 0);

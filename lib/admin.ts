@@ -1,4 +1,4 @@
-import { env } from 'cloudflare:workers';
+import { env } from '@/lib/runtime-env';
 import { getChatGPTUser, requireChatGPTUser } from '@/app/chatgpt-auth';
 export function allowedAdmin(email:string){return (env.ADMIN_EMAILS??'').split(',').map(v=>v.trim().toLowerCase()).filter(Boolean).includes(email.trim().toLowerCase());}
 export async function adminUser(){const user=await getChatGPTUser();return user&&allowedAdmin(user.email)?user:null;}

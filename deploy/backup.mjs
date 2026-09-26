@@ -1,0 +1,10 @@
+import {DatabaseSync,backup} from 'node:sqlite';
+import {mkdirSync,cpSync,existsSync} from 'node:fs';
+import {join} from 'node:path';
+const root=process.env.DATA_DIR||'/app/data';
+const target=join(process.env.BACKUP_DIR||'/app/data/backups',new Date().toISOString().replace(/[:.]/g,'-'));
+mkdirSync(target,{recursive:true,mode:0o700});
+const db=new DatabaseSync(join(root,'karuizawa.sqlite'));
+await backup(db,join(target,'karuizawa.sqlite'));db.close();
+if(existsSync(join(root,'photos')))cpSync(join(root,'photos'),join(target,'photos'),{recursive:true});
+console.log('Backup saved:',target);

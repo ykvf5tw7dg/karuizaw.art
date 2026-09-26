@@ -1,0 +1,4 @@
+import {redirect} from 'next/navigation';
+import {sessionUser,safeReturn} from '@/lib/server/auth';
+export const dynamic='force-dynamic';
+export default async function Login({searchParams}:{searchParams:Promise<{return_to?:string;error?:string}>}){const query=await searchParams;const target=safeReturn(query.return_to??null);if(await sessionUser())redirect(target);return <section className="manage-notice"><h1>管理员登录</h1><p>请使用管理员邮箱及登录密码查看申请资料。</p>{query.error&&<p role="alert">登录未成功，请检查邮箱和密码；连续失败后请等待15分钟再试。</p>}<form action="/api/auth/login" method="post" className="admin-login"><input type="hidden" name="return_to" value={target}/><label>邮箱<input name="email" type="email" required autoComplete="username" maxLength={254}/></label><label>密码<input name="password" type="password" required autoComplete="current-password" maxLength={256}/></label><button className="manage-button" type="submit">登录</button></form></section>;}

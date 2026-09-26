@@ -1,1 +1,1 @@
-export function AccessDenied(){return <section className="manage-notice"><h1>此账号无权查看申请</h1><p>请使用获授权的管理员 ChatGPT 账号登录。</p><a className="manage-button" href="/signout-with-chatgpt?return_to=%2Fmanage%2Fapplications" target="_top">退出并更换账号</a></section>;}
+export function AccessDenied(){return <section className="manage-notice"><h1>此账号无权查看申请</h1><p>请使用获授权的管理员账号登录。</p><a className="manage-button" href="/signout-with-chatgpt?return_to=%2Fmanage%2Fapplications" target="_top">退出并更换账号</a></section>;}

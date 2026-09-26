@@ -4,7 +4,7 @@ export const dynamic='force-dynamic';
 const headers={'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'};
 export async function POST(request:Request){
  const origin=request.headers.get('origin');
- if((origin&&origin!==new URL(request.url).origin)||request.headers.get('x-visit-source')!=='homepage')return Response.json({error:'Forbidden'},{status:403,headers});
+ if((origin&&origin!==new URL(process.env.SITE_ORIGIN||request.url).origin)||request.headers.get('x-visit-source')!=='homepage')return Response.json({error:'Forbidden'},{status:403,headers});
  try{
   const db=applicationDb();
   const day=japanDayKey();
