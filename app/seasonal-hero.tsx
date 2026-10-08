@@ -21,7 +21,7 @@ export function SeasonalHero({onApply}:{onApply:()=>void}){
  function choose(index:number){setPaused(true);api?.scrollTo(index,reduced);}
  return <section className="hero seasonal-hero" id="top" aria-labelledby="hero-title">
  <Carousel className="season-carousel" setApi={setApi} opts={{loop:true,duration:45}} aria-label={t("四季艺术与禅修背景轮播")}>
- <CarouselContent className="season-track">{seasons.map((s,i)=><CarouselItem className="season-slide" key={s.key} aria-label={`${i+1} / 4: ${t(s.name)} · ${t(s.scene)}`} aria-hidden={selected!==i}><img src={`/seasons/${s.key}-residency.webp`} alt={t(s.alt)} fetchPriority={i===0?'high':'auto'} decoding="async"/></CarouselItem>)}</CarouselContent>
+ <CarouselContent className="season-track">{seasons.map((s,i)=><CarouselItem className="season-slide" data-season={s.key} key={s.key} aria-label={`${i+1} / 4: ${t(s.name)} · ${t(s.scene)}`} aria-hidden={selected!==i}><img src={`/seasons/${s.key}-residency.webp`} alt={t(s.alt)} fetchPriority={i===0?'high':'auto'} decoding="async"/></CarouselItem>)}</CarouselContent>
  </Carousel>
  <div className="hero-shade"/>
  <div className="hero-topline"><span>ART · NATURE · CONNECTION</span><span>{t("首批艺术家招募计划")}</span></div>
