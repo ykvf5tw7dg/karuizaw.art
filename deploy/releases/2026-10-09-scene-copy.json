@@ -1,0 +1,75 @@
+{
+  "release_date_japan": "2026-10-09",
+  "source_commit": "0a2b4fb",
+  "status": "complete",
+  "changes": [
+    "Hero title, descriptions, note, plan label and CTA follow the selected scene",
+    "Autumn CTA opens group meditation; winter CTA opens individual meditation",
+    "Spring and summer CTAs open artist residency; meditation secondary link points to meditation-plan",
+    "All four languages updated; clicking apply pauses the carousel"
+  ],
+  "running_image": {
+    "tag": "karuizawa-art:local",
+    "id": "sha256:1d53005e735df28d89d899617990070ebc56ae0d5c86a8d0deed0a5d3b9ee552"
+  },
+  "retained": [
+    {
+      "tag": "karuizawa-art:local",
+      "purpose": "current running release"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-scene-copy",
+      "id": "sha256:734177775a53c525b0fd3d6a8f96ba5a1d5918ecf3b5066e65524f4ad2293448",
+      "purpose": "previous stable rollback"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-visuals",
+      "purpose": "previously retained recovery image"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-meditation",
+      "purpose": "existing recovery baseline"
+    },
+    {
+      "path": "/home/dev2/apps/karuizawa-art/data/backups/2026-10-08T20-30-59-793Z",
+      "purpose": "pre-release data backup"
+    }
+  ],
+  "cleanup": {
+    "status": "complete",
+    "deleted": [
+      "temporary image alias karuizawa-art:scene-copy-20261009; running image retained as local"
+    ],
+    "all_container_image_references_checked": true,
+    "checked_container_count": 20,
+    "method": "Direct cloud build. No image export directory, uploaded image package, checksum file, test container or local release artifact was created. Exact alias removal only; no force/prune.",
+    "cloud_temporary_packages_remaining": 0,
+    "local_export_directories_remaining": 0,
+    "temporary_release_tags_remaining": 0,
+    "other_projects_volumes_and_backups_modified": false
+  },
+  "validation": {
+    "production_build": "passed",
+    "typescript": "passed",
+    "changed_hero_form_translation_lint": "0 errors; existing native img optimization warning",
+    "manual_scene_copy_and_CTA_routing": "four scenes passed",
+    "automatic_scene_and_copy_switch": "passed",
+    "responsive_languages": [
+      "zh-Hans",
+      "zh-Hant",
+      "ja",
+      "en"
+    ],
+    "mobile_width": 390,
+    "horizontal_overflow": false,
+    "carousel_controls_overlap_actions": false,
+    "production_group_and_individual_CTA_modes": "passed",
+    "production_read_only_smoke": "passed",
+    "https_domains": [
+      "karuizawa.art",
+      "www.karuizawa.art"
+    ],
+    "post_cleanup_version_and_health": "both domains passed",
+    "post_cleanup_container_health": "healthy"
+  }
+}
