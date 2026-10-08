@@ -5,7 +5,7 @@ const link=z.string().trim().max(500).refine(v=>!v||/^https?:\/\//i.test(v),"链
 export function normalizeWebsite(value:string){const v=value.trim();return !v||/^https?:\/\//i.test(v)?v:`http://${v.replace(/^\/\//,"")}`;}
 const sponsorLink=z.string().transform(normalizeWebsite).pipe(link);
 const base={locale:z.enum(["zh-Hans","ja","en","zh-Hant"]).optional(),id:z.string().uuid(),name:line,email:z.string().trim().email("请输入有效的电子邮箱").max(254).transform(v=>v.toLowerCase()),message:z.string().trim().min(5,"请简要填写至少5个字的申请说明").max(2000,"申请说明最多2000字"),consent:z.literal(true,{errorMap:()=>({message:"请先确认个人信息使用说明"})}),website:z.string().max(0)};
-const traditions={traditions:z.array(z.enum(traditionIds)).max(8).default([]),traditionOther:z.string().trim().max(120).default(""),traditionDetail:z.string().trim().max(200).default("")};
+const traditions={traditionText:z.string().trim().max(300,"派别说明最多300字").optional(),traditions:z.array(z.enum(traditionIds)).max(8).default([]),traditionOther:z.string().trim().max(120).default(""),traditionDetail:z.string().trim().max(200).default("")};
 export const applicationSchema=z.discriminatedUnion("type",[
  z.object({...base,type:z.literal("artist"),location:line,category:z.enum(["绘画","雕塑与装置","摄影与影像","音乐与表演","设计与建筑","文学与跨学科","其他艺术领域"]),portfolio:link,availability:z.string().trim().max(120)}),
  z.object({...base,type:z.literal("sponsor"),organization:line,category:z.enum(["资金支持","物资与设备","专业服务","传播与媒体","综合合作"]),portfolio:sponsorLink,supportPlan:z.enum(["artist","meditation","all"]).default("artist"),traditionScope:z.enum(["all","selected"]).default("selected"),...traditions}),
@@ -15,6 +15,7 @@ export const applicationSchema=z.discriminatedUnion("type",[
  const issue=(path:string,message:string)=>ctx.addIssue({code:z.ZodIssueCode.custom,path:[path],message});
  if(data.type!=="meditation"&&data.type!=="sponsor")return;
  if(data.type==="sponsor"&&data.supportPlan==="artist")return;
+ if(data.traditionText===undefined){
  if(new Set(data.traditions).size!==data.traditions.length)issue("traditions","请勿重复选择派别");
  if(data.type==="sponsor"&&data.traditionScope==="all"){
   if(data.traditions.length||data.traditionOther||data.traditionDetail)issue("traditions","全部派别不能与具体派别同时选择");
@@ -22,6 +23,7 @@ export const applicationSchema=z.discriminatedUnion("type",[
   if(data.type==="sponsor"&&!data.traditions.length)issue("traditions","请选择希望支持的派别或全部派别");
   if(data.traditions.includes("other")&&!data.traditionOther)issue("traditionOther","请填写其他派别名称");
   if(!data.traditions.includes("other")&&data.traditionOther)issue("traditionOther","请先选择其他派别");
+ }
  }
  if(data.type==="meditation"){
   if(data.applicationMode==="individual"&&data.participants!==1)issue("participants","个人申请人数应为1人");

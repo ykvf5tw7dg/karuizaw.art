@@ -11,7 +11,7 @@ import { SpacePhotos, type SelectedPhoto } from "./space-photos";
 import { validatePhotoSelection } from "@/lib/space-photos";
 import { applicationSchema } from "@/lib/application";
 import {TraditionFields} from "./tradition-fields";
-import {supportPlanNames,type TraditionId} from "@/lib/meditation";
+import {supportPlanNames} from "@/lib/meditation";
 export type ApplicationKind="artist"|"sponsor"|"space"|"meditation";
 const info={
  meditation:{title:"登记禅修意向",en:"MEDITATION RESIDENCY INTEREST",intro:"面向个人自主禅修及团体自带带领者的活动，协调淡季住宿、安静空间与配套服务。具体支持条件另行沟通。",categories:[],category:"",message:"实践目的与驻留意向",placeholder:"请介绍你的实践方式，以及此次驻留希望开展的活动……"},
@@ -27,14 +27,12 @@ export function ApplicationDialog({kind,onClose}:{kind:ApplicationKind|null;onCl
  const [photos,setPhotos]=useState<SelectedPhoto[]>([]);
  const [supportPlan,setSupportPlan]=useState<"artist"|"meditation"|"all"|"">("");
  const [applicationMode,setApplicationMode]=useState<"individual"|"group">("individual");
- const [traditionScope,setTraditionScope]=useState<"all"|"selected">("selected");
- const [traditions,setTraditions]=useState<TraditionId[]>([]);
  const content=info[kind??"artist"];
  async function submit(e:FormEvent<HTMLFormElement>){
   e.preventDefault();if(pending||!kind)return;setError("");
   const fields=Object.fromEntries(new FormData(e.currentTarget));
   if(!id.current)id.current=crypto.randomUUID();
-  const parsed=applicationSchema.safeParse({...fields,...(kind==="sponsor"?{portfolio:sponsorWebsite.trim()?websiteProtocol+sponsorWebsite.trim():""}:{}),...(kind==="sponsor"?{supportPlan,traditionScope:supportPlan==="artist"?"selected":traditionScope,traditions:supportPlan==="artist"?[]:traditions,traditionOther:fields.traditionOther??"",traditionDetail:fields.traditionDetail??""}:{}),...(kind==="meditation"?{applicationMode,traditions,participants:applicationMode==="individual"?1:fields.participants}:{}),id:id.current,locale,type:kind,category,consent,authority});
+  const parsed=applicationSchema.safeParse({...fields,...(kind==="sponsor"?{portfolio:sponsorWebsite.trim()?websiteProtocol+sponsorWebsite.trim():""}:{}),...(kind==="sponsor"?{supportPlan}:{}),...(kind==="meditation"?{applicationMode,participants:applicationMode==="individual"?1:fields.participants}:{}),id:id.current,locale,type:kind,category,consent,authority});
   if(!parsed.success){setError(parsed.error.issues[0]?.code==="invalid_enum_value"?t("请选择"):parsed.error.issues[0]?.message??t("请检查填写内容"));return;}
   if(kind==="space"){const problem=validatePhotoSelection(photos);if(problem){setError(problem);return;}}
   setPending(true);
@@ -57,11 +55,11 @@ export function ApplicationDialog({kind,onClose}:{kind:ApplicationKind|null;onCl
  {kind!=="meditation"&&<div className={kind==="sponsor"?"field full":"field"}><label htmlFor="category">{t(content.category)} *</label><Select value={category} onValueChange={setCategory}><SelectTrigger id="category" className="form-select" aria-required="true"><SelectValue placeholder={t("请选择")}/></SelectTrigger><SelectContent>{content.categories.map(c=><SelectItem key={c} value={c}>{t(c)}</SelectItem>)}</SelectContent></Select></div>}
  {kind!=="meditation"&&(kind==="space"?<SpacePhotos photos={photos} onChange={setPhotos} disabled={pending}/>:<label className="full">{kind==="artist"?t("作品集链接"):t("品牌 / 机构网站")}{t("（选填）")}{kind==="sponsor"?<div className="website-input"><span aria-hidden="true">{websiteProtocol}</span><Input type="text" inputMode="url" maxLength={500} placeholder="www.example.com" aria-describedby="website-help" value={sponsorWebsite} onChange={e=>{const value=e.target.value;const protocol=value.match(/^https?:\/\//i)?.[0];if(protocol)setWebsiteProtocol(protocol.toLowerCase());setSponsorWebsite(value.replace(/^https?:\/\//i, "").replace(/^\/\//,""));}}/></div>:<Input name="portfolio" type="url" maxLength={500} placeholder="https://"/>}<span id="website-help" className="field-note">{kind==="sponsor"?t("直接填写域名即可，自动补全 http://；也可粘贴完整网址。"):t("可提供网页或云盘链接，不在网站公开展示。")}</span></label>)}
  {kind!=="sponsor"&&<label className="full">{kind!=="space"?t("期望驻留时间与时长"):t("可合作时间")}{kind==="meditation"?" *":t("（选填）")}<Input name="availability" required={kind==="meditation"} maxLength={120} placeholder={t("可填写大致时间，或填写待沟通")}/></label>}
- {kind==="sponsor"&&<div className="field full"><label htmlFor="support-plan">{t("希望支持的计划")} *</label><Select value={supportPlan} onValueChange={value=>{setSupportPlan(value as typeof supportPlan);setTraditions([]);setTraditionScope("selected");}}><SelectTrigger id="support-plan" className="form-select" aria-required="true"><SelectValue placeholder={t("请选择")}/></SelectTrigger><SelectContent>{Object.entries(supportPlanNames).map(([id,label])=><SelectItem key={id} value={id}>{t(label)}</SelectItem>)}</SelectContent></Select></div>}
+ {kind==="sponsor"&&<div className="field full"><label htmlFor="support-plan">{t("希望支持的计划")} *</label><Select value={supportPlan} onValueChange={value=>{setSupportPlan(value as typeof supportPlan);}}><SelectTrigger id="support-plan" className="form-select" aria-required="true"><SelectValue placeholder={t("请选择")}/></SelectTrigger><SelectContent>{Object.entries(supportPlanNames).map(([id,label])=><SelectItem key={id} value={id}>{t(label)}</SelectItem>)}</SelectContent></Select></div>}
  {kind==="meditation"&&<><div className="field full"><label htmlFor="application-mode">{t("申请方式")} *</label><Select value={applicationMode} onValueChange={value=>setApplicationMode(value as typeof applicationMode)}><SelectTrigger id="application-mode" className="form-select"><SelectValue/></SelectTrigger><SelectContent><SelectItem value="individual">{t("个人")}</SelectItem><SelectItem value="group">{t("团体")}</SelectItem></SelectContent></Select></div>
  {applicationMode==="group"&&<><label>{t("团体名称")} *<Input name="organization" required maxLength={120}/></label><label>{t("预计人数")} *<Input name="participants" type="number" min={2} step={1} required/></label><label className="full">{t("团体带领者")} *<Input name="leader" required maxLength={120}/></label><label className="full">{t("团体活动安排简介")} *<Textarea name="groupActivities" required maxLength={500} rows={3}/></label></>}
  <label className="full">{t("空间与配套需求")} *<Textarea name="spaceNeeds" required maxLength={1000} rows={3} placeholder={t("请介绍房间、安静活动空间、餐食及交通等需求……")}/></label><label className="full">{t("可接受的住宿预算")}{t("（选填）")}<Input name="budget" maxLength={120} placeholder={t("请注明币种，以及每人每晚或整体预算")}/></label></>}
- {(kind==="meditation"||(kind==="sponsor"&&supportPlan!==""&&supportPlan!=="artist"))&&<TraditionFields sponsor={kind==="sponsor"} scope={kind==="meditation"?"selected":traditionScope} selected={traditions} onChange={(scope,ids)=>{setTraditionScope(scope);setTraditions(ids);}}/>}
+ {(kind==="meditation"||(kind==="sponsor"&&supportPlan!==""&&supportPlan!=="artist"))&&<TraditionFields sponsor={kind==="sponsor"}/>}
  <label className="full">{t(content.message)} *<Textarea name="message" required minLength={5} maxLength={2000} rows={4} placeholder={t(content.placeholder)}/><span className="field-note">{t("5–2000 字。")}</span></label>
  </div>
  <div className="honeypot" aria-hidden="true"><label>{t("网站地址")}<Input name="website" tabIndex={-1} autoComplete="off"/></label></div>

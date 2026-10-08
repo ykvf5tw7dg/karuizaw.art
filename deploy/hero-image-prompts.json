@@ -1,0 +1,35 @@
+{
+  "tool": "image_gen.imagegen",
+  "assets": [
+    {
+      "source": "/Users/liye/.codex/generated_images/01a0d3a1-c318-7f23-b5e0-515c0afff00b/exec-389eee09-49f3-4875-87ca-71f7f1086e21.png",
+      "path": "public/seasons/spring-residency.webp",
+      "prompt": "Generate one photorealistic cinematic wide landscape website hero photograph, 1536x1024 or wider composition. Spring in Karuizawa Japan, inside a refined timber villa art studio with large windows looking onto fresh green forest and delicate cherry blossoms. An adult woman artist in understated linen workwear is painting a canvas with brush, easel and a modest organized palette on the RIGHT half. Camera sees the artist working in three-quarter profile, natural plausible hands and tools. Warm timber, quiet tasteful architecture, soft spring daylight. Spacious moody darker uncluttered LEFT half reserved for white website headline overlay, no typography or text in image. Authentic contemplative editorial photography, inviting, restrained, no luxury advertising posing, no logos, no watermarks. Show artmaking as the primary scene rather than the exterior villa. Subtle green and warm wood palette."
+    },
+    {
+      "source": "/Users/liye/.codex/generated_images/01a0d3a1-c318-7f23-b5e0-515c0afff00b/exec-f5c627f6-088b-4ad8-b899-aa7b3c2148c9.png",
+      "path": "public/seasons/summer-residency.webp",
+      "prompt": "Generate one photorealistic cinematic wide landscape website hero photograph, 1536x1024 or wider composition. Summer in Karuizawa Japan, inside a quiet timber and glass villa sculpture studio opening onto lush deep-green woodland. An adult male sculptor in simple work clothes is carefully shaping a small clay sculpture on a sturdy work table on the RIGHT half, hands anatomically natural, a few believable sculpting tools. The object is a clay abstract organic form, no text. Rich natural summer light from large windows, serene earthy wood and forest green palette, understated elegant space, documentary editorial photography. Spacious darker uncluttered LEFT half for white website headline overlay, no typography, logos or watermarks. Main focus human creation inside the villa, not exterior architecture. Wide immersive composition."
+    },
+    {
+      "source": "/Users/liye/.codex/generated_images/01a0d3a1-c318-7f23-b5e0-515c0afff00b/exec-090de1d7-04ef-43fd-92e2-eaa0ed166b99.png",
+      "path": "public/seasons/autumn-residency.webp",
+      "prompt": "Generate one photorealistic cinematic wide landscape website hero photograph, 1536x1024 or wider composition. Autumn in Karuizawa Japan, small group of six adults meditating OUTDOORS on a dry generous wooden deck beside a quiet timber villa, surrounded by rich crimson and golden maple trees. Modest comfortable long-sleeved clothing, seated on simple cushions and a couple of chairs, natural relaxed stillness, believable faces and hands, diverse men and women on the RIGHT and center-RIGHT half. Soft autumn morning sunlight, warm wood, golden leaves and deep forest green palette, authentic contemplative documentary editorial photography. Group meditation is primary subject, outdoors is unmistakable. Spacious darker uncluttered LEFT half reserved for white website headline overlay. Wide immersive composition, no text, logos or watermarks, no religious symbols required."
+    },
+    {
+      "source": "/Users/liye/.codex/generated_images/01a0d3a1-c318-7f23-b5e0-515c0afff00b/exec-68a65d89-2afd-47f1-b6ab-ceb2ff150de8.png",
+      "path": "public/seasons/winter-residency.webp",
+      "prompt": "Generate one photorealistic cinematic wide landscape website hero photograph, 1536x1024 or wider composition. Winter in Karuizawa Japan, ONE adult woman meditating INSIDE a warm refined Japanese timber villa. Woman on the RIGHT half seated on a simple cushion on a clean wooden floor, modest loose cream long-sleeved clothing, relaxed natural cross-legged posture, eyes softly closed, hands resting naturally on knees, believable anatomy. Large window behind and beside her clearly reveals snow-covered forest and a winter garden OUTSIDE. Warm intimate interior, woven mat and quiet understated timber architecture, gentle winter daylight blended with warm light. Woman is main subject, serene authentic editorial photography, no religious symbols required. Spacious dim uncluttered LEFT half reserved for white website headline overlay. Wide immersive composition, no typography, no logos, no watermarks."
+    },
+    {
+      "source": "/Users/liye/.codex/generated_images/01a0d3a1-c318-7f23-b5e0-515c0afff00b/exec-34dca21c-aae7-4717-bbb2-a7760cd137fa.png",
+      "path": "public/residency/personal-autumn.webp",
+      "prompt": "Generate one photorealistic cinematic wide landscape website hero photograph, 1536x1024 or wider composition. Autumn in Karuizawa Japan. Quiet Japanese timber villa interior, an adult woman in modest loose cream linen clothing meditating seated on a simple cushion in natural relaxed cross-legged posture on the RIGHT half. Eyes softly closed, hands resting naturally on knees, believable anatomy. Floor-to-ceiling window frames fiery red and golden maple leaves and a woodland garden. Minimal warm wooden interior with a woven mat, peaceful uncluttered atmosphere, soft autumn morning light, warm amber accents and muted greens, authentic editorial architectural photography. Spacious dim uncluttered LEFT half reserved for white website headline. No text, no logos, no watermarks, no religious symbols required. Person meditating is main subject."
+    },
+    {
+      "source": "/Users/liye/.codex/generated_images/01a0d3a1-c318-7f23-b5e0-515c0afff00b/exec-5e72f6b2-1d38-4898-9bf8-1f7cab0c3c67.png",
+      "path": "public/residency/group-winter.webp",
+      "prompt": "Generate one photorealistic cinematic wide landscape website hero photograph, 1536x1024 or wider composition. Winter in Karuizawa Japan, six adults in modest comfortable loose clothing meditating INSIDE a spacious warm timber villa with a clean wooden floor, cushions and a few simple chairs. Group seated naturally in two staggered rows on the RIGHT and center-RIGHT half, eyes relaxed or closed, hands resting naturally, believable faces and anatomy, diverse men and women, peaceful shared stillness. Large windows on the RIGHT reveal a snow-covered forest and winter garden outside. Soft cool winter daylight blends with warm interior light. Warm welcoming timber palette, thoughtful Japanese architectural detail, authentic quiet editorial photography, no religious symbols required. Spacious darker uncluttered LEFT half reserved for white website headline overlay. Wide immersive composition. Meditation group is clearly indoors and is primary scene. No text, no logos, no watermarks."
+    }
+  ]
+}
