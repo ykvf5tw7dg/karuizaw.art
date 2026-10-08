@@ -1,0 +1,100 @@
+{
+  "release_date_japan": "2026-10-09",
+  "source_commit": "452c3cb",
+  "status": "complete",
+  "changes": [
+    "Centered administrator login on desktop and mobile",
+    "Four seasonal art/meditation hero scenes: spring painting indoors, summer sculpture indoors, autumn group outdoors, winter woman indoors",
+    "Two independent body illustrations; all six images unique and optimized WebP",
+    "Optional free-text tradition field for meditation and sponsors; historical choices remain readable"
+  ],
+  "running_image": {
+    "tag": "karuizawa-art:local",
+    "id": "sha256:734177775a53c525b0fd3d6a8f96ba5a1d5918ecf3b5066e65524f4ad2293448"
+  },
+  "retained": [
+    {
+      "tag": "karuizawa-art:local",
+      "purpose": "current running release"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-visuals",
+      "id": "sha256:a5ff8f2fe5275bae3c0637617c8216311ab3cef0ac91a9600676f39475dd1ccc",
+      "purpose": "previous stable rollback"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-meditation",
+      "id": "sha256:738090195084baae8e15521db65b927939474ad882061919ed3863834af19990",
+      "purpose": "existing recovery baseline"
+    },
+    {
+      "path": "/home/dev2/apps/karuizawa-art/data/backups/2026-10-08T20-16-03-326Z",
+      "purpose": "pre-release data backup"
+    },
+    {
+      "path": "/home/dev2/apps/karuizawa-art/data/backups/2026-10-08T20-18-19-900Z",
+      "purpose": "pre-mobile-adjustment data backup"
+    }
+  ],
+  "cleanup": {
+    "status": "complete",
+    "deleted": [
+      "temporary tag and unreferenced intermediate image karuizawa-art:visuals-20261009 (sha256:902a9fb7094ce659738f5ffad14300dd2fa1161a59a0a935e663dcd484e1ae60)",
+      "temporary image alias karuizawa-art:visuals-20261009-r2; current image preserved as local",
+      "isolated container karuizawa-visuals-test and disposable test-only records",
+      "local deploy/private/smoke-state.json",
+      "temporary SSH test tunnel on 14318"
+    ],
+    "all_container_image_references_checked": true,
+    "other_projects_volumes_and_backups_modified": false,
+    "method": "Built directly on cloud; no image upload package, checksum or local export directory created. Exact tag removal only; no force/prune.",
+    "cloud_temporary_packages_remaining": 0,
+    "local_export_directories_remaining": 0,
+    "temporary_release_tags_remaining": 0
+  },
+  "validation": {
+    "production_build": "passed",
+    "typescript": "passed",
+    "changed_form_and_schema_lint": "passed",
+    "isolated_tests": [
+      "free-text individual/group/sponsor save and authenticated admin display",
+      "optional blank and 300-character limit",
+      "historical choice-based applicants and sponsors",
+      "duplicate and modified duplicate handling",
+      "private access protection",
+      "existing photo upload/read/access controls, counters, auth and locales"
+    ],
+    "responsive_languages": [
+      "zh-Hans",
+      "zh-Hant",
+      "ja",
+      "en"
+    ],
+    "mobile_width": 390,
+    "horizontal_overflow": false,
+    "admin_login_center": {
+      "desktop_viewport_width": 1280,
+      "desktop_card_center_x": 640,
+      "mobile_viewport_width": 390,
+      "mobile_card_center_x": 195
+    },
+    "production_read_only_smoke": "passed",
+    "https_domains": [
+      "karuizawa.art",
+      "www.karuizawa.art"
+    ],
+    "all_six_online_asset_sha256_match_local": true,
+    "all_six_image_sources_unique": true,
+    "post_cleanup_container_health": "healthy",
+    "post_cleanup_both_domain_api_health": true
+  },
+  "images": {
+    "tool": "image_gen.imagegen",
+    "prompt_and_asset_record": "deploy/hero-image-prompts.json",
+    "total_webp_bytes": 1313574
+  },
+  "notifications": {
+    "existing_notification_queue_preserved": true,
+    "mail_relay_configured": false
+  }
+}
