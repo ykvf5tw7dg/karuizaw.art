@@ -1,0 +1,73 @@
+{
+  "release_date_japan": "2026-10-09",
+  "source_commit": "fc19b32",
+  "status": "complete",
+  "changes": [
+    "Added 禅修与静心 after art programs in desktop navigation and mobile menu",
+    "Links target existing #meditation-plan section; mobile menu closes after click",
+    "Japanese, English and traditional Chinese labels included"
+  ],
+  "running_image": {
+    "tag": "karuizawa-art:local",
+    "id": "sha256:3be53d61c17e535c08b7fc66da233b42592b59c372981ebf7d5b10deb6ccf83c"
+  },
+  "retained": [
+    {
+      "tag": "karuizawa-art:local",
+      "purpose": "current running release"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-navigation",
+      "id": "sha256:1d53005e735df28d89d899617990070ebc56ae0d5c86a8d0deed0a5d3b9ee552",
+      "purpose": "previous stable rollback"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-scene-copy",
+      "purpose": "previously retained recovery image"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-visuals",
+      "purpose": "previously retained recovery image"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-meditation",
+      "purpose": "existing recovery baseline"
+    },
+    {
+      "path": "/home/dev2/apps/karuizawa-art/data/backups/2026-10-08T20-39-52-624Z",
+      "purpose": "pre-release data backup"
+    }
+  ],
+  "cleanup": {
+    "status": "complete",
+    "deleted": [
+      "temporary image alias karuizawa-art:meditation-nav-20261009; running image retained as local"
+    ],
+    "all_container_image_references_checked": true,
+    "checked_container_count": 21,
+    "method": "Direct cloud build. No uploaded image package, checksum file, local export directory or other temporary release artifact was created. Exact tag removal; no force/prune.",
+    "cloud_temporary_packages_remaining": 0,
+    "local_export_directories_remaining": 0,
+    "temporary_release_tags_remaining": 0,
+    "other_projects_volumes_and_backups_modified": false
+  },
+  "validation": {
+    "typescript": "passed",
+    "production_build": "passed",
+    "desktop_language_labels": [
+      "zh-Hans",
+      "ja",
+      "en",
+      "zh-Hant"
+    ],
+    "desktop_nav_overlap": false,
+    "english_nav_labels_wrap": false,
+    "mobile_width": 390,
+    "mobile_menu_link_and_auto_close": "passed",
+    "mobile_horizontal_overflow": false,
+    "production_click_to_meditation_section": "passed",
+    "both_domains_four_language_navigation_and_https": "passed",
+    "post_cleanup_container_health": "healthy",
+    "post_cleanup_version_and_health": "passed"
+  }
+}
