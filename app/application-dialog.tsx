@@ -19,14 +19,14 @@ const info={
  sponsor:{title:"登记赞助意向",en:"SPONSORSHIP INTEREST",intro:"期待与伙伴共同支持艺术活动、禅修与静心驻留，可提供资金、物资或专业服务。",categories:["资金支持","物资与设备","专业服务","传播与媒体","综合合作"],category:"希望提供的支持",message:"合作意向",placeholder:"请介绍可提供的支持、合作方向或希望了解的事项……"},
  space:{title:"登记空间意向",en:"SPACE PARTNERSHIP INTEREST",intro:"面向轻井泽及周边的别墅、露营地和艺术活动空间。请介绍你的空间与合作想法。",categories:["别墅","露营地","艺术工作室","展览与活动空间","其他空间"],category:"空间类型",message:"空间介绍与合作意向",placeholder:"请介绍空间面积、可容纳人数、设施及希望开展的合作……"}
 };
-export function ApplicationDialog({kind,onClose}:{kind:ApplicationKind|null;onClose:()=>void}){
+export function ApplicationDialog({kind,onClose,initialMode="individual"}:{kind:ApplicationKind|null;onClose:()=>void;initialMode?:"individual"|"group"}){
  const {t,locale}=useLanguage();
  const [category,setCategory]=useState("");const [consent,setConsent]=useState(false);const [authority,setAuthority]=useState(false);
  const [pending,setPending]=useState(false);const [error,setError]=useState("");const [receipt,setReceipt]=useState("");const id=useRef("");
  const [sponsorWebsite,setSponsorWebsite]=useState("");const [websiteProtocol,setWebsiteProtocol]=useState("http://");
  const [photos,setPhotos]=useState<SelectedPhoto[]>([]);
  const [supportPlan,setSupportPlan]=useState<"artist"|"meditation"|"all"|"">("");
- const [applicationMode,setApplicationMode]=useState<"individual"|"group">("individual");
+ const [applicationMode,setApplicationMode]=useState<"individual"|"group">(initialMode);
  const content=info[kind??"artist"];
  async function submit(e:FormEvent<HTMLFormElement>){
   e.preventDefault();if(pending||!kind)return;setError("");
