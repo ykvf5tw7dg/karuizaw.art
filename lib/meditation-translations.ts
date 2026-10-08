@@ -95,7 +95,8 @@ export const meditationTranslations: Record<string,Record<string,string>> = {
     "窗外是雪，室内是温暖与安静。": "窓の外には雪、室内には温もりと静けさ。",
     "欢迎个人自主实践，为自己留下一段静心时光。": "個人の自主的な実践を歓迎します。自分のための静かな時間を。",
     "填写个人禅修与驻留意向，了解参与方式。": "個人の瞑想と滞在の希望を登録し、参加方法をご確認ください。",
-    "了解禅修计划": "瞑想プログラムについて"
+    "了解禅修计划": "瞑想プログラムについて",
+    "禅修与静心": "禅・瞑想"
   },
   "en": {
     "汉传佛教": "Chinese Buddhism",
@@ -193,7 +194,8 @@ export const meditationTranslations: Record<string,Record<string,string>> = {
     "窗外是雪，室内是温暖与安静。": "Snow outside; warmth and stillness within.",
     "欢迎个人自主实践，为自己留下一段静心时光。": "Independent personal practice is welcome. Make time for your own stillness.",
     "填写个人禅修与驻留意向，了解参与方式。": "Share your personal meditation and residency interests to learn how to participate.",
-    "了解禅修计划": "Explore meditation"
+    "了解禅修计划": "Explore meditation",
+    "禅修与静心": "Meditation & Stillness"
   },
   "zh-Hant": {
     "汉传佛教": "漢傳佛教",
@@ -291,6 +293,7 @@ export const meditationTranslations: Record<string,Record<string,string>> = {
     "窗外是雪，室内是温暖与安静。": "窗外是雪，室內是溫暖與安靜。",
     "欢迎个人自主实践，为自己留下一段静心时光。": "歡迎個人自主實踐，為自己留下一段靜心時光。",
     "填写个人禅修与驻留意向，了解参与方式。": "填寫個人禪修與駐留意向，了解參與方式。",
-    "了解禅修计划": "了解禪修計劃"
+    "了解禅修计划": "了解禪修計劃",
+    "禅修与静心": "禪修與靜心"
   }
 };

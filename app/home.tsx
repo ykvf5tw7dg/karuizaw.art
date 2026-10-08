@@ -30,10 +30,10 @@ function HomeContent(){
  <a className="skip" href="#main">{t("跳至正文")}</a>
  <header className="site-header">
  <a className="brand" href="#top" aria-label={t("轻井泽国际艺术村首页")}><span className="brand-mark" aria-hidden="true">K<span>／</span></span><span><strong>{t("轻井泽国际艺术村")}</strong><small>KARUIZAWA INTERNATIONAL ART VILLAGE</small></span></a>
- <nav aria-label={t("主导航")}><a href="#about">{t("关于艺术村")}</a><a href="#programs">{t("艺术计划")}</a><a href="#center">{t("关于我们")}</a><a className="nav-visit" href="#participate">{t("参与共建")}<span aria-hidden="true">↗</span></a></nav>
+ <nav aria-label={t("主导航")}><a href="#about">{t("关于艺术村")}</a><a href="#programs">{t("艺术计划")}</a><a href="#meditation-plan">{t("禅修与静心")}</a><a href="#center">{t("关于我们")}</a><a className="nav-visit" href="#participate">{t("参与共建")}<span aria-hidden="true">↗</span></a></nav>
  <LanguageSwitcher/>
  <button className="menu-toggle" aria-label={menu?t("关闭导航"):t("打开导航")} aria-expanded={menu} aria-controls="mobile-nav" onClick={()=>setMenu(!menu)}>{t("菜单")}<span aria-hidden="true">{menu?"×":"☰"}</span></button>
- <nav id="mobile-nav" className="mobile-nav" aria-label={t("移动端导航")} hidden={!menu} onClick={()=>setMenu(false)}><a href="#about">{t("关于艺术村")}</a><a href="#programs">{t("艺术计划")}</a><a href="#center">{t("关于我们")}</a><a href="#participate">{t("参与共建")}</a></nav>
+ <nav id="mobile-nav" className="mobile-nav" aria-label={t("移动端导航")} hidden={!menu} onClick={()=>setMenu(false)}><a href="#about">{t("关于艺术村")}</a><a href="#programs">{t("艺术计划")}</a><a href="#meditation-plan">{t("禅修与静心")}</a><a href="#center">{t("关于我们")}</a><a href="#participate">{t("参与共建")}</a></nav>
  </header>
  <main id="main">
  <SeasonalHero onApply={apply}/>
