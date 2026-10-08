@@ -1,5 +1,7 @@
+import {meditationTranslations} from "./meditation-translations";
 export const translations: Record<string, Record<string,string>> = {
   "ja": {
+    ...meditationTranslations["ja"],
     "今日": "本日",
     "累计": "累計",
     "今日按日本时间统计，累计为计数启用后的首页浏览次数": "本日は日本時間で集計。累計は計数開始以降のホームページ閲覧回数です。",
@@ -229,6 +231,7 @@ export const translations: Record<string, Record<string,string>> = {
     "这些信息将帮助我们匹配适合的计划、档期与合作方式。": "ご入力情報をもとに、適したプログラム、日程、連携方法をご案内します。"
   },
   "en": {
+    ...meditationTranslations["en"],
     "今日": "Today",
     "累计": "Total",
     "今日按日本时间统计，累计为计数启用后的首页浏览次数": "Today uses Japan time. Total counts homepage views since counting began.",
@@ -458,6 +461,7 @@ export const translations: Record<string, Record<string,string>> = {
     "这些信息将帮助我们匹配适合的计划、档期与合作方式。": "Your information will help us match suitable programs, dates and ways to collaborate."
   },
   "zh-Hant": {
+    ...meditationTranslations["zh-Hant"],
     "今日": "今日",
     "累计": "累計",
     "今日按日本时间统计，累计为计数启用后的首页浏览次数": "今日按日本時間統計，累計為計數啟用後的首頁瀏覽次數",
