@@ -23,7 +23,7 @@ export function LanguageProvider({initialLocale,explicitLocale,children}:{initia
   return()=>{window.removeEventListener('popstate',sync);window.removeEventListener('languagechange',sync);};
  },[initialLocale,explicitLocale]);
  const t=useCallback((text:string)=>translations[locale]?.[text]??text,[locale]);
- useEffect(()=>{document.documentElement.lang=locale;document.title=t('轻井泽国际艺术村');},[locale,t]);
+ useEffect(()=>{document.documentElement.lang=locale;document.title=t('轻井泽国际禅修营');},[locale,t]);
  return <Context.Provider value={{locale,t,changeLanguage}}>{children}</Context.Provider>;
 }
 export function useLanguage(){return useContext(Context);}

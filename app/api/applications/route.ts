@@ -24,7 +24,8 @@ export async function POST(request:Request){
  const contentType=request.headers.get('content-type')??'';
  const multipart=contentType.toLowerCase().startsWith('multipart/form-data;');
  if(!multipart&&!contentType.toLowerCase().includes('application/json'))return json({error:"不支持的提交格式。"},415);
- const limit=multipart?MAX_PHOTO_BYTES+1024*1024:16000;
+ const textLimit=24000;
+ const limit=multipart?MAX_PHOTO_BYTES+1024*1024:textLimit;
  if(Number(request.headers.get('content-length')||0)>limit)return json({error:'提交内容过大，图片合计不得超过30MB。'},413);
  let raw:unknown;const photos:{category:PhotoCategory;file:File}[]=[];
  try{
@@ -32,7 +33,7 @@ export async function POST(request:Request){
   if(multipart){
    const form=await body.formData();
    const application=form.get('application');
-   if(typeof application!=='string'||new TextEncoder().encode(application).length>16000)return json({error:'申请文字内容过长。'},400);
+   if(typeof application!=='string'||new TextEncoder().encode(application).length>textLimit)return json({error:'申请文字内容过长。'},400);
    raw=JSON.parse(application);
    for(const [key,value] of form.entries()){
     if(key==='application')continue;

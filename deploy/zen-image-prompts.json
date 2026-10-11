@@ -1,0 +1,41 @@
+{
+  "tool": "built-in image_gen",
+  "images": [
+    {
+      "key": "incense",
+      "path": "/Users/liye/.codex/generated_images/01a0d3a1-c318-7f23-b5e0-515c0afff00b/exec-6e0e52c8-022c-4271-b0ad-c0556e2aabfd.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: website cultural meditation retreat illustration. A small group of three adults learning attentive Japanese incense appreciation with one instructor in a warm timber retreat room overlooking Karuizawa woodland. One person gently holds a small ceramic incense cup with both hands, others quietly observe, a modest incense tray on a low table. Calm natural posture. Editorial lifestyle photography, horizontal landscape 3:2, natural soft daylight, forest greens, warm natural wood and cream linen. Realistic anatomy and hands, modest and welcoming atmosphere, simple clothing, no religious uniforms, no performance or stage. No logo, no watermark, no text overlays. Single coherent photograph, not a collage.",
+      "asset": "public/experiences/incense.webp"
+    },
+    {
+      "key": "flowers",
+      "path": "/Users/liye/.codex/generated_images/01a0d3a1-c318-7f23-b5e0-515c0afff00b/exec-f3f8d377-c7f7-428e-a900-5f40b5a8b4f5.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: website cultural meditation retreat illustration. Two adults and a female instructor doing simple ikebana flower arranging at a light wood table beside a window overlooking woodland. Seasonal branches and a few delicate flowers in simple ceramic vases, attentive relaxed expressions, hands arranging stems carefully, authentic modest setup. Editorial lifestyle photography, horizontal landscape 3:2, natural soft daylight, forest greens, warm natural wood and cream linen. Realistic anatomy and hands, modest and welcoming atmosphere, simple clothing, no religious uniforms, no performance or stage. No logo, no watermark, no text overlays. Single coherent photograph, not a collage.",
+      "asset": "public/experiences/flowers.webp"
+    },
+    {
+      "key": "tea",
+      "path": "/Users/liye/.codex/generated_images/01a0d3a1-c318-7f23-b5e0-515c0afff00b/exec-bd3e77fa-9690-4e3b-aa78-20afe521a90b.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: website cultural meditation retreat illustration. Three adults sharing a quiet tea appreciation session with a teacher around a low wooden tea table beside a forest-facing window. One teacher pours tea into small ceramic cups, kettle and restrained tea utensils, relaxed attentive guests. Intimate calm retreat, no lavish ceremony staging. Editorial lifestyle photography, horizontal landscape 3:2, natural soft daylight, forest greens, warm natural wood and cream linen. Realistic anatomy and hands, modest and welcoming atmosphere, simple clothing, no religious uniforms, no performance or stage. No logo, no watermark, no text overlays. Single coherent photograph, not a collage.",
+      "asset": "public/experiences/tea.webp"
+    },
+    {
+      "key": "writing",
+      "path": "/Users/liye/.codex/generated_images/01a0d3a1-c318-7f23-b5e0-515c0afff00b/exec-0447a043-d8d2-4a13-ac60-7dfa54e7ee37.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: website cultural meditation retreat illustration. Two adults quietly practicing brush calligraphy and reflective writing at separate places on a broad wooden table in a woodland retreat. One writes with an upright calligraphy brush on paper, the other writes in a journal, books placed nearby. Camera three-quarter side view, paper marks not readable text. Editorial lifestyle photography, horizontal landscape 3:2, natural soft daylight, forest greens, warm natural wood and cream linen. Realistic anatomy and hands, modest and welcoming atmosphere, simple clothing, no religious uniforms, no performance or stage. No logo, no watermark, no text overlays. Single coherent photograph, not a collage.",
+      "asset": "public/experiences/writing.webp"
+    },
+    {
+      "key": "photography",
+      "path": "/Users/liye/.codex/generated_images/01a0d3a1-c318-7f23-b5e0-515c0afff00b/exec-2a1ee71c-ca60-4ee2-bcfe-5bc7bb4d9a45.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: website cultural meditation retreat illustration. Two adult retreat participants slowly observing and photographing nature along a peaceful wooded Karuizawa footpath. One holds a compact camera naturally up to the eye aimed toward leaves, the other watches woodland, casual understated clothes. Quiet contemplative nature walk. Editorial lifestyle photography, horizontal landscape 3:2, natural soft daylight, forest greens, warm natural wood and cream linen. Realistic anatomy and hands, modest and welcoming atmosphere, simple clothing, no religious uniforms, no performance or stage. No logo, no watermark, no text overlays. Single coherent photograph, not a collage.",
+      "asset": "public/experiences/photography.webp"
+    },
+    {
+      "key": "terrace-meditation",
+      "asset": "public/seasons/terrace-meditation.webp",
+      "source": "/Users/liye/.codex/generated_images/01a0d3a1-c318-7f23-b5e0-515c0afff00b/exec-c6815a33-dd92-45bb-a9d6-ed200c01599c.png",
+      "prompt": "New composition inspired by the campsite reference: two adults sitting side by side on terrace cushions, facing the woodland away from the camera, rear three-quarter view, white geodesic dome along the left, green timber railing beyond them, soft daylight. Photorealistic, no text or logo."
+    }
+  ]
+}

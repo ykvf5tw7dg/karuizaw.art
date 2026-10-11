@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { traditionIds } from "./meditation";
+import {experienceIds,teacherIds} from "./retreat";
 const line=z.string().trim().min(1,"请填写所有必填项").max(120,"填写内容过长");
 const link=z.string().trim().max(500).refine(v=>!v||/^https?:\/\//i.test(v),"链接请以 https:// 或 http:// 开头").refine(v=>{if(!v)return true;try{return ['https:','http:'].includes(new URL(v).protocol);}catch{return false;}},"请输入有效链接");
 export function normalizeWebsite(value:string){const v=value.trim();return !v||/^https?:\/\//i.test(v)?v:`http://${v.replace(/^\/\//,"")}`;}
@@ -9,10 +10,17 @@ const traditions={traditionText:z.string().trim().max(300,"派别说明最多300
 export const applicationSchema=z.discriminatedUnion("type",[
  z.object({...base,type:z.literal("artist"),location:line,category:z.enum(["绘画","雕塑与装置","摄影与影像","音乐与表演","设计与建筑","文学与跨学科","其他艺术领域"]),portfolio:link,availability:z.string().trim().max(120)}),
  z.object({...base,type:z.literal("sponsor"),organization:line,category:z.enum(["资金支持","物资与设备","专业服务","传播与媒体","综合合作"]),portfolio:sponsorLink,supportPlan:z.enum(["artist","meditation","all"]).default("artist"),traditionScope:z.enum(["all","selected"]).default("selected"),...traditions}),
- z.object({...base,type:z.literal("meditation"),applicationMode:z.enum(["individual","group"]),location:line,participants:z.coerce.number().int().min(1,"请填写有效人数"),availability:line,organization:z.string().trim().max(120).default(""),leader:z.string().trim().max(120).default(""),groupActivities:z.string().trim().max(500).default(""),spaceNeeds:z.string().trim().min(1,"请填写空间与配套需求").max(1000),budget:z.string().trim().max(120).default(""),...traditions}),
+ z.object({...base,type:z.literal("teacher"),location:line,subjects:z.array(z.enum(teacherIds)).min(1,"请选择至少一项可带领的内容").max(10),subjectOther:z.string().trim().max(200).default(""),experience:z.string().trim().min(5,"请简要填写教学或带领经历").max(2000),languages:line,availability:line,participantsGuidance:z.string().trim().max(300).default(""),spaceNeeds:z.string().trim().min(1,"请填写空间与配套需求").max(1000),cooperation:z.string().trim().max(500).default(""),portfolio:sponsorLink,...traditions}),
+ z.object({...base,type:z.literal("meditation"),interests:z.array(z.enum(experienceIds)).max(12).default([]),interestOther:z.string().trim().max(200).default(""),applicationMode:z.enum(["individual","group"]),location:line,participants:z.coerce.number().int().min(1,"请填写有效人数"),availability:line,organization:z.string().trim().max(120).default(""),leader:z.string().trim().max(120).default(""),groupActivities:z.string().trim().max(500).default(""),spaceNeeds:z.string().trim().min(1,"请填写空间与配套需求").max(1000),budget:z.string().trim().max(120).default(""),...traditions}),
  z.object({...base,type:z.literal("space"),address:z.string().trim().min(1,"请填写空间地址").max(300,"空间地址最多300字"),location:line,category:z.enum(["别墅","露营地","艺术工作室","展览与活动空间","其他空间"]),availability:z.string().trim().max(120),authority:z.literal(true,{errorMap:()=>({message:"请确认您有权提交该空间的合作意向"})})})
 ]).superRefine((data,ctx)=>{
  const issue=(path:string,message:string)=>ctx.addIssue({code:z.ZodIssueCode.custom,path:[path],message});
+ if(data.type==="teacher"){
+  if(new Set(data.subjects).size!==data.subjects.length)issue("subjects","请勿重复选择内容");
+  if(data.subjects.includes("other")&&!data.subjectOther)issue("subjectOther","请填写其他内容说明");
+  return;
+ }
+ if(data.type==="meditation"&&new Set(data.interests).size!==data.interests.length)issue("interests","请勿重复选择内容");
  if(data.type!=="meditation"&&data.type!=="sponsor")return;
  if(data.type==="sponsor"&&data.supportPlan==="artist")return;
  if(data.traditionText===undefined){

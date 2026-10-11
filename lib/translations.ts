@@ -1,3 +1,4 @@
+import {zenTranslations} from "./zen-translations";
 import {meditationTranslations} from "./meditation-translations";
 export const translations: Record<string, Record<string,string>> = {
   "ja": {
@@ -691,3 +692,5 @@ export const translations: Record<string, Record<string,string>> = {
     "这些信息将帮助我们匹配适合的计划、档期与合作方式。": "這些資訊將幫助我們配對適合的計劃、檔期與合作方式。"
   }
 };
+
+for(const locale of Object.keys(zenTranslations))Object.assign(translations[locale],zenTranslations[locale]);

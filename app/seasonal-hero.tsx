@@ -4,84 +4,12 @@ import { useEffect, useState } from "react";
 import { Carousel,CarouselContent,CarouselItem,type CarouselApi } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 const seasons=[
- {
-  "key": "spring",
-  "name": "春",
-  "en": "SPRING",
-  "scene": "春日室内绘画",
-  "alt": "艺术家在春日别墅内绘画，窗外新绿与樱花，AI 概念图",
-  "kind": "artist",
-  "mode": "individual",
-  "kicker": "首批艺术家招募计划",
-  "title": [
-   "在春光中落笔，",
-   "让灵感生长。"
-  ],
-  "description": [
-   "让新绿与光影，成为画布上的故事。",
-   "邀请 100 位艺术家，共同开启轻井泽的创作旅程。"
-  ],
-  "note": "填写绘画创作与驻留意向，了解参与方式。"
- },
- {
-  "key": "summer",
-  "name": "夏",
-  "en": "SUMMER",
-  "scene": "夏日室内雕塑",
-  "alt": "艺术家在夏日别墅内创作雕塑，窗外绿林，AI 概念图",
-  "kind": "artist",
-  "mode": "individual",
-  "kicker": "首批艺术家招募计划",
-  "title": [
-   "在林间塑形，",
-   "让想象成真。"
-  ],
-  "description": [
-   "在安静的工作室，把想法化为作品。",
-   "邀请 100 位艺术家，共同开启轻井泽的创作旅程。"
-  ],
-  "note": "填写雕塑创作与驻留意向，了解参与方式。"
- },
- {
-  "key": "autumn",
-  "name": "秋",
-  "en": "AUTUMN",
-  "scene": "秋日团体禅修",
-  "alt": "团体在秋日红枫庭院的户外平台禅修，AI 概念图",
-  "kind": "meditation",
-  "mode": "group",
-  "kicker": "团体禅修支持计划",
-  "title": [
-   "在秋林中静坐，",
-   "与同伴共修。"
-  ],
-  "description": [
-   "在红枫与静谧之间，留出共同练习的时间。",
-   "欢迎团体自带带领者，登记禅修与静心驻留意向。"
-  ],
-  "note": "填写人数、时间与空间需求，了解支持条件。"
- },
- {
-  "key": "winter",
-  "name": "冬",
-  "en": "WINTER",
-  "scene": "冬日静心禅修",
-  "alt": "一位女性在温暖别墅内禅修，窗外冬日雪林，AI 概念图",
-  "kind": "meditation",
-  "mode": "individual",
-  "kicker": "个人静心支持计划",
-  "title": [
-   "在冬日里静心，",
-   "与自己相遇。"
-  ],
-  "description": [
-   "窗外是雪，室内是温暖与安静。",
-   "欢迎个人自主实践，为自己留下一段静心时光。"
-  ],
-  "note": "填写个人禅修与驻留意向，了解参与方式。"
- }
+ {key:'spring',name:'春',en:'SPRING',scene:'露台静坐',image:'/seasons/terrace-meditation.webp',alt:'两人在营地露台面向森林禅修，AI 概念图',kind:'meditation',mode:'individual',kicker:'禅修与静心驻留计划',title:['面向森林，','安住当下。'],description:['在自然与四季之间，为身心留出安静的时间。','欢迎个人自主实践，以及团体自带带领者。'],note:'登记平日与淡季驻留意向，了解参与方式。'},
+ {key:'summer',name:'夏',en:'SUMMER',scene:'静心绘画',image:'/seasons/spring-residency.webp',alt:'参与者在林间别墅内安静绘画，AI 概念图',kind:'meditation',mode:'individual',kicker:'艺术融入静心生活',title:['用一笔色彩，','专注眼前。'],description:['让绘画成为静心时光中的一段日常。','也可以阅读、书写，在自己的节奏中安静停留。'],note:'填写禅修意向与体验兴趣，活动安排另行沟通。'},
+ {key:'autumn',name:'秋',en:'AUTUMN',scene:'秋日团体禅修',image:'/seasons/autumn-residency.webp',alt:'团体在秋日红枫庭院的户外平台禅修，AI 概念图',kind:'meditation',mode:'group',kicker:'团体共修与文化体验',title:['与同伴静坐，','听见秋林。'],description:['在红枫与静谧之间，留出共同练习的时间。','闻香、插花与品茶，可按需求及带领者安排协调。'],note:'填写人数、时间与空间需求，了解支持条件。'},
+ {key:'winter',name:'冬',en:'WINTER',scene:'冬日静心禅修',image:'/seasons/winter-residency.webp',alt:'一位女性在温暖别墅内禅修，窗外冬日雪林，AI 概念图',kind:'meditation',mode:'individual',kicker:'个人静心驻留',title:['在冬日里，','留时间给自己。'],description:['窗外是雪，室内是温暖与安静。','从静坐到阅读、书法与写作，感受从容的日常。'],note:'填写个人禅修与驻留意向，了解参与方式。'}
 ] as const;
-export function SeasonalHero({onApply}:{onApply:(kind:"artist"|"meditation",mode:"individual"|"group")=>void}){
+export function SeasonalHero({onApply}:{onApply:(kind:"meditation",mode:"individual"|"group")=>void}){
  const {t}=useLanguage();
  const [api,setApi]=useState<CarouselApi>();
  const [selected,setSelected]=useState(0);
@@ -93,13 +21,13 @@ export function SeasonalHero({onApply}:{onApply:(kind:"artist"|"meditation",mode
  const content=seasons[selected];
  function choose(index:number){setPaused(true);api?.scrollTo(index,reduced);}
  return <section className="hero seasonal-hero" id="top" aria-labelledby="hero-title">
- <Carousel className="season-carousel" setApi={setApi} opts={{loop:true,duration:45}} aria-label={t("四季艺术与禅修背景轮播")}>
- <CarouselContent className="season-track">{seasons.map((s,i)=><CarouselItem className="season-slide" data-season={s.key} key={s.key} aria-label={`${i+1} / 4: ${t(s.name)} · ${t(s.scene)}`} aria-hidden={selected!==i}><img src={`/seasons/${s.key}-residency.webp`} alt={t(s.alt)} fetchPriority={i===0?'high':'auto'} decoding="async"/></CarouselItem>)}</CarouselContent>
+ <Carousel className="season-carousel" setApi={setApi} opts={{loop:true,duration:45}} aria-label={t("四季禅修与静心生活轮播")}>
+ <CarouselContent className="season-track">{seasons.map((s,i)=><CarouselItem className="season-slide" data-season={s.key} key={s.key} aria-label={`${i+1} / 4: ${t(s.name)} · ${t(s.scene)}`} aria-hidden={selected!==i}><img src={s.image} alt={t(s.alt)} fetchPriority={i===0?'high':'auto'} decoding="async"/></CarouselItem>)}</CarouselContent>
  </Carousel>
  <div className="hero-shade"/>
- <div className="hero-topline"><span>ART · NATURE · CONNECTION</span><span>{t(content.kicker)}</span></div>
- <div className="hero-content"><h1 id="hero-title">{content.title.map(line=><span className="copy-line" key={line}>{t(line)}</span>)}</h1><p className="hero-description">{content.description.map(line=><span className="copy-line" key={line}>{t(line)}</span>)}</p><p className="hero-interest-note">{t(content.note)}</p><div className="hero-actions"><button type="button" className="light-button" onClick={()=>{setPaused(true);onApply(content.kind,content.mode);}} aria-haspopup="dialog">{t(content.kind==="artist"?"登记驻留意向":"登记禅修意向")}<span aria-hidden="true">↗</span></button><a className="hero-secondary" href={content.kind==="artist"?"#about":"#meditation-plan"}>{t(content.kind==="artist"?"了解艺术村":"了解禅修计划")}<span aria-hidden="true">↓</span></a></div></div>
+ <div className="hero-topline"><span>NATURE · STILLNESS · CONNECTION</span><span>{t(content.kicker)}</span></div>
+ <div className="hero-content"><h1 id="hero-title">{content.title.map(line=><span className="copy-line" key={line}>{t(line)}</span>)}</h1><p className="hero-description">{content.description.map(line=><span className="copy-line" key={line}>{t(line)}</span>)}</p><p className="hero-interest-note">{t(content.note)}</p><div className="hero-actions"><button type="button" className="light-button" onClick={()=>{setPaused(true);onApply(content.kind,content.mode);}} aria-haspopup="dialog">{t("登记禅修意向")}<span aria-hidden="true">↗</span></button><a className="hero-secondary" href="#meditation-plan">{t("了解驻留方式")}<span aria-hidden="true">↓</span></a></div></div>
  <div className="season-controls" aria-label={t("轮播控制")}><div className="season-switches">{seasons.map((s,i)=><Button key={s.key} className="season-button" variant="ghost" aria-label={`${t("切换到")} ${t(s.name)}`} aria-pressed={selected===i} onClick={()=>choose(i)}><span>{t(s.name)}</span><small>{s.en}</small></Button>)}</div><Button className="season-pause" variant="ghost" aria-label={paused?t("播放四季轮播"):t("暂停四季轮播")} onClick={()=>setPaused(!paused)}>{paused?t("播放 ▷"):t("暂停 Ⅱ")}</Button></div>
- <div className="hero-bottom"><span className="season-caption" aria-live={paused?'polite':'off'}>{String(selected+1).padStart(2,'0')} / 04 <span>{t(seasons[selected].name)} · {t(seasons[selected].scene)}</span></span><span className="image-caption">{t("艺术与禅修 · AI 概念意境图")}</span></div>
+ <div className="hero-bottom"><span className="season-caption" aria-live={paused?'polite':'off'}>{String(selected+1).padStart(2,'0')} / 04 <span>{t(seasons[selected].name)} · {t(seasons[selected].scene)}</span></span><span className="image-caption">{t("禅修与静心生活 · AI 概念图")}</span></div>
  </section>;
 }
