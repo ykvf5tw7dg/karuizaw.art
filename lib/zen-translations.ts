@@ -1,5 +1,13 @@
 // Chinese source keys with Japanese, English and Traditional Chinese equivalents.
 const rows: [string,string,string,string][] = [
+['品茗与闻香','お茶と香りを楽しむ','Tea & incense','品茗與聞香'],
+['静心驻留与文化体验','静かな滞在と文化体験','Mindful stays & cultural experiences','靜心駐留與文化體驗'],
+['在茶香之间，','お茶と香りの中で、','Among tea and incense,','在茶香之間，'],
+['与老师及同伴围坐，在品茗与闻香中感受专注。','先生や仲間と囲むお茶と香り。目の前に意識を向けるひとときを。','Gather with a teacher and companions to find focus through tea and incense.','與老師及同伴圍坐，在品茗與聞香中感受專注。'],
+['文化体验融入静心驻留，具体安排另行沟通。','静かな滞在に文化体験を。具体的な内容はご相談のうえ調整します。','Cultural experiences enrich your retreat; arrangements are discussed individually.','文化體驗融入靜心駐留，具體安排另行溝通。'],
+['一位老师与两位参与者在林间别墅内品茗闻香，AI 概念图','森のヴィラで先生と二人の参加者がお茶と香りを楽しむ、AIコンセプト画像','One teacher and two participants enjoy tea and incense in a woodland villa, AI concept image','一位老師與兩位參與者在林間別墅內品茗聞香，AI 概念圖'],
+['男士摄影师在森林步道使用专业相机与三脚架，AI 概念图','森の小道で男性写真家がプロ用カメラと三脚を使う、AIコンセプト画像','A male photographer uses a professional camera and tripod on a forest trail, AI concept image','男士攝影師在森林步道使用專業相機與三腳架，AI 概念圖'],
+
 ['轻井泽国际禅修营','軽井沢国際禅・瞑想センター','Karuizawa International Zen Meditation Center','輕井澤國際禪修營'],
 ['轻井泽国际禅修营首页','軽井沢国際禅・瞑想センター ホーム','Karuizawa Zen Meditation Center home','輕井澤國際禪修營首頁'],
 ['一般社団法人 軽井沢国際禅・瞑想センター（筹）','一般社団法人 軽井沢国際禅・瞑想センター（筹）','Karuizawa International Zen Meditation Center (in preparation)','一般社団法人 軽井沢国際禅・瞑想センター（籌）'],

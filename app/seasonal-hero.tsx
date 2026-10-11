@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Carousel,CarouselContent,CarouselItem,type CarouselApi } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 const seasons=[
- {key:'spring',name:'春',en:'SPRING',scene:'露台静坐',image:'/seasons/terrace-meditation.webp',alt:'两人在营地露台面向森林禅修，AI 概念图',kind:'meditation',mode:'individual',kicker:'禅修与静心驻留计划',title:['面向森林，','安住当下。'],description:['在自然与四季之间，为身心留出安静的时间。','欢迎个人自主实践，以及团体自带带领者。'],note:'登记平日与淡季驻留意向，了解参与方式。'},
+ {key:'spring',name:'春',en:'SPRING',scene:'品茗与闻香',image:'/seasons/tea-incense.webp',alt:'一位老师与两位参与者在林间别墅内品茗闻香，AI 概念图',kind:'meditation',mode:'group',kicker:'静心驻留与文化体验',title:['在茶香之间，','安住当下。'],description:['与老师及同伴围坐，在品茗与闻香中感受专注。','文化体验融入静心驻留，具体安排另行沟通。'],note:'登记平日与淡季驻留意向，了解参与方式。'},
  {key:'summer',name:'夏',en:'SUMMER',scene:'静心绘画',image:'/seasons/spring-residency.webp',alt:'参与者在林间别墅内安静绘画，AI 概念图',kind:'meditation',mode:'individual',kicker:'艺术融入静心生活',title:['用一笔色彩，','专注眼前。'],description:['让绘画成为静心时光中的一段日常。','也可以阅读、书写，在自己的节奏中安静停留。'],note:'填写禅修意向与体验兴趣，活动安排另行沟通。'},
  {key:'autumn',name:'秋',en:'AUTUMN',scene:'秋日团体禅修',image:'/seasons/autumn-residency.webp',alt:'团体在秋日红枫庭院的户外平台禅修，AI 概念图',kind:'meditation',mode:'group',kicker:'团体共修与文化体验',title:['与同伴静坐，','听见秋林。'],description:['在红枫与静谧之间，留出共同练习的时间。','闻香、插花与品茶，可按需求及带领者安排协调。'],note:'填写人数、时间与空间需求，了解支持条件。'},
  {key:'winter',name:'冬',en:'WINTER',scene:'冬日静心禅修',image:'/seasons/winter-residency.webp',alt:'一位女性在温暖别墅内禅修，窗外冬日雪林，AI 概念图',kind:'meditation',mode:'individual',kicker:'个人静心驻留',title:['在冬日里，','留时间给自己。'],description:['窗外是雪，室内是温暖与安静。','从静坐到阅读、书法与写作，感受从容的日常。'],note:'填写个人禅修与驻留意向，了解参与方式。'}

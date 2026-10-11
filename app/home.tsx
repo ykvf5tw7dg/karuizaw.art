@@ -12,7 +12,7 @@ const experiences=[
  {key:'flowers',title:'插花与花道',text:'以当季枝叶，感受季节与留白。',alt:'老师带领参与者用当季枝叶插花，AI 概念图'},
  {key:'tea',title:'品茶与茶道',text:'从泡茶到品茗，将注意力放回眼前。',alt:'老师与小团体在森林窗边品茶，AI 概念图'},
  {key:'writing',title:'阅读、书法与写作',text:'在阅读与书写中，整理思绪，安静表达。',alt:'参与者在木桌旁练习书法与写作，AI 概念图'},
- {key:'photography',title:'森林漫步与摄影',text:'放慢脚步，用镜头观察自然的细节。',alt:'参与者在森林步道观察与摄影，AI 概念图'}
+ {key:'photography-male',title:'森林漫步与摄影',text:'放慢脚步，用镜头观察自然的细节。',alt:'男士摄影师在森林步道使用专业相机与三脚架，AI 概念图'}
 ];
 const navigation=[['#about','关于计划'],['#meditation-plan','禅修与驻留'],['#programs','静心体验'],['#center','关于我们'],['#participate','参与计划']];
 export default function Home({initialLocale,explicitLocale}:{initialLocale:Locale;explicitLocale:boolean}){return <LanguageProvider initialLocale={initialLocale} explicitLocale={explicitLocale}><HomeContent/></LanguageProvider>;}

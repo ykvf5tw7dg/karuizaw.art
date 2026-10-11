@@ -1,0 +1,21 @@
+{
+  "tool": "built-in image_gen",
+  "images": [
+    {
+      "key": "tea-incense-hero",
+      "asset": "public/seasons/tea-incense.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: meditation retreat website hero, landscape 3:2. Primary request: exactly THREE adults total: one experienced East Asian teacher and two adult participants quietly tasting tea and appreciating incense together in a woodland villa in Karuizawa. No tent. Scene: warm timber interior, large windows overlooking fresh spring forest, low wooden table with a small ceramic tea pot, three modest cups, and a separate small ceramic incense burner. The teacher gently pours tea; one participant holds a tea cup; the other quietly appreciates the subtle scent, natural gestures. Composition: wide environmental photograph, all three people and table grouped on the RIGHT half, left half quiet shadowed timber interior and forest window negative space for website headline; full heads visible, natural bodies and correct hands. Natural soft daylight, contemplative, tasteful ordinary linen clothing, candid documentary photography, realistic details. Exactly one teacher and two participants, no extra people, no text, no logo, no watermark, no religious costume, no excessive smoke. New scene, no white dome or campsite.",
+      "path": "/Users/liye/.codex/generated_images/01a0d3a1-c318-7f23-b5e0-515c0afff00b/exec-f5a42d6d-5a27-47ba-a99c-ae7d8be42597.png"
+    },
+    {
+      "key": "male-photographer",
+      "asset": "public/experiences/photography-male.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: meditation retreat website body illustration, horizontal 3:2. Primary request: a single adult East Asian MALE professional nature photographer with confident experienced cameraman presence, working quietly on a forest trail in Karuizawa. Practical olive field jacket, camera shoulder bag, tasteful practical outdoor clothing, mature man around 40. He operates a professional mirrorless camera with substantial zoom lens on a stable tripod with fluid head, one hand naturally adjusting the camera and the other on the pan handle, looking toward the camera viewfinder or screen. Three-quarter profile view, camera points toward woodland scenery, believable functional equipment and natural anatomy. Rich green forest, soft filtered natural sunlight, calm candid editorial photography, understated and realistic. One person only. No woman, no other people, no text, no logos, no watermark, no exaggerated movie production rig.",
+      "path": "/Users/liye/.codex/generated_images/01a0d3a1-c318-7f23-b5e0-515c0afff00b/exec-b4d2fd1b-f98d-4836-b247-bc18edccdd9d.png"
+    }
+  ],
+  "withdrawn": [
+    "public/seasons/terrace-meditation.webp",
+    "public/experiences/photography.webp"
+  ]
+}
