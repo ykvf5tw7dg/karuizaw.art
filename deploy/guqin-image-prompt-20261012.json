@@ -1,0 +1,11 @@
+{
+  "tool": "built-in image_gen",
+  "images": [
+    {
+      "key": "stream-guqin",
+      "path": "/Users/liye/.codex/generated_images/01a0d3a1-c318-7f23-b5e0-515c0afff00b/exec-dcdb4a4a-1f76-4afb-b0cb-2606d528dca6.png",
+      "asset": "public/experiences/stream-guqin.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: horizontal 3:2 editorial photograph for the Painting & Gentle Music section of a woodland meditation retreat website. Primary request: exactly ONE adult East Asian MAN quietly playing a traditional Chinese GUQIN at the side of a clear flowing forest stream. Guqin is a slim long dark wooden fretless seven-string zither laid HORIZONTALLY on a low simple wooden table, no bridges, no piano keys; it is NOT a guzheng, not a piano. Scene: peaceful shaded forest with mossy rocks and visible shallow rippling stream beside the player, natural lush green woodland. Subject: mature male around 35 to 45, wearing understated ivory linen clothing, seated comfortably on a low wooden bench on safe dry flat ground at the stream bank. Both hands in plausible guqin playing positions: right hand plucking near one end, left hand lightly pressing or sliding farther along the strings. Composition: three-quarter view showing his face, both hands, the full slender instrument and nearby stream; medium-wide environmental framing. Natural filtered daylight, meditative and unposed, realistic candid lifestyle photography, restrained green and warm wood palette. Constraints: correct natural hands, realistic instrument proportions and seven strings, one person only; no text, logos, watermark, piano, guitar, guzheng, concert stage, costumes or extra people."
+    }
+  ]
+}

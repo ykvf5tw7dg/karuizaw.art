@@ -57,7 +57,7 @@ function HomeContent(){
    <div className="section-label"><span>03 / MINDFUL EXPERIENCES</span><span>{t('静心体验')}</span></div>
    <div className="section-heading"><h2>{t('静心，也在日常之间。')}</h2><p>{t('从一段静坐到一杯茶，从一枝花到一笔色彩，让注意力回到眼前。')}</p></div>
    <div className="experience-gallery">{experiences.map(item=><figure key={item.key}><img src={`/experiences/${item.key}.webp`} alt={t(item.alt)} width={1536} height={1024} loading="lazy" decoding="async"/><figcaption><h3>{t(item.title)}</h3><p>{t(item.text)}</p></figcaption></figure>)}</div>
-   <div className="creative-note"><div><span className="eyebrow">ART IN DAILY LIFE</span><h3>{t('绘画与轻音乐')}</h3></div><p>{t('在静心时光中加入素描、水彩或轻音乐练习。创作以适合住宿空间、易清洁的方式开展；音乐活动按场地与其他住客的作息协调。')}</p></div>
+   <div className="creative-note"><figure><img src="/experiences/stream-guqin.webp" alt={t('男士在林间溪边安静弹奏古琴，AI 概念图')} width={1536} height={1024} loading="lazy" decoding="async"/></figure><div className="creative-copy"><span className="eyebrow">ART IN DAILY LIFE</span><h3>{t('绘画与轻音乐')}</h3><p>{t('在静心时光中加入素描、水彩或轻音乐练习。创作以适合住宿空间、易清洁的方式开展；音乐活动按场地与其他住客的作息协调。')}</p></div></div>
    <p className="practice-image-note">{t('体验内容可根据需求、场地条件与带领者安排协调，具体活动及费用以确认方案为准。')}</p><p className="practice-image-note">{t('AI 概念意境图，非实际项目场地实拍。')}</p>
   </section>
   <section className="invitation section-wrap" id="participate">

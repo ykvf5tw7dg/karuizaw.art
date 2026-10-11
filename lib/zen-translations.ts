@@ -1,5 +1,6 @@
 // Chinese source keys with Japanese, English and Traditional Chinese equivalents.
 const rows: [string,string,string,string][] = [
+['男士在林间溪边安静弹奏古琴，AI 概念图','森の小川のほとりで男性が静かに古琴を弾く、AIコンセプト画像','A man quietly plays a guqin beside a forest stream, AI concept image','男士在林間溪邊安靜彈奏古琴，AI 概念圖'],
 ['品茗与闻香','お茶と香りを楽しむ','Tea & incense','品茗與聞香'],
 ['静心驻留与文化体验','静かな滞在と文化体験','Mindful stays & cultural experiences','靜心駐留與文化體驗'],
 ['在茶香之间，','お茶と香りの中で、','Among tea and incense,','在茶香之間，'],
