@@ -1,0 +1,91 @@
+{
+  "release_date_japan": "2026-10-12",
+  "source_commit": "c4c4649",
+  "status": "published",
+  "changes": [
+    "Meditation-led site rebrand with exact general association name marked （筹）",
+    "Calligraphy, writing, photography, incense, flowers, tea and music as mindful experiences",
+    "Three public entries: meditation, teacher collaboration, space partnership",
+    "Teacher validation and private admin details; historical artist/sponsor records retained",
+    "Four-language content and 11 distinct concept images"
+  ],
+  "running_image": {
+    "tag": "karuizawa-art:local",
+    "id": "sha256:d015a9bef9f105a55f14ab2e163908547577a6091b59129bd2be5359cce7e119",
+    "revision": "c4c4649"
+  },
+  "retained": [
+    {
+      "tag": "karuizawa-art:local",
+      "purpose": "current running release"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261012-before-zen",
+      "id": "sha256:3be53d61c17e535c08b7fc66da233b42592b59c372981ebf7d5b10deb6ccf83c",
+      "purpose": "previous stable rollback"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-navigation",
+      "purpose": "existing recovery baseline retained"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-scene-copy",
+      "purpose": "existing recovery baseline retained"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-visuals",
+      "purpose": "existing recovery baseline retained"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-meditation",
+      "purpose": "existing recovery baseline retained"
+    },
+    {
+      "path": "/home/dev2/apps/karuizawa-art/data/backups/2026-10-11T23-16-55-333Z",
+      "purpose": "pre-release data backup"
+    }
+  ],
+  "cleanup": {
+    "status": "complete",
+    "deleted": [
+      "temporary image alias karuizawa-art:zen-retreat-20261012; image retained as local",
+      "/tmp/karuizawa-zen-qa-20261012",
+      "deploy/private/smoke-state.json",
+      "deploy/private/zen-production-check.json"
+    ],
+    "all_container_image_references_checked": true,
+    "checked_container_count": 21,
+    "method": "Direct cloud build with streamed tracked source. No uploaded image package, checksum or local export directory created. Exact alias removal only; no force/prune.",
+    "cloud_temporary_packages_remaining": 0,
+    "local_export_directories_remaining": 0,
+    "temporary_release_tags_remaining": 0,
+    "other_projects_volumes_and_backups_modified": false
+  },
+  "validation": {
+    "typescript": "passed",
+    "production_build": "passed",
+    "teacher_personal_group_api_and_admin_details": "passed",
+    "teacher_other_and_limits_validation": "passed",
+    "historical_applications": "passed",
+    "space_uploads_and_private_access": "passed",
+    "duplicate_csrf_and_auth_protection": "passed",
+    "notification_queue_records": "passed",
+    "domains": [
+      "https://karuizawa.art",
+      "https://www.karuizawa.art"
+    ],
+    "languages": [
+      "zh-Hans",
+      "zh-Hant",
+      "ja",
+      "en"
+    ],
+    "distinct_image_count": 11,
+    "image_hashes_match": true,
+    "script_count": 16,
+    "script_status": "all 200",
+    "source_commit": "c4c4649",
+    "post_cleanup_container_health": "healthy",
+    "browser_visual_qa": "Not completed: native in-app browser action blocked by URL security policy on an existing error page. No bypass attempted. Responsive CSS and localized content checked in source; mobile and interactive visual behavior not browser-verified."
+  }
+}
