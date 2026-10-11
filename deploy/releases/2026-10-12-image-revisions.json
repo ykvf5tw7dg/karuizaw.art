@@ -1,0 +1,97 @@
+{
+  "release_date_japan": "2026-10-12",
+  "source_commit": "a3ef564",
+  "status": "published",
+  "changes": [
+    "Withdraw white dome campsite meditation hero and original photography illustration",
+    "Add exactly three people: one teacher and two participants sharing tea and incense",
+    "Add single male professional forest photographer",
+    "Update spring hero copy and image descriptions in all four languages"
+  ],
+  "running_image": {
+    "tag": "karuizawa-art:local",
+    "id": "sha256:8c10ef53fd0407d270e2fc847631abf8f205740691f187d03f819cf816c23f95",
+    "revision": "a3ef564"
+  },
+  "retained": [
+    {
+      "tag": "karuizawa-art:local",
+      "purpose": "current running release"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261012-before-image-update",
+      "id": "sha256:d015a9bef9f105a55f14ab2e163908547577a6091b59129bd2be5359cce7e119",
+      "purpose": "previous stable rollback"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261012-before-zen",
+      "id": "sha256:3be53d61c17e535c08b7fc66da233b42592b59c372981ebf7d5b10deb6ccf83c",
+      "purpose": "previous stable rollback"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-navigation",
+      "purpose": "existing recovery baseline retained"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-scene-copy",
+      "purpose": "existing recovery baseline retained"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-visuals",
+      "purpose": "existing recovery baseline retained"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-meditation",
+      "purpose": "existing recovery baseline retained"
+    },
+    {
+      "path": "/home/dev2/apps/karuizawa-art/data/backups/2026-10-11T23-48-51-652Z",
+      "purpose": "pre-release data backup"
+    }
+  ],
+  "cleanup": {
+    "status": "complete",
+    "deleted": [
+      "karuizawa-art:images-20261012 temporary alias; underlying image retained as local",
+      "public/seasons/terrace-meditation.webp locally and in cloud source/image",
+      "public/experiences/photography.webp locally and in cloud source/image"
+    ],
+    "all_container_image_references_checked": true,
+    "checked_container_count": 21,
+    "method": "Streamed git archive and direct cloud build; no uploaded image packages/checksums or local export directories. Exact temporary image alias removal only; no force or prune.",
+    "cloud_temporary_packages_remaining": 0,
+    "local_export_directories_remaining": 0,
+    "temporary_release_tags_remaining": 0,
+    "other_projects_volumes_and_backups_modified": false
+  },
+  "validation": {
+    "typescript": "passed",
+    "production_build": "passed",
+    "domains": [
+      "https://karuizawa.art",
+      "https://www.karuizawa.art"
+    ],
+    "languages": [
+      "zh-Hans",
+      "zh-Hant",
+      "ja",
+      "en"
+    ],
+    "distinct_active_images": 11,
+    "new_image_sha256_matches": "both domains",
+    "withdrawn_image_http_status": 404,
+    "homepage_status": 200,
+    "scripts_per_domain": 8,
+    "script_status": "all 200",
+    "post_cleanup_container_health": "healthy",
+    "browser_visual_qa": "Not completed; previously blocked native browser security restriction remains. Generated assets visually inspected; source responsive CSS and live HTTP content checked."
+  },
+  "image_generation": {
+    "tool": "built-in image_gen",
+    "prompt_record": "deploy/zen-image-revisions-20261012.json",
+    "assets": [
+      "public/seasons/tea-incense.webp",
+      "public/experiences/photography-male.webp"
+    ]
+  }
+}
