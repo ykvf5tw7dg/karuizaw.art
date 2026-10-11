@@ -1,0 +1,97 @@
+{
+  "release_date_japan": "2026-10-12",
+  "source_commit": "b26f0d4",
+  "status": "published",
+  "changes": [
+    "Add one male playing guqin beside a forest stream to Painting & Gentle Music section",
+    "Two columns on desktop; image above text on mobile",
+    "Localized image description in four languages; image used once"
+  ],
+  "running_image": {
+    "tag": "karuizawa-art:local",
+    "id": "sha256:5f4e6a60b3ac50be0a60416a7b00fe93393b2c1119956403b16041d48a8de5d3",
+    "revision": "b26f0d4"
+  },
+  "retained": [
+    {
+      "tag": "karuizawa-art:local",
+      "purpose": "current running release"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261012-before-guqin",
+      "id": "sha256:8c10ef53fd0407d270e2fc847631abf8f205740691f187d03f819cf816c23f95",
+      "purpose": "previous stable rollback"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261012-before-image-update",
+      "id": "sha256:d015a9bef9f105a55f14ab2e163908547577a6091b59129bd2be5359cce7e119",
+      "purpose": "existing recovery baseline retained"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261012-before-zen",
+      "id": "sha256:3be53d61c17e535c08b7fc66da233b42592b59c372981ebf7d5b10deb6ccf83c",
+      "purpose": "existing recovery baseline retained"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-navigation",
+      "purpose": "existing recovery baseline retained"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-scene-copy",
+      "purpose": "existing recovery baseline retained"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-visuals",
+      "purpose": "existing recovery baseline retained"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-meditation",
+      "purpose": "existing recovery baseline retained"
+    },
+    {
+      "path": "/home/dev2/apps/karuizawa-art/data/backups/2026-10-11T23-56-13-756Z",
+      "purpose": "pre-release data backup"
+    }
+  ],
+  "cleanup": {
+    "status": "complete",
+    "deleted": [
+      "karuizawa-art:guqin-20261012 temporary alias; underlying image retained as local"
+    ],
+    "all_container_image_references_checked": true,
+    "checked_container_count": 21,
+    "method": "Streamed git archive and direct cloud build; no uploaded image packages/checksums or local export directories. Exact temporary alias removal only, no force or prune.",
+    "cloud_temporary_packages_remaining": 0,
+    "local_export_directories_remaining": 0,
+    "temporary_release_tags_remaining": 0,
+    "other_projects_volumes_and_backups_modified": false
+  },
+  "validation": {
+    "typescript": "passed",
+    "production_build": "passed",
+    "domains": [
+      "https://karuizawa.art",
+      "https://www.karuizawa.art"
+    ],
+    "languages": [
+      "zh-Hans",
+      "zh-Hant",
+      "ja",
+      "en"
+    ],
+    "distinct_active_images": 12,
+    "new_image_sha256_matches": "both domains",
+    "homepage_status": 200,
+    "scripts_per_domain": 8,
+    "script_status": "all 200",
+    "post_cleanup_container_health": "healthy",
+    "browser_visual_qa": "Not completed due to previously blocked native browser security restriction. Generated image visually inspected; responsive source CSS and live HTTP content checked."
+  },
+  "image_generation": {
+    "tool": "built-in image_gen",
+    "prompt_record": "deploy/guqin-image-prompt-20261012.json",
+    "assets": [
+      "public/experiences/stream-guqin.webp"
+    ]
+  }
+}
