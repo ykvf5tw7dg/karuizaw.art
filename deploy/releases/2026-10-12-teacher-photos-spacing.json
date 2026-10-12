@@ -1,0 +1,130 @@
+{
+  "release_date_japan": "2026-10-12",
+  "source_commit": "b2e5c5e",
+  "status": "published",
+  "changes": [
+    "Teacher application: up to6 categorized portrait/work/teaching photos, optional social account details; private administrator review only",
+    "Teacher CMS: up to6 photos, batch upload, photo categories, cover/order, up to6 reviewed HTTPS public social links",
+    "Teacher public detail: compact6-photo album, filters, accessible lightbox and left/right controls",
+    "Home section vertical padding reduced92→52px desktop and62→36px mobile; heading margins also reduced",
+    "Formal HTTPS root/www allowed for application submission; other supplied origins refused; previous missing-Origin behavior unchanged",
+    "Mobile clipped upload input dimensions corrected to eliminate horizontal scroll"
+  ],
+  "limits": {
+    "teacher_application_photos": 6,
+    "application_per_image_MB": 10,
+    "application_total_MB": 30,
+    "cms_teacher_photos": 6,
+    "cms_per_image_MB": 10,
+    "cms_social_links": 6,
+    "space_photos_unchanged": 20
+  },
+  "running_image": {
+    "tag": "karuizawa-art:local",
+    "id": "sha256:e73218a15ccc970adeea808739a807b935464dfead31913101067e9ee00cf9c7"
+  },
+  "retained": [
+    {
+      "tag": "karuizawa-art:local",
+      "id": "sha256:e73218a15ccc970adeea808739a807b935464dfead31913101067e9ee00cf9c7",
+      "purpose": "current"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261012-before-teacher-photos",
+      "id": "sha256:ea99ae3abedc128aa01ebfc40a54d76ecb16097a831d079d73c81ac001d99055",
+      "purpose": "previous stable rollback"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261012-before-albums",
+      "id": "sha256:bf7ebb676453ee1f55ff13e45d0caab425604ebeabd7836a4adf016418b51c07",
+      "purpose": "existing recovery baseline"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261012-before-card-update",
+      "id": "sha256:cf7f97b46ce06eaa810602cf9b8775316cc6091f0f797be76dbee07089c1d527",
+      "purpose": "existing recovery baseline"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261012-before-partners",
+      "id": "sha256:5f4e6a60b3ac50be0a60416a7b00fe93393b2c1119956403b16041d48a8de5d3",
+      "purpose": "existing recovery baseline"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261012-before-guqin",
+      "id": "sha256:8c10ef53fd0407d270e2fc847631abf8f205740691f187d03f819cf816c23f95",
+      "purpose": "existing recovery baseline"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261012-before-image-update",
+      "id": "sha256:d015a9bef9f105a55f14ab2e163908547577a6091b59129bd2be5359cce7e119",
+      "purpose": "existing recovery baseline"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261012-before-zen",
+      "id": "sha256:3be53d61c17e535c08b7fc66da233b42592b59c372981ebf7d5b10deb6ccf83c",
+      "purpose": "existing recovery baseline"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-navigation",
+      "id": "sha256:1d53005e735df28d89d899617990070ebc56ae0d5c86a8d0deed0a5d3b9ee552",
+      "purpose": "existing recovery baseline"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-scene-copy",
+      "id": "sha256:734177775a53c525b0fd3d6a8f96ba5a1d5918ecf3b5066e65524f4ad2293448",
+      "purpose": "existing recovery baseline"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-visuals",
+      "id": "sha256:a5ff8f2fe5275bae3c0637617c8216311ab3cef0ac91a9600676f39475dd1ccc",
+      "purpose": "existing recovery baseline"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-meditation",
+      "id": "sha256:738090195084baae8e15521db65b927939474ad882061919ed3863834af19990",
+      "purpose": "existing recovery baseline"
+    },
+    {
+      "path": "/home/dev2/apps/karuizawa-art/data/backups/2026-10-12T12-37-51-172Z",
+      "purpose": "pre-release DB and uploads backup; pair with prior image if teacher data subsequently exceeds old1-photo schema"
+    }
+  ],
+  "cleanup": {
+    "checked_container_count": 21,
+    "deleted": [
+      "karuizawa-art:teacher-photos-20261012",
+      "/tmp/karuizawa-teacher-six-qa-20261012 isolated QA data",
+      "/tmp/teacher-update-20261012.py one-off implementation helper"
+    ],
+    "cloud_temporary_packages_remaining": 0,
+    "post_cleanup_health": "healthy",
+    "post_cleanup_revision": "b2e5c5e",
+    "status": "complete",
+    "local_export_directories_remaining": 0,
+    "temporary_release_tags_remaining": 0,
+    "all_container_image_references_checked": true,
+    "current_previous_stable_and_recovery_baselines_retained": true,
+    "method": "Streamed Git archive/cloud build; no upload packages/checksums or local exports; exact temporary alias removal only, no force/global prune",
+    "other_projects_volumes_and_backups_modified": false,
+    "owned_local_test_server_stopped": true
+  },
+  "validation": {
+    "typescript": "passed after Next typegen",
+    "production_build": "passed",
+    "isolated_teacher_api": "6 photos saved,7 rejected; categories, social accounts, private image access, duplicate/idempotent retry and conflict, legacy photo-free request, CMS6/seventh limit, safe HTTPS social links, historical single-photo profile passed",
+    "isolated_space_regression": "20-photo cap/categories/stale revision and draft/public media passed",
+    "browser": "Four-language teacher form at390px, no horizontal overflow; desktop section spacing; local six-photo teacher gallery and next-image/lightbox; formal www form and52px section padding confirmed",
+    "formal_http": "both domains health, four languages, admin login, auth/CSRF/spoof controls passed; read-only production checks",
+    "production_data_unchanged_against_backup": [
+      "applications",
+      "application_notifications",
+      "content_profiles"
+    ],
+    "no_test_records_sent_to_production": true,
+    "notifications": "Existing behavior retained; no claim that unconfigured relay is enabled"
+  },
+  "screenshots": [
+    "deploy/releases/screenshots/2026-10-12-teacher-six-photos.jpg",
+    "deploy/releases/screenshots/2026-10-12-home-spacing.jpg"
+  ]
+}
