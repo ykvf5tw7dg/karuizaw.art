@@ -118,7 +118,7 @@
       "ja": "吹き抜けのリビング\n寝室三室\n森を望むバルコニー",
       "en": "Double-height living room\nThree bedrooms\nForest-view balcony"
     },
-    "sleepingCapacity": null,
+    "sleepingCapacity": 6,
     "practiceCapacity": null,
     "languages": [],
     "teachingModes": [],
@@ -165,7 +165,8 @@
         }
       }
     ],
-    "internalNotes": "房源明确注明薪炉及桑拿不可使用，不能作为禅修营设施宣传。\n正文注明无空调及电视；照片中的设备不作为可用性承诺。\n住宿人数与禅修活动人数均需确认。\n来源核验：2026-10-12。加盟关系由用户确认。\n住宿人数冲突：页面与结构化数据为8，正文为6；公开信息保持待确认。"
+    "internalNotes": "房源明确注明薪炉及桑拿不可使用，不能作为禅修营设施宣传。\n正文注明无空调及电视；照片中的设备不作为可用性承诺。\n禅修活动人数需按空间与活动确认。\n来源核验：2026-10-12。加盟关系由用户确认。\n住宿人数由用户于2026-10-12确认为6–10人；此次确认优先于旧房源中的人数信息。",
+    "sleepingCapacityMax": 10
   },
   {
     "id": "forest-private-camp",
@@ -209,6 +210,16 @@
     "sourceUrl": "https://zh.airbnb.com/rooms/1613339157530929423",
     "photos": [
       {
+        "id": "outdoor-space",
+        "src": "/partners/spaces/forest-private-camp/outdoor-space.webp",
+        "alt": {
+          "zh-Hans": "营地户外空间",
+          "zh-Hant": "營地戶外空間",
+          "ja": "キャンプの屋外空間",
+          "en": "Camp outdoor space"
+        }
+      },
+      {
         "id": "exterior",
         "src": "/partners/spaces/forest-private-camp/exterior.webp",
         "alt": {
@@ -236,16 +247,6 @@
           "zh-Hant": "粉色帳篷",
           "ja": "ピンクのテント",
           "en": "Pink tent"
-        }
-      },
-      {
-        "id": "outdoor-space",
-        "src": "/partners/spaces/forest-private-camp/outdoor-space.webp",
-        "alt": {
-          "zh-Hans": "营地户外空间",
-          "zh-Hant": "營地戶外空間",
-          "ja": "キャンプの屋外空間",
-          "en": "Camp outdoor space"
         }
       }
     ],

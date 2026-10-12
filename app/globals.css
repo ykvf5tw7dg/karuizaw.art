@@ -102,3 +102,12 @@
 @media(max-width:760px){.profile-header .brand{width:100%;max-width:none!important}.profile-header .brand strong{max-width:none!important;flex:1}.profile-header .brand-mark{width:32px;letter-spacing:-4px}}
 
 .partner-copy,.profile-heading,.profile-content>section,.teacher-preparation>div{min-width:0;overflow-wrap:anywhere}.manage-profile-row strong{overflow-wrap:anywhere}.profile-editor fieldset:disabled .editor-save{opacity:.7}
+
+/* Shared content tracks keep keywords and actions aligned across each space row. */
+@media(min-width:761px){
+ .partner-spaces .partner-card{display:grid;grid-row:span 7;grid-template-rows:subgrid;row-gap:0}
+ .partner-spaces .partner-copy{display:grid;grid-row:span 6;grid-template-rows:subgrid;row-gap:0}
+ .partner-spaces .partner-features{align-content:start;align-items:start}
+ .partner-spaces .partner-capacity{margin-top:0!important;align-self:start}
+ .partner-spaces .partner-actions{align-self:end}
+}
