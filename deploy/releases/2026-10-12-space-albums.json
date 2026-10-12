@@ -1,0 +1,129 @@
+{
+  "release_date_japan": "2026-10-12",
+  "source_commit": "bf78179",
+  "album_implementation_commit": "93ce075",
+  "status": "published",
+  "changes": [
+    "Space albums support 20 categorized photos with compact preview, show-all and accessible lightbox",
+    "Admin batch upload with category, per-image category editing, cover and ordering",
+    "Two trusted formal HTTPS aliases can log in and redirect on same host; all other origins refused",
+    "Rosewood detail descriptions synchronized with user-confirmed6–10 guests; camp panoramic cover preserved"
+  ],
+  "photos": {
+    "source": "Existing three public Airbnb listings; source URLs, originals and hashes retained under content/partner-spaces",
+    "komorebi-woods": 20,
+    "rosewood-inn": 20,
+    "forest-private-camp": 18,
+    "total": 58,
+    "excluded": "One family/person photo and one exact duplicate; only newly downloaded unused copies removed",
+    "manifest": "content/partner-spaces/gallery-manifest.json"
+  },
+  "running_image": {
+    "tag": "karuizawa-art:local",
+    "id": "sha256:ea99ae3abedc128aa01ebfc40a54d76ecb16097a831d079d73c81ac001d99055"
+  },
+  "retained": [
+    {
+      "tag": "karuizawa-art:local",
+      "id": "sha256:ea99ae3abedc128aa01ebfc40a54d76ecb16097a831d079d73c81ac001d99055",
+      "purpose": "current running release"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261012-before-albums",
+      "id": "sha256:bf7ebb676453ee1f55ff13e45d0caab425604ebeabd7836a4adf016418b51c07",
+      "purpose": "previous stable rollback; requires paired pre-album data backup"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261012-before-card-update",
+      "id": "sha256:cf7f97b46ce06eaa810602cf9b8775316cc6091f0f797be76dbee07089c1d527",
+      "purpose": "previous stable rollback"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261012-before-partners",
+      "id": "sha256:5f4e6a60b3ac50be0a60416a7b00fe93393b2c1119956403b16041d48a8de5d3",
+      "purpose": "existing recovery baseline retained"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261012-before-guqin",
+      "id": "sha256:8c10ef53fd0407d270e2fc847631abf8f205740691f187d03f819cf816c23f95",
+      "purpose": "existing recovery baseline retained"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261012-before-image-update",
+      "id": "sha256:d015a9bef9f105a55f14ab2e163908547577a6091b59129bd2be5359cce7e119",
+      "purpose": "existing recovery baseline retained"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261012-before-zen",
+      "id": "sha256:3be53d61c17e535c08b7fc66da233b42592b59c372981ebf7d5b10deb6ccf83c",
+      "purpose": "existing recovery baseline retained"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-navigation",
+      "purpose": "existing recovery baseline retained",
+      "id": "sha256:1d53005e735df28d89d899617990070ebc56ae0d5c86a8d0deed0a5d3b9ee552"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-scene-copy",
+      "purpose": "existing recovery baseline retained",
+      "id": "sha256:734177775a53c525b0fd3d6a8f96ba5a1d5918ecf3b5066e65524f4ad2293448"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-visuals",
+      "purpose": "existing recovery baseline retained",
+      "id": "sha256:a5ff8f2fe5275bae3c0637617c8216311ab3cef0ac91a9600676f39475dd1ccc"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-meditation",
+      "purpose": "existing recovery baseline retained",
+      "id": "sha256:738090195084baae8e15521db65b927939474ad882061919ed3863834af19990"
+    },
+    {
+      "path": "/home/dev2/apps/karuizawa-art/data/backups/2026-10-12T11-53-32-321Z",
+      "purpose": "pre-album DB and uploads; paired rollback backup for previous stable max4-photo schema"
+    },
+    {
+      "path": "/home/dev2/apps/karuizawa-art/data/backups/2026-10-12T12-05-06-378Z",
+      "purpose": "album DB before login alias repair"
+    }
+  ],
+  "cleanup": {
+    "status": "complete",
+    "deleted": [
+      "karuizawa-art:albums-20261012 alias",
+      "karuizawa-art:albums-login-20261012 alias",
+      "karuizawa-art:albums-before-login-20261012 intermediate image29cd3c35c6c9",
+      "/tmp/karuizawa-gallery-qa-20261012 isolated QA data",
+      "/tmp/karuizawa-album-login-qa-20261012 isolated QA data",
+      "/tmp/prepare-karuizawa-gallery.py one-off preparation script"
+    ],
+    "all_container_image_references_checked": true,
+    "checked_container_count": 21,
+    "cloud_temporary_packages_remaining": 0,
+    "local_export_directories_remaining": 0,
+    "temporary_release_tags_remaining": 0,
+    "method": "Streamed Git archive and cloud build; no image packages/checksums or local export directories; exact unused tag removal only, no force/global prune",
+    "current_previous_stable_and_recovery_baselines_retained": true,
+    "other_projects_volumes_and_backups_modified": false,
+    "owned_local_test_server_stopped": true
+  },
+  "validation": {
+    "typescript": "passed after Next typegen",
+    "production_build": "passed",
+    "isolated_gallery_api": "19th/20th upload persisted,21st refused; categories, stale revision, draft/public media, historical uncategorized photos, teacher1-photo cap passed",
+    "isolated_login": "two formal HTTPS aliases and secure cookie passed; missing/untrusted/deceptive/HTTP origins rejected",
+    "formal_site_admin": "both domains valid logins, same-host redirects,20/20/18-image editors and multi-select upload controls passed; read-only production verification",
+    "formal_site_http": "both domains,3details ×4languages, health200; all58image hashes matched both domains",
+    "browser": "desktop filter/show-all, lightbox clicks and keyboard wrapping, Escape/focus return; mobile390 layout and modal controls; four-language layout; formal www site verified",
+    "touch_swipe": "implemented; physical swipe gesture not separately tested",
+    "existing_application_rows_unchanged_against_backup": true,
+    "profile_data": "only categorized photo arrays and obsolete Rosewood detail capacity sentences changed; cover/order/status/internal notes preserved",
+    "notifications": "Existing notification behavior unchanged; no claim of configured email relay",
+    "post_cleanup_container_health": "healthy",
+    "post_cleanup_revision": "bf78179"
+  },
+  "screenshots": [
+    "deploy/releases/screenshots/2026-10-12-space-album.jpg",
+    "deploy/releases/screenshots/2026-10-12-space-lightbox.jpg"
+  ]
+}
