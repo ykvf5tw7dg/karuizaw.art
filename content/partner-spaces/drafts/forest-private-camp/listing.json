@@ -1,5 +1,5 @@
 {
-  "display_name": "摩天轮下森林私享营地",
+  "display_name": "摩天轮下的森",
   "type": "camp",
   "region": "北轻井泽／群马县嬬恋村",
   "summary": {
@@ -56,5 +56,17 @@
   "affiliation_basis": "User stated these three spaces have joined the retreat plan",
   "photos_manifest": "source.json",
   "rates_and_availability": "to_be_confirmed; not imported",
-  "activity_availability": "to_be_confirmed; no course or teacher assignment implied"
+  "activity_availability": "to_be_confirmed; no course or teacher assignment implied",
+  "names": {
+    "zh-Hans": "摩天轮下的森",
+    "zh-Hant": "摩天輪下的森",
+    "ja": "観覧車下の森",
+    "en": "Ferris Wheel Forest"
+  },
+  "name_reference": {
+    "url": "https://mori.yoshinn.com/",
+    "content_url": "https://mori.yoshinn.com/api/content",
+    "checked_date_japan": "2026-10-12",
+    "fields": "hero.title / footer.title in zh-cn, zh-tw, ja, en"
+  }
 }
