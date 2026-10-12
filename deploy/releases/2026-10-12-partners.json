@@ -1,0 +1,126 @@
+{
+  "release_date_japan": "2026-10-12",
+  "source_commit": "0609992",
+  "status": "published",
+  "changes": [
+    "Three affiliated spaces with 12 listing photos and four-language detail pages",
+    "Independent facilitator section in preparation; no fictional teachers",
+    "Preferred space/facilitator fields and server name snapshots, with center-coordination selection",
+    "Private CMS for translated introductions, ordering, photo upload, draft/public state and internal notes",
+    "Initial seed migration does not overwrite later edits; uploaded media and application records use existing data backup"
+  ],
+  "running_image": {
+    "tag": "karuizawa-art:local",
+    "id": "sha256:cf7f97b46ce06eaa810602cf9b8775316cc6091f0f797be76dbee07089c1d527",
+    "revision": "0609992"
+  },
+  "retained": [
+    {
+      "tag": "karuizawa-art:local",
+      "purpose": "current running release"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261012-before-partners",
+      "id": "sha256:5f4e6a60b3ac50be0a60416a7b00fe93393b2c1119956403b16041d48a8de5d3",
+      "purpose": "previous stable rollback"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261012-before-guqin",
+      "id": "sha256:8c10ef53fd0407d270e2fc847631abf8f205740691f187d03f819cf816c23f95",
+      "purpose": "existing recovery baseline retained"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261012-before-image-update",
+      "id": "sha256:d015a9bef9f105a55f14ab2e163908547577a6091b59129bd2be5359cce7e119",
+      "purpose": "existing recovery baseline retained"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261012-before-zen",
+      "id": "sha256:3be53d61c17e535c08b7fc66da233b42592b59c372981ebf7d5b10deb6ccf83c",
+      "purpose": "existing recovery baseline retained"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-navigation",
+      "purpose": "existing recovery baseline retained"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-scene-copy",
+      "purpose": "existing recovery baseline retained"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-visuals",
+      "purpose": "existing recovery baseline retained"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-meditation",
+      "purpose": "existing recovery baseline retained"
+    },
+    {
+      "path": "/home/dev2/apps/karuizawa-art/data/backups/2026-10-12T07-45-22-417Z",
+      "purpose": "pre-release data backup"
+    },
+    {
+      "path": "content/partner-spaces",
+      "purpose": "requested source material and selected originals retained"
+    },
+    {
+      "path": "deploy/releases/screenshots/2026-10-12-partner-spaces.jpg",
+      "purpose": "formal-site release screenshot"
+    },
+    {
+      "path": "deploy/releases/screenshots/2026-10-12-teachers.jpg",
+      "purpose": "formal-site facilitator section screenshot"
+    }
+  ],
+  "cleanup": {
+    "status": "complete",
+    "deleted": [
+      "karuizawa-art:partners-20261012 temporary alias; underlying image retained as local",
+      "/tmp/karuizawa-partners-qa-20261012 isolated test database and uploads"
+    ],
+    "all_container_image_references_checked": true,
+    "checked_container_count": 21,
+    "method": "Streamed git archive and direct cloud build. No uploaded image packages, checksum files or local export directories created. Exact temporary alias removal only, no force/global prune.",
+    "cloud_temporary_packages_remaining": 0,
+    "local_export_directories_remaining": 0,
+    "temporary_release_tags_remaining": 0,
+    "owned_local_test_server_stopped": true,
+    "other_projects_volumes_and_backups_modified": false
+  },
+  "validation": {
+    "typescript": "passed",
+    "production_build": "passed",
+    "isolated_cms_and_application_smoke": "passed; draft/public, image access, CSRF/auth, revision conflict, internal notes, photo/URL validation, preferences, idempotency after profile withdrawal, historical submissions",
+    "teacher_personal_group_regression": "passed",
+    "domains": [
+      "https://karuizawa.art",
+      "https://www.karuizawa.art"
+    ],
+    "languages": [
+      "zh-Hans",
+      "zh-Hant",
+      "ja",
+      "en"
+    ],
+    "property_detail_pages_per_language": 3,
+    "listing_photo_count": 12,
+    "photo_sha256_matches": "all photos on both domains",
+    "scripts_per_domain": 11,
+    "script_status": "all 200",
+    "public_browser_qa": "Desktop 1440px card layout and formal-site screenshots; mobile 390px homepage/detail, no horizontal overflow or broken images; preferred-space and center-coordination UI verified",
+    "admin_browser_qa": "Not completed: native in-app browser form submissions omitted Origin and were rejected by existing CSRF protection. No weakening or bypass retained. Admin workflows tested over HTTP in an isolated database; production login, Secure session and editor reads passed over HTTP.",
+    "pre_release_applications": 1,
+    "post_release_applications": 1,
+    "existing_application_rows_unchanged_against_backup": true,
+    "public_spaces": 3,
+    "public_teachers": 0,
+    "post_cleanup_container_health": "healthy",
+    "post_cleanup_public_version": "passed on both domains"
+  },
+  "pending_content": [
+    "Rosewood Inn capacity discrepancy: 8 in heading/structured data vs 6 in narrative; published capacity remains null",
+    "Real facilitator profiles need supplied/confirmed biographical material before publication"
+  ],
+  "admin_entry": "https://www.karuizawa.art/manage/profiles",
+  "admin_guide": "deploy/profiles-guide.txt"
+}
