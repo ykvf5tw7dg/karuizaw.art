@@ -1,0 +1,124 @@
+{
+  "release_date_japan": "2026-10-12",
+  "source_commit": "5ff5e50",
+  "status": "published",
+  "changes": [
+    "Align camp names with official Mori website across home, detail, CMS and new space preference selection",
+    "Add names-only migration; preserve historical application snapshots and all existing photos/profile fields"
+  ],
+  "name_source": {
+    "url": "https://mori.yoshinn.com/",
+    "content_url": "https://mori.yoshinn.com/api/content",
+    "fields": "hero.title and footer.title"
+  },
+  "names": {
+    "zh-Hans": "摩天轮下的森",
+    "zh-Hant": "摩天輪下的森",
+    "ja": "観覧車下の森",
+    "en": "Ferris Wheel Forest"
+  },
+  "running_image": {
+    "tag": "karuizawa-art:local",
+    "id": "sha256:4462165bc18e1412550eaf9574b1fb3d2fdaaa7c8683364183c941ca400406ce"
+  },
+  "retained": [
+    {
+      "tag": "karuizawa-art:local",
+      "id": "sha256:4462165bc18e1412550eaf9574b1fb3d2fdaaa7c8683364183c941ca400406ce",
+      "purpose": "current"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261012-before-camp-name",
+      "id": "sha256:e73218a15ccc970adeea808739a807b935464dfead31913101067e9ee00cf9c7",
+      "purpose": "previous stable rollback"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261012-before-teacher-photos",
+      "id": "sha256:ea99ae3abedc128aa01ebfc40a54d76ecb16097a831d079d73c81ac001d99055",
+      "purpose": "existing recovery baseline"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261012-before-albums",
+      "id": "sha256:bf7ebb676453ee1f55ff13e45d0caab425604ebeabd7836a4adf016418b51c07",
+      "purpose": "existing recovery baseline"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261012-before-card-update",
+      "id": "sha256:cf7f97b46ce06eaa810602cf9b8775316cc6091f0f797be76dbee07089c1d527",
+      "purpose": "existing recovery baseline"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261012-before-partners",
+      "id": "sha256:5f4e6a60b3ac50be0a60416a7b00fe93393b2c1119956403b16041d48a8de5d3",
+      "purpose": "existing recovery baseline"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261012-before-guqin",
+      "id": "sha256:8c10ef53fd0407d270e2fc847631abf8f205740691f187d03f819cf816c23f95",
+      "purpose": "existing recovery baseline"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261012-before-image-update",
+      "id": "sha256:d015a9bef9f105a55f14ab2e163908547577a6091b59129bd2be5359cce7e119",
+      "purpose": "existing recovery baseline"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261012-before-zen",
+      "id": "sha256:3be53d61c17e535c08b7fc66da233b42592b59c372981ebf7d5b10deb6ccf83c",
+      "purpose": "existing recovery baseline"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-navigation",
+      "id": "sha256:1d53005e735df28d89d899617990070ebc56ae0d5c86a8d0deed0a5d3b9ee552",
+      "purpose": "existing recovery baseline"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-scene-copy",
+      "id": "sha256:734177775a53c525b0fd3d6a8f96ba5a1d5918ecf3b5066e65524f4ad2293448",
+      "purpose": "existing recovery baseline"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-visuals",
+      "id": "sha256:a5ff8f2fe5275bae3c0637617c8216311ab3cef0ac91a9600676f39475dd1ccc",
+      "purpose": "existing recovery baseline"
+    },
+    {
+      "tag": "karuizawa-art:rollback-20261009-before-meditation",
+      "id": "sha256:738090195084baae8e15521db65b927939474ad882061919ed3863834af19990",
+      "purpose": "existing recovery baseline"
+    },
+    {
+      "path": "/home/dev2/apps/karuizawa-art/data/backups/2026-10-12T12-47-32-105Z",
+      "purpose": "pre-release DB and uploads backup"
+    }
+  ],
+  "validation": {
+    "migration": "passed names-only update, other profiles and fields unchanged",
+    "production_build_and_typescript": "passed",
+    "formal_http": "Both HTTPS domains, 4 languages, home/detail16 checks passed",
+    "production_data": "Applications and notifications unchanged against pre-release backup; camp18 photos and all non-name fields unchanged; other profiles unchanged",
+    "browser": "Formal Japanese detail heading/title confirmed with screenshot"
+  },
+  "cleanup": {
+    "status": "complete",
+    "checked_container_count": 21,
+    "all_container_image_references_checked": true,
+    "deleted": [
+      "karuizawa-art:camp-name-20261012",
+      "/tmp/karuizawa-mori-reference.html",
+      "/tmp/karuizawa-mori-reference.js",
+      "/tmp/karuizawa-mori-content.json"
+    ],
+    "cloud_temporary_packages_remaining": 0,
+    "local_export_directories_remaining": 0,
+    "temporary_release_tags_remaining": 0,
+    "current_previous_stable_and_recovery_baselines_retained": true,
+    "method": "Streamed Git archive/cloud build; no upload packages/checksums or local exports; exact temporary alias removal only, no force/global prune",
+    "post_cleanup_revision": "5ff5e50",
+    "post_cleanup_health": "healthy",
+    "other_projects_volumes_and_backups_modified": false
+  },
+  "screenshots": [
+    "deploy/releases/screenshots/2026-10-12-camp-name-ja.jpg"
+  ]
+}
