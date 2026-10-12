@@ -1,0 +1,27 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+const base=process.env.TEST_URL;
+if(!base?.startsWith('http://127.0.0.1:'))throw new Error('Use isolated localhost database only');
+const request=(path,options={})=>fetch(base+path,{redirect:'manual',...options});
+const access=readFileSync('deploy/private/admin-access.txt','utf8');
+const login=await request('/api/auth/login',{method:'POST',headers:{origin:base},body:new URLSearchParams({email:access.match(/邮箱：(.+)/)[1],password:access.match(/密码：(.+)/)[1]})});
+assert.equal(login.status,303);const cookie=login.headers.get('set-cookie').split(';')[0];
+const headers={origin:base,cookie,'content-type':'application/json'};
+const save=p=>{const {id,revision,updatedAt,...payload}=p;return request('/api/manage/profiles/'+id,{method:'PUT',headers,body:JSON.stringify({revision,payload})});};
+const upload=(id,revision,category)=>{const form=new FormData();form.append('revision',String(revision));form.append('category',category);form.append('photo',new Blob([readFileSync('public/partners/spaces/komorebi-woods/living-room.webp')],{type:'image/webp'}),'test.webp');return request(`/api/manage/profiles/${id}/photos`,{method:'POST',headers:{origin:base,cookie},body:form});};
+let r=await upload('forest-private-camp',2,'invalid');assert.equal(r.status,400);assert.ok((await r.json()).error.includes('分类'));
+// The migration increments this profile to revision3; fetch the stale revision response before a successful upload.
+r=await upload('forest-private-camp',0,'living');assert.equal(r.status,409);
+r=await upload('forest-private-camp',3,'living');assert.equal(r.status,201,await r.clone().text());let p=(await r.json()).profile;assert.equal(p.photos.length,19);assert.equal(p.photos.at(-1).category,'living');assert.equal(p.status,'draft');
+r=await upload(p.id,p.revision,'bathroom');assert.equal(r.status,201,await r.clone().text());p=(await r.json()).profile;assert.equal(p.photos.length,20);assert.equal(p.photos.at(-1).category,'bathroom');
+r=await upload(p.id,p.revision,'other');assert.equal(r.status,400);assert.ok((await r.json()).error.includes('上限'));
+for(const photo of p.photos)for(const lang of ['zh-Hans','zh-Hant','ja','en'])if(!photo.alt[lang])photo.alt[lang]='Isolated facility photo';p.status='public';
+const tooMany={...p,photos:[...p.photos,{...p.photos.at(-1),id:'extra'}]};assert.equal((await save(tooMany)).status,400);
+assert.equal((await save({...p,photos:p.photos.map((x,i)=>i?x:{...x,category:'unknown'})})).status,400);
+r=await save(p);assert.equal(r.status,200,await r.clone().text());p=(await r.json()).profile;
+assert.equal((await request('/spaces/'+p.id)).status,200);assert.equal((await request(p.photos.at(-1).src)).status,200);
+const legacy={...p,photos:p.photos.map(({category,...photo})=>photo)};assert.equal((await save(legacy)).status,200);
+r=await request('/api/manage/profiles',{method:'POST',headers,body:JSON.stringify({kind:'teacher'})});assert.equal(r.status,201);let teacher=(await r.json()).profile;
+r=await upload(teacher.id,teacher.revision,'other');assert.equal(r.status,201);teacher=(await r.json()).profile;
+assert.equal((await upload(teacher.id,teacher.revision,'other')).status,400);
+console.log('PASS: upload19/20, reject21, persist categories, reject unknown categories, stale revision, draft/public image access, historical uncategorized photos, teacher1-photo limit');

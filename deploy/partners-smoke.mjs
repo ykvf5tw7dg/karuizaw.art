@@ -14,7 +14,7 @@ assert.equal((await send('/api/manage/profiles',{kind:'teacher'},'POST',{...head
 assert.equal((await send('/api/manage/profiles',{kind:'teacher'},'POST',{cookie,'content-type':'application/json'})).status,403);
 for(const lang of ['zh-Hans','zh-Hant','ja','en']){
  const r=await request('/?lang='+lang);assert.equal(r.status,200);const html=await r.text();assert.ok(html.includes('Rosewood Inn'));assert.ok(html.includes('/spaces/forest-private-camp'));assert.ok(!html.includes('人数冲突：页面'));
- for(const id of ['komorebi-woods','rosewood-inn','forest-private-camp']){const detail=await request(`/spaces/${id}?lang=${lang}`);assert.equal(detail.status,200);const text=await detail.text();assert.equal([...new Set([...text.matchAll(/\/partners\/spaces\/[a-z-]+\/[a-z-]+\.webp/g)].map(x=>x[0]))].length,4);}
+ for(const id of ['komorebi-woods','rosewood-inn','forest-private-camp']){const detail=await request(`/spaces/${id}?lang=${lang}`);assert.equal(detail.status,200);const text=await detail.text();assert.equal([...new Set([...text.matchAll(/\/partners\/spaces\/[a-z-]+\/[a-z-]+\.webp/g)].map(x=>x[0]))].length,{'komorebi-woods':20,'rosewood-inn':20,'forest-private-camp':18}[id]);}
 }
 const before=await request('/manage/profiles',{headers:{cookie}});assert.equal(before.status,200);assert.ok((await before.text()).includes('Rosewood Inn'));
 let r=await send('/api/manage/profiles',{kind:'teacher'});assert.equal(r.status,201);let p=(await r.json()).profile;
