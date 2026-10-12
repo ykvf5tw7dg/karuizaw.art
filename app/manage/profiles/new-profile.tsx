@@ -1,0 +1,4 @@
+"use client";
+import {useState} from 'react';
+import type {Profile} from '@/lib/profiles';
+export function NewProfile(){const [busy,setBusy]=useState(false),[error,setError]=useState('');async function create(kind:'space'|'teacher'){setBusy(true);setError('');try{const r=await fetch('/api/manage/profiles',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({kind})});const data=await r.json() as {error?:string;profile:Profile};if(!r.ok)throw new Error(data.error||'创建失败。');window.location.assign('/manage/profiles/'+data.profile.id);}catch(e){setError(e instanceof Error?e.message:'创建失败。');setBusy(false);}}return <div className="profile-create"><button className="manage-button" disabled={busy} onClick={()=>create('space')}>添加空间</button><button className="manage-button" disabled={busy} onClick={()=>create('teacher')}>添加老师</button>{error&&<p role="alert">{error}</p>}</div>;}

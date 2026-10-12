@@ -13,6 +13,7 @@ import { applicationSchema } from "@/lib/application";
 import {TraditionFields} from "./tradition-fields";
 import {supportPlanNames} from "@/lib/meditation";
 import {experienceNames,teacherNames,organizationName} from "@/lib/retreat";
+import {localizedText,type PublicProfile} from '@/lib/profiles';
 import {ExperienceFields} from "./experience-fields";
 export type ApplicationKind="artist"|"sponsor"|"space"|"meditation"|"teacher";
 const info={
@@ -22,8 +23,9 @@ const info={
  sponsor:{title:"登记赞助意向",en:"SPONSORSHIP INTEREST",intro:"期待与伙伴共同支持艺术活动、禅修与静心驻留，可提供资金、物资或专业服务。",categories:["资金支持","物资与设备","专业服务","传播与媒体","综合合作"],category:"希望提供的支持",message:"合作意向",placeholder:"请介绍可提供的支持、合作方向或希望了解的事项……"},
  space:{title:"登记空间意向",en:"SPACE PARTNERSHIP INTEREST",intro:"面向轻井泽及周边的别墅、露营地和安静活动空间，协调平日与淡季驻留。请介绍可用档期及合作想法。",categories:["别墅","露营地","艺术工作室","展览与活动空间","其他空间"],category:"空间类型",message:"空间介绍与合作意向",placeholder:"请介绍空间面积、可容纳人数、设施及希望开展的合作……"}
 };
-export function ApplicationDialog({kind,onClose,initialMode="individual"}:{kind:ApplicationKind|null;onClose:()=>void;initialMode?:"individual"|"group"}){
+export function ApplicationDialog({kind,onClose,initialMode="individual",preferredSpace,preferredTeacher,spaceOptions=[],teacherOptions=[]}:{preferredSpace?:string;preferredTeacher?:string;spaceOptions?:Pick<PublicProfile,'id'|'names'>[];teacherOptions?:Pick<PublicProfile,'id'|'names'>[];kind:ApplicationKind|null;onClose:()=>void;initialMode?:"individual"|"group"}){
  const {t,locale}=useLanguage();
+ const [spaceSelection,setSpaceSelection]=useState(preferredSpace??'');const [teacherSelection,setTeacherSelection]=useState(preferredTeacher??'');
  const [category,setCategory]=useState("");const [consent,setConsent]=useState(false);const [authority,setAuthority]=useState(false);
  const [pending,setPending]=useState(false);const [error,setError]=useState("");const [receipt,setReceipt]=useState("");const id=useRef("");
  const [sponsorWebsite,setSponsorWebsite]=useState("");const [websiteProtocol,setWebsiteProtocol]=useState("http://");
@@ -36,7 +38,7 @@ export function ApplicationDialog({kind,onClose,initialMode="individual"}:{kind:
   e.preventDefault();if(pending||!kind)return;setError("");
   const fields=Object.fromEntries(new FormData(e.currentTarget));
   if(!id.current)id.current=crypto.randomUUID();
-  const parsed=applicationSchema.safeParse({...fields,...(kind==="teacher"?{subjects:selections}:{}),...(kind==="meditation"?{interests:selections}:{}),...(kind==="sponsor"?{portfolio:sponsorWebsite.trim()?websiteProtocol+sponsorWebsite.trim():""}:{}),...(kind==="sponsor"?{supportPlan}:{}),...(kind==="meditation"?{applicationMode,participants:applicationMode==="individual"?1:fields.participants}:{}),id:id.current,locale,type:kind,category,consent,authority});
+  const parsed=applicationSchema.safeParse({...fields,...(kind==="teacher"?{subjects:selections}:{}),...(kind==="meditation"?{interests:selections}:{}),...(kind==="sponsor"?{portfolio:sponsorWebsite.trim()?websiteProtocol+sponsorWebsite.trim():""}:{}),...(kind==="sponsor"?{supportPlan}:{}),...(kind==="meditation"?{applicationMode,participants:applicationMode==="individual"?1:fields.participants}:{}),preferredSpace:spaceSelection||undefined,preferredTeacher:teacherSelection||undefined,id:id.current,locale,type:kind,category,consent,authority});
   if(!parsed.success){setError(parsed.error.issues[0]?.code==="invalid_enum_value"?t("请选择"):parsed.error.issues[0]?.message??t("请检查填写内容"));return;}
   if(kind==="space"){const problem=validatePhotoSelection(photos);if(problem){setError(problem);return;}}
   setPending(true);
@@ -52,6 +54,9 @@ export function ApplicationDialog({kind,onClose,initialMode="individual"}:{kind:
  <p className="form-help">{t("标有 * 的项目为必填。无需提交证件、银行或付款信息。")}</p>
  <fieldset disabled={pending}>
  <div className="form-grid">
+ {kind==='meditation'&&spaceOptions.length>0&&<div className="field full"><label htmlFor="preferred-space">{t('意向空间')}{t('（选填）')}</label><Select value={spaceSelection||'center'} onValueChange={v=>setSpaceSelection(v==='center'?'':v)}><SelectTrigger id="preferred-space" className="form-select"><SelectValue/></SelectTrigger><SelectContent><SelectItem value="center">{t('由中心协调')}</SelectItem>{spaceOptions.map(p=><SelectItem key={p.id} value={p.id}>{localizedText(p.names,locale)}</SelectItem>)}</SelectContent></Select><span className="field-note">{t('此选择仅用于沟通，不代表档期、课程或预订确认。')}</span></div>}
+ {kind==='meditation'&&teacherOptions.length>0&&<div className="field full"><label htmlFor="preferred-teacher">{t('意向老师')}{t('（选填）')}</label><Select value={teacherSelection||'center'} onValueChange={v=>setTeacherSelection(v==='center'?'':v)}><SelectTrigger id="preferred-teacher" className="form-select"><SelectValue/></SelectTrigger><SelectContent><SelectItem value="center">{t('由中心协调')}</SelectItem>{teacherOptions.map(p=><SelectItem key={p.id} value={p.id}>{localizedText(p.names,locale)}</SelectItem>)}</SelectContent></Select></div>}
+
  <label>{t("姓名 / 联系人 *")}<Input name="name" autoComplete="name" required maxLength={120} placeholder={t("如何称呼你")}/></label>
  <label>{t("电子邮箱 *")}<Input name="email" type="email" autoComplete="email" required maxLength={254} placeholder="name@example.com"/></label>
  {(kind==="sponsor"||kind==="space")&&<label className="full">{kind==="space"?t("空间地址"):t("企业 / 品牌 / 机构名称（个人填姓名）")} *<Input name={kind==="space"?"address":"organization"} required maxLength={kind==="space"?300:120} placeholder={kind==="space"?t("请填写空间完整地址（含町名、地番或门牌号）"):t("合作主体名称")}/></label>}

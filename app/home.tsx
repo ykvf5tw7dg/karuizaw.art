@@ -6,6 +6,8 @@ import {FooterUtilities} from './footer-utilities';
 import {SeasonalHero} from './seasonal-hero';
 import {Button} from '@/components/ui/button';
 import {ApplicationDialog,type ApplicationKind} from './application-dialog';
+import {PartnerSpaces,PartnerTeachers,type RetreatPreference} from './partner-sections';
+import {type PublicProfile} from '@/lib/profiles';
 import {organizationName,centerEnglish} from '@/lib/retreat';
 const experiences=[
  {key:'incense',title:'闻香与香道',text:'在一缕香气中，练习感知与专注。',alt:'老师与参与者围坐木桌闻香，AI 概念图'},
@@ -15,14 +17,15 @@ const experiences=[
  {key:'photography-male',title:'森林漫步与摄影',text:'放慢脚步，用镜头观察自然的细节。',alt:'男士摄影师在森林步道使用专业相机与三脚架，AI 概念图'}
 ];
 const navigation=[['#about','关于计划'],['#meditation-plan','禅修与驻留'],['#programs','静心体验'],['#center','关于我们'],['#participate','参与计划']];
-export default function Home({initialLocale,explicitLocale}:{initialLocale:Locale;explicitLocale:boolean}){return <LanguageProvider initialLocale={initialLocale} explicitLocale={explicitLocale}><HomeContent/></LanguageProvider>;}
-function HomeContent(){
- const {t}=useLanguage();
+export default function Home({initialLocale,explicitLocale,spaces,teachers}:{initialLocale:Locale;explicitLocale:boolean;spaces:PublicProfile[];teachers:PublicProfile[]}){return <LanguageProvider initialLocale={initialLocale} explicitLocale={explicitLocale}><HomeContent spaces={spaces} teachers={teachers}/></LanguageProvider>;}
+function HomeContent({spaces,teachers}:{spaces:PublicProfile[];teachers:PublicProfile[]}){
+ const {t,locale}=useLanguage();
+ const [preference,setPreference]=useState<RetreatPreference>({});
  const [menu,setMenu]=useState(false);
  const [kind,setKind]=useState<ApplicationKind|null>(null);
  const [initialMode,setInitialMode]=useState<'individual'|'group'>('individual');
  const [formKey,setFormKey]=useState(0);
- function apply(next:ApplicationKind,mode:'individual'|'group'='individual'){setInitialMode(mode);setFormKey(k=>k+1);setKind(next);}
+ function apply(next:ApplicationKind,mode:'individual'|'group'='individual',selected:RetreatPreference={}){setPreference(selected);setInitialMode(mode);setFormKey(k=>k+1);setKind(next);}
  useEffect(()=>{
   const modelContext=(document as Document & {modelContext?:{registerTool:(tool:unknown,options:{signal:AbortSignal})=>void|Promise<void>}}).modelContext;
   if(!modelContext?.registerTool)return;
@@ -34,10 +37,10 @@ function HomeContent(){
  <a className="skip" href="#main">{t('跳至正文')}</a>
  <header className="site-header">
   <a className="brand" href="#top" aria-label={t('轻井泽国际禅修营首页')}><span className="brand-mark" aria-hidden="true">K<span>／</span></span><span><strong>{t('轻井泽国际禅修营')}</strong><small>KARUIZAWA · ZEN & MEDITATION</small></span></a>
-  <nav aria-label={t('主导航')}>{navigation.map(([href,label])=><a key={href} href={href} className={href==='#participate'?'nav-visit':undefined}>{t(label)}{href==='#participate'&&<span aria-hidden="true">↗</span>}</a>)}</nav>
+  <nav aria-label={t('主导航')}>{navigation.filter(([href])=>href!=='#center').map(([href,label])=><a key={href} href={href} className={href==='#participate'?'nav-visit':undefined}>{t(label)}{href==='#participate'&&<span aria-hidden="true">↗</span>}</a>)}<details className="resource-nav"><summary>{t('空间与老师')}</summary><div><a href="#spaces">{t('加盟别墅与营地')}</a><a href="#teachers">{t('带领老师')}</a><a href="#center">{t('关于我们')}</a></div></details></nav>
   <LanguageSwitcher/>
   <button className="menu-toggle" aria-label={menu?t('关闭导航'):t('打开导航')} aria-expanded={menu} aria-controls="mobile-nav" onClick={()=>setMenu(!menu)}>{t('菜单')}<span aria-hidden="true">{menu?'×':'☰'}</span></button>
-  <nav id="mobile-nav" className="mobile-nav" aria-label={t('移动端导航')} hidden={!menu} onClick={()=>setMenu(false)}>{navigation.map(([href,label])=><a href={href} key={href}>{t(label)}</a>)}</nav>
+  <nav id="mobile-nav" className="mobile-nav" aria-label={t('移动端导航')} hidden={!menu} onClick={()=>setMenu(false)}>{navigation.map(([href,label])=><a href={href} key={href}>{t(label)}</a>)}<a href="#spaces">{t('加盟别墅与营地')}</a><a href="#teachers">{t('带领老师')}</a></nav>
  </header>
  <main id="main">
   <SeasonalHero onApply={apply}/>
@@ -53,15 +56,17 @@ function HomeContent(){
    <p className="quiet-note retreat-terms">{t('目前接受筹备期意向登记。住宿档期、支持条件、活动内容与费用，均以进一步沟通确认的方案为准。')}</p>
    <p className="practice-image-note">{t('AI 概念意境图，非实际项目场地实拍。')}</p>
   </section>
+  <PartnerSpaces spaces={spaces} onApply={selected=>apply('meditation','individual',selected)}/>
   <section className="programs section-wrap" id="programs">
-   <div className="section-label"><span>03 / MINDFUL EXPERIENCES</span><span>{t('静心体验')}</span></div>
+   <div className="section-label"><span>04 / MINDFUL EXPERIENCES</span><span>{t('静心体验')}</span></div>
    <div className="section-heading"><h2>{t('静心，也在日常之间。')}</h2><p>{t('从一段静坐到一杯茶，从一枝花到一笔色彩，让注意力回到眼前。')}</p></div>
    <div className="experience-gallery">{experiences.map(item=><figure key={item.key}><img src={`/experiences/${item.key}.webp`} alt={t(item.alt)} width={1536} height={1024} loading="lazy" decoding="async"/><figcaption><h3>{t(item.title)}</h3><p>{t(item.text)}</p></figcaption></figure>)}</div>
    <div className="creative-note"><figure><img src="/experiences/stream-guqin.webp" alt={t('男士在林间溪边安静弹奏古琴，AI 概念图')} width={1536} height={1024} loading="lazy" decoding="async"/></figure><div className="creative-copy"><span className="eyebrow">ART IN DAILY LIFE</span><h3>{t('绘画与轻音乐')}</h3><p>{t('在静心时光中加入素描、水彩或轻音乐练习。创作以适合住宿空间、易清洁的方式开展；音乐活动按场地与其他住客的作息协调。')}</p></div></div>
    <p className="practice-image-note">{t('体验内容可根据需求、场地条件与带领者安排协调，具体活动及费用以确认方案为准。')}</p><p className="practice-image-note">{t('AI 概念意境图，非实际项目场地实拍。')}</p>
   </section>
+  <PartnerTeachers teachers={teachers} onApply={selected=>apply('meditation','individual',selected)} onRecruit={()=>apply('teacher')}/>
   <section className="invitation section-wrap" id="participate">
-   <div className="section-label"><span>04 / TAKE PART</span><span>{t('参与计划')}</span></div>
+   <div className="section-label"><span>06 / TAKE PART</span><span>{t('参与计划')}</span></div>
    <div className="section-heading"><h2><span className="heading-phrase">{t('带着你的实践、经验，')}</span><span className="heading-phrase">{t('或一处安静的空间。')}</span></h2><p>{t('欢迎参与者、老师与空间伙伴，共同创造静心停留的可能。')}</p></div>
    <div className="join-grid">
     <article className="join-card featured"><span className="join-kicker">FOR PARTICIPANTS</span><div className="join-word">STILLNESS<span>{t('为安静与专注留出时间')}</span></div><h3>{t('个人与团体禅修驻留')}</h3><p>{t('欢迎个人自主实践及团体自带带领者，也欢迎希望静心休整的艺术家与创作者。填写时间、人数与体验兴趣，了解平日及淡季参与条件。')}</p><Button className="join-button" onClick={()=>apply('meditation')}>{t('登记禅修意向')}<span aria-hidden="true">↗</span></Button></article>
@@ -70,12 +75,12 @@ function HomeContent(){
    </div><p className="join-note">{t('提交登记不产生付款义务，也不代表参与确认、老师聘任或空间合作成立。具体条件另行协商。')}</p>
   </section>
   <section className="center section-wrap" id="center">
-   <div className="section-label"><span>05 / OUR CENTER</span><span>{t('关于我们')}</span></div>
+   <div className="section-label"><span>07 / OUR CENTER</span><span>{t('关于我们')}</span></div>
    <div className="center-grid"><div><p className="eyebrow">{centerEnglish}</p><h2><span className="heading-phrase">{t('以自然安住身心，')}</span><span className="heading-phrase">{t('以文化连接彼此。')}</span></h2></div><div className="center-copy"><h3>{organizationName}</h3><p>{t('中文名称：轻井泽国际禅修营。中心拟在日本设立为一般社团法人，以轻井泽为基地，支持禅修与静心驻留、文化体验及国际交流。')}</p><p>{t('我们计划连接参与者、老师与当地空间，让阅读、书法、写作、绘画、摄影、闻香、插花、品茶与音乐融入静心生活，逐步建立开放、可持续的驻留与交流平台。')}</p><p>{t('目前，中心正处于筹备阶段，组织治理与具体事业安排将以正式设立后的章程为准。')}</p></div></div>
   </section>
   <section className="closing"><span>PAUSE. STAY. CONNECT.</span><p>{t('下一段静心时光，从这里开始。')}</p><a href="#participate">{t('探索参与方式')}<span aria-hidden="true">↗</span></a></section>
  </main>
- <footer><div className="footer-top"><a className="footer-name" href="#top">{t('轻井泽国际禅修营')}</a><p><span className="copy-line">{t('日本 · 轻井泽')}</span><span className="copy-line">{t('禅修驻留 / 静心体验 / 国际交流')}</span></p><a href="#top">{t('回到顶部 ↑')}</a></div><div className="footer-bottom"><span>© 2026 {organizationName} · {t('版权所有')}</span><span>{t('网站图片为概念意境图，非实际项目场地实拍。')}</span></div><FooterUtilities/></footer>
- <ApplicationDialog key={formKey} initialMode={initialMode} kind={kind} onClose={()=>setKind(null)}/>
+ <footer><div className="footer-top"><a className="footer-name" href="#top">{t('轻井泽国际禅修营')}</a><p><span className="copy-line">{t('日本 · 轻井泽')}</span><span className="copy-line">{t('禅修驻留 / 静心体验 / 国际交流')}</span></p><a href="#top">{t('回到顶部 ↑')}</a></div><div className="footer-bottom"><span>© 2026 {organizationName} · {t('版权所有')}</span><span>{t('本站包含房源照片与 AI 概念图，图片性质以所在栏目说明为准。')}</span></div><FooterUtilities/></footer>
+ <ApplicationDialog preferredSpace={preference.spaceId} preferredTeacher={preference.teacherId} spaceOptions={spaces} teacherOptions={teachers} key={formKey} initialMode={initialMode} kind={kind} onClose={()=>setKind(null)}/>
  </>;
 }

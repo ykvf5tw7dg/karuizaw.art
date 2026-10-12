@@ -1,0 +1,48 @@
+{
+  "prepared_date_japan": "2026-10-12",
+  "publication_status": "prepared_not_published",
+  "properties": [
+    {
+      "slug": "komorebi-woods",
+      "listing_id": "1709830092777295689",
+      "display_name": "北轻井泽 KOMOREBI WOODS",
+      "record": "drafts/komorebi-woods/listing.json",
+      "source": "drafts/komorebi-woods/source.json",
+      "photos": 4,
+      "status": "prepared_not_published"
+    },
+    {
+      "slug": "rosewood-inn",
+      "listing_id": "1728766554006075321",
+      "display_name": "Rosewood Inn",
+      "record": "drafts/rosewood-inn/listing.json",
+      "source": "drafts/rosewood-inn/source.json",
+      "photos": 4,
+      "status": "prepared_not_published"
+    },
+    {
+      "slug": "forest-private-camp",
+      "listing_id": "1613339157530929423",
+      "display_name": "摩天轮下森林私享营地",
+      "record": "drafts/forest-private-camp/listing.json",
+      "source": "drafts/forest-private-camp/source.json",
+      "photos": 4,
+      "status": "prepared_not_published"
+    }
+  ],
+  "photo_count": 12,
+  "photo_bytes": 3980582,
+  "source_public_rooms_verified": true,
+  "teacher_profiles": "not_provided",
+  "remaining_checks": [
+    "Rosewood sleeping capacity: listing heading/JSON-LD 8 vs narrative 6",
+    "Activity capacity and permitted practices for each property",
+    "Camp whole-site 7 verified by narrative and host preview; JSON-LD 5 is inconsistent"
+  ],
+  "validation": {
+    "image_files_decoded": true,
+    "unique_image_count": 12,
+    "minimum_width": 1200,
+    "sha256_verified": true
+  }
+}

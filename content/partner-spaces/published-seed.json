@@ -1,0 +1,254 @@
+[
+  {
+    "id": "komorebi-woods",
+    "kind": "space",
+    "status": "public",
+    "sort": 0,
+    "names": {
+      "zh-Hans": "北轻井泽 KOMOREBI WOODS",
+      "zh-Hant": "北輕井澤 KOMOREBI WOODS",
+      "ja": "北軽井沢 KOMOREBI WOODS",
+      "en": "Kita-Karuizawa KOMOREBI WOODS"
+    },
+    "summary": {
+      "zh-Hans": "坐落于森林中的整栋木质别墅，客厅可望见林景，溪边设有木露台。可沟通安静住宿、阅读及小型团体的空间使用。",
+      "zh-Hant": "坐落於森林中的整棟木質別墅，客廳可望見林景，溪邊設有木露臺。可溝通安靜住宿、閱讀及小型團體的空間使用。",
+      "ja": "森に囲まれた一棟貸しの木のヴィラ。森を望むリビングと小川沿いのウッドデッキがあり、静かな滞在や読書、少人数の空間利用をご相談いただけます。",
+      "en": "A private woodland villa with forest views from the living room and a deck beside a stream. Quiet stays, reading and small-group use can be discussed."
+    },
+    "details": {
+      "zh-Hans": "两间和室，共六张日式床垫。设客厅、厨房、浴室、两个厕所及两个停车位。\n\n住宿档期、活动安排及费用需另行沟通。禅修活动人数根据实际空间与带领方式确认。",
+      "zh-Hant": "兩間和室，共六張日式床墊。設客廳、廚房、浴室、兩個廁所及兩個停車位。\n\n住宿檔期、活動安排及費用需另行溝通。禪修活動人數根據實際空間與帶領方式確認。",
+      "ja": "和室二室、布団六組。リビング、キッチン、浴室、トイレ二か所、駐車スペース二台分があります。\n\n宿泊日程、活動内容、費用は別途ご相談ください。実践の人数は会場と指導方法に応じて確認します。",
+      "en": "Two Japanese-style bedrooms with six futons, a living room, kitchen, bathroom, two toilets and parking for two cars.\n\nDates, activities and fees are discussed separately. Practice group sizes depend on the space and facilitation."
+    },
+    "location": {
+      "zh-Hans": "北轻井泽／群马县嬬恋村",
+      "zh-Hant": "北輕井澤／群馬縣嬬戀村",
+      "ja": "北軽井沢／群馬県嬬恋村",
+      "en": "Kita-Karuizawa / Tsumagoi, Gunma"
+    },
+    "features": {
+      "zh-Hans": "森林独栋\n溪边木露台\nWi-Fi与厨房",
+      "zh-Hant": "森林獨棟\n溪邊木露臺\nWi-Fi與廚房",
+      "ja": "森の貸切ヴィラ\n小川沿いのウッドデッキ\nWi-Fi・キッチン",
+      "en": "Private woodland villa\nStreamside deck\nWi-Fi & kitchen"
+    },
+    "sleepingCapacity": 6,
+    "practiceCapacity": null,
+    "languages": [],
+    "teachingModes": [],
+    "sourceUrl": "https://zh.airbnb.com/rooms/1709830092777295689",
+    "photos": [
+      {
+        "id": "exterior",
+        "src": "/partners/spaces/komorebi-woods/exterior.webp",
+        "alt": {
+          "zh-Hans": "房源外观",
+          "zh-Hant": "房源外觀",
+          "ja": "建物の外観",
+          "en": "Property exterior"
+        }
+      },
+      {
+        "id": "living-room",
+        "src": "/partners/spaces/komorebi-woods/living-room.webp",
+        "alt": {
+          "zh-Hans": "客厅",
+          "zh-Hant": "客廳",
+          "ja": "リビング",
+          "en": "Living room"
+        }
+      },
+      {
+        "id": "bedroom",
+        "src": "/partners/spaces/komorebi-woods/bedroom.webp",
+        "alt": {
+          "zh-Hans": "卧室",
+          "zh-Hant": "臥室",
+          "ja": "寝室",
+          "en": "Bedroom"
+        }
+      },
+      {
+        "id": "deck",
+        "src": "/partners/spaces/komorebi-woods/deck.webp",
+        "alt": {
+          "zh-Hans": "木露台",
+          "zh-Hant": "木露臺",
+          "ja": "ウッドデッキ",
+          "en": "Wooden deck"
+        }
+      }
+    ],
+    "internalNotes": "具体档期、活动使用和费用需另行确认；照片不代表已配置课程或老师。\n来源核验：2026-10-12。加盟关系由用户确认。"
+  },
+  {
+    "id": "rosewood-inn",
+    "kind": "space",
+    "status": "public",
+    "sort": 10,
+    "names": {
+      "zh-Hans": "Rosewood Inn",
+      "zh-Hant": "Rosewood Inn",
+      "ja": "Rosewood Inn",
+      "en": "Rosewood Inn"
+    },
+    "summary": {
+      "zh-Hans": "森林中的两层独栋别墅，设挑高客厅、三间卧室和户外阳台。可沟通个人休整、阅读及团体安静入住的安排。",
+      "zh-Hant": "森林中的兩層獨棟別墅，設挑高客廳、三間臥室和戶外陽臺。可溝通個人休整、閱讀及團體安靜入住的安排。",
+      "ja": "森の中にある二階建ての貸切コテージ。吹き抜けのリビング、三つの寝室、屋外バルコニーがあり、静かな個人滞在やグループ滞在をご相談いただけます。",
+      "en": "A two-storey woodland cottage with a double-height living room, three bedrooms and an outdoor balcony. Quiet personal stays and group accommodation can be discussed."
+    },
+    "details": {
+      "zh-Hans": "两层独栋，设三间卧室、挑高客厅、厨房、两间浴室及阳台。房源人数标注尚有差异，住宿上限待确认。薪炉和桑拿不可使用；房源说明注明无空调和电视。\n\n住宿档期、活动安排及费用需另行沟通。禅修活动人数根据实际空间与带领方式确认。",
+      "zh-Hant": "兩層獨棟，設三間臥室、挑高客廳、廚房、兩間浴室及陽臺。房源人數標註尚有差異，住宿上限待確認。薪爐和桑拿不可使用；房源說明註明無空調和電視。\n\n住宿檔期、活動安排及費用需另行溝通。禪修活動人數根據實際空間與帶領方式確認。",
+      "ja": "二階建て、寝室三室、吹き抜けのリビング、キッチン、浴室二室、バルコニー。宿泊定員の記載に相違があり、確認中です。薪ストーブとサウナは使用不可で、説明文ではエアコンとテレビはないとされています。\n\n宿泊日程、活動内容、費用は別途ご相談ください。実践の人数は会場と指導方法に応じて確認します。",
+      "en": "Two storeys with three bedrooms, a double-height living room, kitchen, two bathrooms and balcony. Published capacity figures differ and are being checked. The stove and sauna are unavailable; the listing states there is no air conditioning or TV.\n\nDates, activities and fees are discussed separately. Practice group sizes depend on the space and facilitation."
+    },
+    "location": {
+      "zh-Hans": "北轻井泽／群马县嬬恋村",
+      "zh-Hant": "北輕井澤／群馬縣嬬戀村",
+      "ja": "北軽井沢／群馬県嬬恋村",
+      "en": "Kita-Karuizawa / Tsumagoi, Gunma"
+    },
+    "features": {
+      "zh-Hans": "挑高客厅\n三间卧室\n森林阳台",
+      "zh-Hant": "挑高客廳\n三間臥室\n森林陽臺",
+      "ja": "吹き抜けのリビング\n寝室三室\n森を望むバルコニー",
+      "en": "Double-height living room\nThree bedrooms\nForest-view balcony"
+    },
+    "sleepingCapacity": null,
+    "practiceCapacity": null,
+    "languages": [],
+    "teachingModes": [],
+    "sourceUrl": "https://zh.airbnb.com/rooms/1728766554006075321",
+    "photos": [
+      {
+        "id": "exterior",
+        "src": "/partners/spaces/rosewood-inn/exterior.webp",
+        "alt": {
+          "zh-Hans": "房源外观",
+          "zh-Hant": "房源外觀",
+          "ja": "建物の外観",
+          "en": "Property exterior"
+        }
+      },
+      {
+        "id": "living-room",
+        "src": "/partners/spaces/rosewood-inn/living-room.webp",
+        "alt": {
+          "zh-Hans": "客厅",
+          "zh-Hant": "客廳",
+          "ja": "リビング",
+          "en": "Living room"
+        }
+      },
+      {
+        "id": "bedroom",
+        "src": "/partners/spaces/rosewood-inn/bedroom.webp",
+        "alt": {
+          "zh-Hans": "卧室",
+          "zh-Hant": "臥室",
+          "ja": "寝室",
+          "en": "Bedroom"
+        }
+      },
+      {
+        "id": "balcony",
+        "src": "/partners/spaces/rosewood-inn/balcony.webp",
+        "alt": {
+          "zh-Hans": "森林阳台",
+          "zh-Hant": "森林陽臺",
+          "ja": "森を望むバルコニー",
+          "en": "Forest-view balcony"
+        }
+      }
+    ],
+    "internalNotes": "房源明确注明薪炉及桑拿不可使用，不能作为禅修营设施宣传。\n正文注明无空调及电视；照片中的设备不作为可用性承诺。\n住宿人数与禅修活动人数均需确认。\n来源核验：2026-10-12。加盟关系由用户确认。\n住宿人数冲突：页面与结构化数据为8，正文为6；公开信息保持待确认。"
+  },
+  {
+    "id": "forest-private-camp",
+    "kind": "space",
+    "status": "public",
+    "sort": 20,
+    "names": {
+      "zh-Hans": "摩天轮下森林私享营地",
+      "zh-Hant": "摩天輪下森林私享營地",
+      "ja": "観覧車の森貸切キャンプ",
+      "en": "Private Forest Camp"
+    },
+    "summary": {
+      "zh-Hans": "白色与粉色两顶帐篷组成的森林包场营地，每日接待一组客人。设户外休息空间、共用卫浴与Starlink网络，可沟通安静驻留及自然体验。",
+      "zh-Hant": "白色與粉色兩頂帳篷組成的森林包場營地，每日接待一組客人。設戶外休息空間、共用衛浴與Starlink網路，可溝通安靜駐留及自然體驗。",
+      "ja": "白とピンクの二張りのテントを一日一組で貸切にする森のキャンプ。屋外休憩スペース、共用のシャワー・トイレ、Starlink Wi-Fiがあり、静かな滞在や自然体験をご相談いただけます。",
+      "en": "A private forest camp with white and pink tents, hosting one group per day. Outdoor resting space, shared showers and toilets, and Starlink Wi-Fi support quiet stays and nature experiences."
+    },
+    "details": {
+      "zh-Hans": "白色帐篷最多五人，粉色帐篷最多两人，总计七人；每日仅接待一组客人。设共用厕所、24小时热水淋浴、户外休息空间与Starlink网络。22:00至07:00为安静时段。禁止篝火、天灯和大面积明火；闻香及音乐等活动须按场地规则提前协调。\n\n住宿档期、活动安排及费用需另行沟通。禅修活动人数根据实际空间与带领方式确认。",
+      "zh-Hant": "白色帳篷最多五人，粉色帳篷最多兩人，總計七人；每日僅接待一組客人。設共用廁所、24小時熱水淋浴、戶外休息空間與Starlink網路。22:00至07:00為安靜時段。禁止篝火、天燈和大面積明火；聞香及音樂等活動須按場地規則提前協調。\n\n住宿檔期、活動安排及費用需另行溝通。禪修活動人數根據實際空間與帶領方式確認。",
+      "ja": "白いテントは五名、ピンクのテントは二名、計七名まで。一日一組の貸切で、共用トイレ、24時間温水シャワー、屋外休憩スペース、Starlink Wi-Fiがあります。静粛時間は22時〜7時。焚き火、スカイランタン、大きな裸火は禁止。香りや音楽の活動は事前にご相談ください。\n\n宿泊日程、活動内容、費用は別途ご相談ください。実践の人数は会場と指導方法に応じて確認します。",
+      "en": "The white tent accommodates up to five and the pink tent up to two: seven in total, with one private group per day. Shared toilets, 24-hour hot showers, outdoor resting space and Starlink Wi-Fi are provided. Quiet hours are 22:00–07:00. Campfires, sky lanterns and large open flames are prohibited; incense and music activities require advance coordination.\n\nDates, activities and fees are discussed separately. Practice group sizes depend on the space and facilitation."
+    },
+    "location": {
+      "zh-Hans": "北轻井泽／群马县嬬恋村",
+      "zh-Hant": "北輕井澤／群馬縣嬬戀村",
+      "ja": "北軽井沢／群馬県嬬恋村",
+      "en": "Kita-Karuizawa / Tsumagoi, Gunma"
+    },
+    "features": {
+      "zh-Hans": "双帐篷包场\n共用卫浴与热水\nStarlink网络",
+      "zh-Hant": "雙帳篷包場\n共用衛浴與熱水\nStarlink網路",
+      "ja": "テント二張りの貸切\n共用シャワー・トイレ\nStarlink Wi-Fi",
+      "en": "Two private tents\nShared showers & toilets\nStarlink Wi-Fi"
+    },
+    "sleepingCapacity": 7,
+    "practiceCapacity": null,
+    "languages": [],
+    "teachingModes": [],
+    "sourceUrl": "https://zh.airbnb.com/rooms/1613339157530929423",
+    "photos": [
+      {
+        "id": "exterior",
+        "src": "/partners/spaces/forest-private-camp/exterior.webp",
+        "alt": {
+          "zh-Hans": "房源外观",
+          "zh-Hant": "房源外觀",
+          "ja": "建物の外観",
+          "en": "Property exterior"
+        }
+      },
+      {
+        "id": "white-tent-interior",
+        "src": "/partners/spaces/forest-private-camp/white-tent-interior.webp",
+        "alt": {
+          "zh-Hans": "白色帐篷内部",
+          "zh-Hant": "白色帳篷內部",
+          "ja": "白いテントの室内",
+          "en": "White tent interior"
+        }
+      },
+      {
+        "id": "pink-tent-interior",
+        "src": "/partners/spaces/forest-private-camp/pink-tent-interior.webp",
+        "alt": {
+          "zh-Hans": "粉色帐篷",
+          "zh-Hant": "粉色帳篷",
+          "ja": "ピンクのテント",
+          "en": "Pink tent"
+        }
+      },
+      {
+        "id": "outdoor-space",
+        "src": "/partners/spaces/forest-private-camp/outdoor-space.webp",
+        "alt": {
+          "zh-Hans": "营地户外空间",
+          "zh-Hant": "營地戶外空間",
+          "ja": "キャンプの屋外空間",
+          "en": "Camp outdoor space"
+        }
+      }
+    ],
+    "internalNotes": "第三方房源仍存在户外焚火设施文字，但房源正文禁止篝火、天灯及大面积明火；不能宣传可生火或任意用香。\n户外闻香、音乐及其他活动需按场地规则确认，22:00至07:00为安静时段。\n黑色帐篷不在本次房源可用范围。\n不能将营地住宿总人数直接当作老师带领活动的人数。\n来源核验：2026-10-12。加盟关系由用户确认。\n正文与房东预览为全场7人（5+2）；JSON-LD为5，与全场人数不符。"
+  }
+]

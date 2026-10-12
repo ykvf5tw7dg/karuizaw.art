@@ -1,0 +1,6 @@
+import {adminJson} from '@/lib/admin';
+import {profileSchema} from '@/lib/profiles';
+import {getProfile,saveProfile} from '@/lib/server/profiles';
+import {adminMutation,readBounded} from '@/lib/server/profile-request';
+export const dynamic='force-dynamic';
+export async function PUT(request:Request,{params}:{params:Promise<{id:string}>}){const denied=await adminMutation(request);if(denied)return denied;try{const {id}=await params;const prior=getProfile(id);if(!prior)return adminJson({error:'未找到资料。'},404);const raw=JSON.parse((await readBounded(request,150000)).toString());if(!Number.isInteger(raw.revision))return adminJson({error:'版本无效。'},400);const parsed=profileSchema.safeParse(raw.payload);if(!parsed.success)return adminJson({error:parsed.error.issues[0].message},400);const p=parsed.data;if(p.kind!==prior.kind)return adminJson({error:'不能更改资料类型。'},400);if(p.photos.some(photo=>!prior.photos.some(old=>old.id===photo.id&&old.src===photo.src)))return adminJson({error:'请通过图片上传入口添加照片。'},400);if(!saveProfile(id,p,raw.revision))return adminJson({error:'资料已被其他窗口更新，请刷新后重试。'},409);return adminJson({profile:getProfile(id)});}catch(error){return adminJson({error:error instanceof Error&&error.message==='TOO_LARGE'?'内容过长。':'无法保存，请检查填写内容。'},400);}}

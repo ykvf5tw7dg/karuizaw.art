@@ -1,0 +1,357 @@
+{
+  "listing_id": "1728766554006075321",
+  "slug": "rosewood-inn",
+  "source_url": "https://zh.airbnb.com/rooms/1728766554006075321",
+  "name": "步行约 6 分钟即可抵达轻井泽玩具王国，带中庭起居室的小屋｜Rosewood Inn",
+  "occupancy_structured": 8,
+  "image_candidates": [
+    "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/a39e319f-6c1c-4dff-8991-6aaf12a3bd91.jpeg",
+    "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/35b2429e-984a-43f7-bbdc-cd0fc6178d7a.jpeg",
+    "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/232f89a2-0ba9-4306-bda2-c97617aeb584.jpeg",
+    "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/2ded2a6d-a035-4cf0-ad53-aa9dd5f2e198.jpeg",
+    "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/d3863a53-2b64-488a-a9f1-6b09395ad6ab.jpeg",
+    "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/7f6b738c-12ba-4f40-a26f-be50097bebb9.jpeg",
+    "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/f2b1514c-af1d-4280-b322-9845e63b423a.jpeg",
+    "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/55bffc30-8350-47a5-b069-12d32be54b51.jpeg"
+  ],
+  "checked_date_japan": "2026-10-12",
+  "publication_status": "draft",
+  "photo_metadata": [
+    {
+      "id": "2725083306",
+      "accessibilityLabel": "平面图图片1",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/232b34ea-e625-44f7-965e-a0a25c6b28fc.png"
+    },
+    {
+      "id": "2728237442",
+      "accessibilityLabel": "客厅图片1",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/a39e319f-6c1c-4dff-8991-6aaf12a3bd91.jpeg"
+    },
+    {
+      "id": "2725065052",
+      "accessibilityLabel": "客厅图片2",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/f056a4bf-eecb-4f50-bf9b-22950795c22d.jpeg"
+    },
+    {
+      "id": "2725070968",
+      "accessibilityLabel": "客厅图片3",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/c8f062e4-5325-42db-8cdc-900ccc7d2e24.jpeg"
+    },
+    {
+      "id": "2725070970",
+      "accessibilityLabel": "客厅图片4",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/7fbfad09-2eb9-4ba7-89b6-d2d99cef6f05.jpeg"
+    },
+    {
+      "id": "2725070971",
+      "accessibilityLabel": "客厅图片5",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/35b2429e-984a-43f7-bbdc-cd0fc6178d7a.jpeg"
+    },
+    {
+      "id": "2728221289",
+      "accessibilityLabel": "客厅图片6",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/0ea0581c-696d-448e-ac74-45d7e55ec364.jpeg"
+    },
+    {
+      "id": "2725073484",
+      "accessibilityLabel": "设施齐全的厨房图片1",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/0c635404-7ffd-4cb3-9fb6-78bc31171ef1.jpeg"
+    },
+    {
+      "id": "2728228586",
+      "accessibilityLabel": "设施齐全的厨房图片2",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/21fed0b8-8db1-418c-93bf-e7d3574296f9.jpeg"
+    },
+    {
+      "id": "2725070967",
+      "accessibilityLabel": "用餐区图片1",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/232f89a2-0ba9-4306-bda2-c97617aeb584.jpeg"
+    },
+    {
+      "id": "2725071629",
+      "accessibilityLabel": "卧室 1图片1",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/56d33a88-bfc3-4f76-9c0c-142d436f3120.jpeg"
+    },
+    {
+      "id": "2725071691",
+      "accessibilityLabel": "卧室 1图片2",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/d3863a53-2b64-488a-a9f1-6b09395ad6ab.jpeg"
+    },
+    {
+      "id": "2728221559",
+      "accessibilityLabel": "卧室 1图片3",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/13653767-9321-4b3e-ac4a-509d01faf76a.jpeg"
+    },
+    {
+      "id": "2728221570",
+      "accessibilityLabel": "卧室 1图片4",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/8f62371e-8b59-4f20-bbcd-6b24a7fc5650.jpeg"
+    },
+    {
+      "id": "2728221272",
+      "accessibilityLabel": "卧室 2图片1",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/fe4daa4e-1a18-424a-99cc-f18bc14305e3.jpeg"
+    },
+    {
+      "id": "2728221337",
+      "accessibilityLabel": "卧室 2图片2",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/c6207d72-972e-480b-9a80-0be5c2e02868.jpeg"
+    },
+    {
+      "id": "2725071621",
+      "accessibilityLabel": "卧室 3图片1",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/4b3f8cd6-6f9b-4dfd-aad2-a0d4e84416d3.jpeg"
+    },
+    {
+      "id": "2725071685",
+      "accessibilityLabel": "卧室 3图片2",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/578d194e-35a2-40f4-89a0-afe5807aed8b.jpeg"
+    },
+    {
+      "id": "2728221283",
+      "accessibilityLabel": "卧室 3图片3",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/af69c7c8-7805-4603-9d70-86ae8ba12ef7.jpeg"
+    },
+    {
+      "id": "2728221329",
+      "accessibilityLabel": "卧室 3图片4",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/90730822-fd56-4e82-9a77-107a4fcdf8c4.jpeg"
+    },
+    {
+      "id": "2725072353",
+      "accessibilityLabel": "全功能卫生间 1图片1",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/1577c9bb-c7b2-48d1-a623-170327d80341.jpeg"
+    },
+    {
+      "id": "2725072466",
+      "accessibilityLabel": "全功能卫生间 1图片2",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/dae32fa6-21cc-4de9-ba92-d5d9f0641c30.jpeg"
+    },
+    {
+      "id": "2725072616",
+      "accessibilityLabel": "全功能卫生间 1图片3",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/7f6b738c-12ba-4f40-a26f-be50097bebb9.jpeg"
+    },
+    {
+      "id": "2725072786",
+      "accessibilityLabel": "全功能卫生间 1图片4",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/14676772-bc32-4aa9-9eae-b26e9a327d5e.jpeg"
+    },
+    {
+      "id": "2728221774",
+      "accessibilityLabel": "全功能卫生间 1图片5",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/47f6cd31-d4b5-4470-8034-e673b8b7c826.jpeg"
+    },
+    {
+      "id": "2725071683",
+      "accessibilityLabel": "全功能卫生间 1图片6",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/5f917fc9-9827-4669-ad12-ef9f0eaf8577.jpeg"
+    },
+    {
+      "id": "2728222026",
+      "accessibilityLabel": "全功能卫生间 1图片7",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/553c3c86-d228-4371-93a8-0fb088244a72.jpeg"
+    },
+    {
+      "id": "2728221640",
+      "accessibilityLabel": "全功能卫生间 2图片1",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/691ca6b6-c204-42ba-a197-1f069509bc58.jpeg"
+    },
+    {
+      "id": "2728221641",
+      "accessibilityLabel": "全功能卫生间 2图片2",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/81a06d9a-1a5a-40e0-9304-0141d8e4b925.jpeg"
+    },
+    {
+      "id": "2728221644",
+      "accessibilityLabel": "全功能卫生间 2图片3",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/caada0aa-e843-47dc-8748-bc8c39d8aec0.jpeg"
+    },
+    {
+      "id": "2728229880",
+      "accessibilityLabel": "全功能卫生间 2图片4",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/5cacbaa7-c339-4cde-af18-bd71d6ce910b.jpeg"
+    },
+    {
+      "id": "2728221716",
+      "accessibilityLabel": "全功能卫生间 2图片5",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/711a3d32-306f-4170-aa6b-422472dd3ca2.jpeg"
+    },
+    {
+      "id": "2725062932",
+      "accessibilityLabel": "后院图片1",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/a71387e8-7471-447e-8e47-1918d13b1945.jpeg"
+    },
+    {
+      "id": "2725063410",
+      "accessibilityLabel": "后院图片2",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/295ff8ed-c0cd-4347-95e7-d9293fc57ba5.jpeg"
+    },
+    {
+      "id": "2725063413",
+      "accessibilityLabel": "后院图片3",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/98d2ffcf-57d8-4114-a5e0-65bbe9a0b531.jpeg"
+    },
+    {
+      "id": "2725063414",
+      "accessibilityLabel": "后院图片4",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/634997cf-f15a-4af4-a517-aa65e953e1ab.jpeg"
+    },
+    {
+      "id": "2725073440",
+      "accessibilityLabel": "后院图片5",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/df63e2ca-864f-4a86-8cc5-83a11c6088a8.jpeg"
+    },
+    {
+      "id": "2725079764",
+      "accessibilityLabel": "后院图片6",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/5c582351-a6a7-445a-842a-97e1081b4389.jpeg"
+    },
+    {
+      "id": "2725079767",
+      "accessibilityLabel": "后院图片7",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/3caa8bfc-46e6-43f2-bd85-25135f3af7eb.jpeg"
+    },
+    {
+      "id": "2725079785",
+      "accessibilityLabel": "后院图片8",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/723090c8-4c5b-48bf-ace7-60d72665dc09.jpeg"
+    },
+    {
+      "id": "2725079870",
+      "accessibilityLabel": "后院图片9",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/a03b3b90-9a00-4a53-8687-17eeb7e8c80d.jpeg"
+    },
+    {
+      "id": "2725079940",
+      "accessibilityLabel": "后院图片10",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/f3a83113-3b79-4f49-bab5-75dc9fd1ebfb.jpeg"
+    },
+    {
+      "id": "2725080119",
+      "accessibilityLabel": "后院图片11",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/946be3b6-8670-4a8e-898b-640bab868ed7.jpeg"
+    },
+    {
+      "id": "2725062757",
+      "accessibilityLabel": "阳台图片1",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/e56f01cf-34fa-4899-9274-a3953b061c6f.jpeg"
+    },
+    {
+      "id": "2725064663",
+      "accessibilityLabel": "阳台图片2",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/427c24d9-ebfe-493c-94f6-117cfa63333a.jpeg"
+    },
+    {
+      "id": "2728221861",
+      "accessibilityLabel": "洗衣区图片1",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/56c6e124-8e83-4add-8700-1c91b346f900.jpeg"
+    },
+    {
+      "id": "2723484645",
+      "accessibilityLabel": "房源外观图片1",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/f2b1514c-af1d-4280-b322-9845e63b423a.jpeg"
+    },
+    {
+      "id": "2723484654",
+      "accessibilityLabel": "房源外观图片2",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/55bffc30-8350-47a5-b069-12d32be54b51.jpeg"
+    },
+    {
+      "id": "2724940140",
+      "accessibilityLabel": "房源外观图片3",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/04438c47-e03c-4539-8ec6-574cb4e1958f.png"
+    },
+    {
+      "id": "2725079552",
+      "accessibilityLabel": "房源外观图片4",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/c73350fd-43df-4ab1-b1a5-84ce98409165.jpeg"
+    },
+    {
+      "id": "2725079577",
+      "accessibilityLabel": "房源外观图片5",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/0e7746ef-3cc9-45dd-b2fe-6f2606c1c2c5.jpeg"
+    },
+    {
+      "id": "2725073490",
+      "accessibilityLabel": "房源外观图片6",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/2ded2a6d-a035-4cf0-ad53-aa9dd5f2e198.jpeg"
+    },
+    {
+      "id": "2725080137",
+      "accessibilityLabel": "房源外观图片7",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/0aa21575-b257-4a32-97f4-a2540f67f413.jpeg"
+    },
+    {
+      "id": "2725080131",
+      "accessibilityLabel": "房源外观图片8",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/d9341578-ac81-4041-9daa-156497cb0633.jpeg"
+    },
+    {
+      "id": "2725073487",
+      "accessibilityLabel": "其他照片图片1",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/c037b9ed-6152-4e2d-b959-dd37baeed377.jpeg"
+    },
+    {
+      "title": "民居 · Tsumagoi, Agatsuma District · 3 间卧室 · 8 张床 · 2 个卫生间",
+      "imageUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/a39e319f-6c1c-4dff-8991-6aaf12a3bd91.jpeg"
+    },
+    {
+      "imageUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/a39e319f-6c1c-4dff-8991-6aaf12a3bd91.jpeg"
+    }
+  ],
+  "selected_photos": [
+    {
+      "role": "exterior",
+      "source_label": "房源外观图片1",
+      "source_photo_id": "2723484645",
+      "source_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/f2b1514c-af1d-4280-b322-9845e63b423a.jpeg",
+      "local_path": "content/partner-spaces/drafts/rosewood-inn/photos/exterior.jpeg",
+      "format": "original photo from listing",
+      "downloaded_date_japan": "2026-10-12",
+      "bytes": 467247,
+      "sha256": "60a1e21992dcfcad8ae3cb48a01684a06c38f8b2190d3e1c4929a7afed156339",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "role": "living-room",
+      "source_label": "客厅图片1",
+      "source_photo_id": "2728237442",
+      "source_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/a39e319f-6c1c-4dff-8991-6aaf12a3bd91.jpeg",
+      "local_path": "content/partner-spaces/drafts/rosewood-inn/photos/living-room.jpeg",
+      "format": "original photo from listing",
+      "downloaded_date_japan": "2026-10-12",
+      "bytes": 256936,
+      "sha256": "46bdbc6b25f7a4b30df026532bd77908d25d7c71a68c0222ce7f4bea2f704ce2",
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "role": "bedroom",
+      "source_label": "卧室 1图片1",
+      "source_photo_id": "2725071629",
+      "source_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/56d33a88-bfc3-4f76-9c0c-142d436f3120.jpeg",
+      "local_path": "content/partner-spaces/drafts/rosewood-inn/photos/bedroom.jpeg",
+      "format": "original photo from listing",
+      "downloaded_date_japan": "2026-10-12",
+      "bytes": 216358,
+      "sha256": "368bf29aced4b339e11a8fb1e6459982b8bc3b5f5652764ce98e6201d1507cd1",
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "role": "balcony",
+      "source_label": "阳台图片1",
+      "source_photo_id": "2725062757",
+      "source_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1728766554006075321/original/e56f01cf-34fa-4899-9274-a3953b061c6f.jpeg",
+      "local_path": "content/partner-spaces/drafts/rosewood-inn/photos/balcony.jpeg",
+      "format": "original photo from listing",
+      "downloaded_date_japan": "2026-10-12",
+      "bytes": 351586,
+      "sha256": "a8c3bf28ee099700e75bc8f91f78cf27df59aa4b6fcfec779227ab39d513752e",
+      "width": 1200,
+      "height": 800
+    }
+  ]
+}

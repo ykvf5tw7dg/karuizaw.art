@@ -1,0 +1,60 @@
+{
+  "display_name": "摩天轮下森林私享营地",
+  "type": "camp",
+  "region": "北轻井泽／群马县嬬恋村",
+  "summary": {
+    "zh-Hans": "白色与粉色两顶帐篷组成的森林包场营地，每日接待一组客人。设户外休息空间、共用卫浴与Starlink网络，可沟通安静驻留及自然体验。",
+    "zh-Hant": "白色與粉色兩頂帳篷組成的森林包場營地，每日接待一組客人。設戶外休息空間、共用衛浴與Starlink網路，可溝通安靜駐留及自然體驗。",
+    "ja": "白とピンクの二張りのテントを一日一組で貸切にする森のキャンプ。屋外休憩スペース、共用のシャワー・トイレ、Starlink Wi-Fiがあり、静かな滞在や自然体験をご相談いただけます。",
+    "en": "A private forest camp with white and pink tents, hosting one group per day. Outdoor resting space, shared showers and toilets, and Starlink Wi-Fi support quiet stays and nature experiences."
+  },
+  "sleeping_capacity": {
+    "value": 7,
+    "status": "confirmed_by_listing_body_and_host_preview",
+    "components": [
+      {
+        "space": "white tent",
+        "capacity": 5
+      },
+      {
+        "space": "pink tent",
+        "capacity": 2
+      }
+    ],
+    "sources": [
+      "public listing body",
+      "Safari host preview: 7 guests"
+    ],
+    "structured_data_conflict": {
+      "value": 5,
+      "note": "JSON-LD occupancy reports 5, which differs from whole-site 7; use verified narrative total, not structured data alone."
+    }
+  },
+  "bedrooms": null,
+  "sleeping_arrangement": "白色帐篷最多5人，粉色帐篷最多2人；两顶帐篷及专用场地由同一组客人包场使用",
+  "facilities": [
+    "两顶帐篷",
+    "户外休息空间",
+    "共用厕所",
+    "24小时热水淋浴",
+    "Starlink网络",
+    "停车位"
+  ],
+  "practice_capacity": null,
+  "practice_capacity_status": "to_be_confirmed_by_site_layout",
+  "publication_notes": [
+    "第三方房源仍存在户外焚火设施文字，但房源正文禁止篝火、天灯及大面积明火；不能宣传可生火或任意用香。",
+    "户外闻香、音乐及其他活动需按场地规则确认，22:00至07:00为安静时段。",
+    "黑色帐篷不在本次房源可用范围。",
+    "不能将营地住宿总人数直接当作老师带领活动的人数。"
+  ],
+  "listing_id": "1613339157530929423",
+  "source_url": "https://zh.airbnb.com/rooms/1613339157530929423",
+  "source_title": "摩天轮下森林私享营地｜整栋出租（白色+粉色帐篷）｜可烧烤・星链网络",
+  "checked_date_japan": "2026-10-12",
+  "status": "draft_not_published",
+  "affiliation_basis": "User stated these three spaces have joined the retreat plan",
+  "photos_manifest": "source.json",
+  "rates_and_availability": "to_be_confirmed; not imported",
+  "activity_availability": "to_be_confirmed; no course or teacher assignment implied"
+}

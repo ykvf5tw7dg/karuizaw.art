@@ -1,0 +1,282 @@
+{
+  "listing_id": "1613339157530929423",
+  "slug": "forest-private-camp",
+  "source_url": "https://zh.airbnb.com/rooms/1613339157530929423",
+  "name": "摩天轮下森林私享营地｜整栋出租（白色+粉色帐篷）｜可烧烤・星链网络",
+  "occupancy_structured": 5,
+  "image_candidates": [
+    "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/523d49b0-4fe7-4676-a143-7e2c72c2f580.jpeg",
+    "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/3b303c75-1f86-4257-bfbe-1db7871b144f.png",
+    "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/1647e11c-d066-45db-923d-beace965c23c.jpeg",
+    "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/aae99324-5fc1-4bbd-9da3-aa62dd0a9563.png",
+    "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/58baaf53-21e8-4242-8043-4d6cf8437ce7.jpeg",
+    "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/f18db33d-e2c8-4701-bd79-dac4298d67a4.jpeg",
+    "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/00ee94b4-8922-4278-b625-1e67fec7c05c.png",
+    "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/a16032ec-42e0-4df6-bda1-1217339f1094.jpeg"
+  ],
+  "checked_date_japan": "2026-10-12",
+  "publication_status": "draft",
+  "photo_metadata": [
+    {
+      "id": "2766865393",
+      "accessibilityLabel": "卧室 1图片1",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/1647e11c-d066-45db-923d-beace965c23c.jpeg"
+    },
+    {
+      "id": "2766865407",
+      "accessibilityLabel": "卧室 1图片2",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/f18db33d-e2c8-4701-bd79-dac4298d67a4.jpeg"
+    },
+    {
+      "id": "2766865413",
+      "accessibilityLabel": "卧室 1图片3",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/b3678030-d9e8-4732-8f39-10d2bc12292a.jpeg"
+    },
+    {
+      "id": "2503600799",
+      "accessibilityLabel": "卧室 1图片4",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/a16032ec-42e0-4df6-bda1-1217339f1094.jpeg"
+    },
+    {
+      "id": "2811920071",
+      "accessibilityLabel": "卧室 2图片1",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/3bccc453-9a9f-443b-9895-6eba050363b3.jpeg"
+    },
+    {
+      "id": "2811920122",
+      "accessibilityLabel": "卧室 2图片2",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/a18aab3a-b3be-4076-b527-2ca0b2f86fd7.jpeg"
+    },
+    {
+      "id": "2811920207",
+      "accessibilityLabel": "卧室 2图片3",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/672f33b1-02f2-48a0-b474-1f511de714b6.jpeg"
+    },
+    {
+      "id": "2811920237",
+      "accessibilityLabel": "卧室 2图片4",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/03577184-33ca-4c75-9193-b1f5d1715bda.jpeg"
+    },
+    {
+      "id": "2503600862",
+      "accessibilityLabel": "全功能卫生间图片1",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/67408359-3a38-4c60-9323-2d907c92555e.jpeg"
+    },
+    {
+      "id": "2503600863",
+      "accessibilityLabel": "全功能卫生间图片2",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/741cebf2-fbd8-4a67-aecc-bd46f9b1d71b.jpeg"
+    },
+    {
+      "id": "2811920954",
+      "accessibilityLabel": "全功能卫生间图片3",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/9842d72d-9116-4623-8033-677d99fe043b.jpeg"
+    },
+    {
+      "id": "2811920986",
+      "accessibilityLabel": "全功能卫生间图片4",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/b4b6e460-fd84-4b5a-8cbd-efea78c039a5.jpeg"
+    },
+    {
+      "id": "2811922433",
+      "accessibilityLabel": "全功能卫生间图片5",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/f99dff5e-42d7-4462-b925-cb682d59d79c.jpeg"
+    },
+    {
+      "id": "2724784631",
+      "accessibilityLabel": "工作区域图片1",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/d67fbdc8-0a61-4645-87e5-0ce1e06c162d.jpeg"
+    },
+    {
+      "id": "2599870083",
+      "accessibilityLabel": "前院图片1",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/3b303c75-1f86-4257-bfbe-1db7871b144f.png"
+    },
+    {
+      "id": "2621413753",
+      "accessibilityLabel": "前院图片2",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/aae99324-5fc1-4bbd-9da3-aa62dd0a9563.png"
+    },
+    {
+      "id": "2599870078",
+      "accessibilityLabel": "庭院图片1",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/00ee94b4-8922-4278-b625-1e67fec7c05c.png"
+    },
+    {
+      "id": "2599870086",
+      "accessibilityLabel": "庭院图片2",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/56fc6360-6a74-442c-aab8-916009c95d4d.png"
+    },
+    {
+      "id": "2503600852",
+      "accessibilityLabel": "庭院图片3",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/aa11a419-84b8-4e65-92aa-252e892eaecb.jpeg"
+    },
+    {
+      "id": "2603853934",
+      "accessibilityLabel": "庭院图片4",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/f1a4dd8a-b1b2-4de8-9865-2a065045fc84.png"
+    },
+    {
+      "id": "2599879448",
+      "accessibilityLabel": "房源外观图片1",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/987c33fa-2160-40fb-803d-a7f5d23b2aeb.png"
+    },
+    {
+      "id": "2751412824",
+      "accessibilityLabel": "房源外观图片2",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/c032d64a-7ba0-40c1-832d-6aad0427c0cf.png"
+    },
+    {
+      "id": "2751412827",
+      "accessibilityLabel": "房源外观图片3",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/0d33fec0-9d0d-4dd0-a624-d33d4cd76216.jpeg"
+    },
+    {
+      "id": "2751412839",
+      "accessibilityLabel": "房源外观图片4",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/7619f770-a0d6-4123-94a7-11089a311bcd.jpeg"
+    },
+    {
+      "id": "2751412845",
+      "accessibilityLabel": "房源外观图片5",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/d11ea232-0b31-4ba1-8a07-cf7d35bda6ff.jpeg"
+    },
+    {
+      "id": "2751412856",
+      "accessibilityLabel": "房源外观图片6",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/8e01d2cb-8cd2-4d62-9d15-658725617e68.jpeg"
+    },
+    {
+      "id": "2621413755",
+      "accessibilityLabel": "户外 BBQ 与焚火区（春秋季围炉而坐）",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/d1f7f01d-8b8a-4be0-b469-cb332d1cd558.png"
+    },
+    {
+      "id": "2621413757",
+      "accessibilityLabel": "房源外观图片8",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/c25fac7f-7c23-448e-8cbb-800e8b6295af.png"
+    },
+    {
+      "id": "2621413760",
+      "accessibilityLabel": "房源外观图片9",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/89ea254a-416f-4f56-b362-cac72215c93c.png"
+    },
+    {
+      "id": "2724783604",
+      "accessibilityLabel": "房源外观图片10",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/bbefaf39-88a3-4529-a77e-e4f1bf90c2cd.png"
+    },
+    {
+      "id": "2811925110",
+      "accessibilityLabel": "房源外观图片11",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/4524d9b7-30d4-4796-b46d-77909cbc521e.jpeg"
+    },
+    {
+      "id": "2811925333",
+      "accessibilityLabel": "房源外观图片12",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/1661443f-7e1e-4182-8146-56c4eb4c99f4.png"
+    },
+    {
+      "id": "2789300837",
+      "accessibilityLabel": "其他照片图片1",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/523d49b0-4fe7-4676-a143-7e2c72c2f580.jpeg"
+    },
+    {
+      "id": "2782234188",
+      "accessibilityLabel": "其他照片图片2",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/58baaf53-21e8-4242-8043-4d6cf8437ce7.jpeg"
+    },
+    {
+      "id": "2787616393",
+      "accessibilityLabel": "其他照片图片3",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/0e7e0240-7c98-4a75-95ae-91120ca69598.jpeg"
+    },
+    {
+      "id": "2724784602",
+      "accessibilityLabel": "其他照片图片4",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/5c1a2be5-01a6-41ef-a460-66399bc64b41.jpeg"
+    },
+    {
+      "id": "2724784695",
+      "accessibilityLabel": "其他照片图片5",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/3035032f-3c88-4230-83eb-cf0cf0576bb1.jpeg"
+    },
+    {
+      "id": "2724784705",
+      "accessibilityLabel": "其他照片图片6",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/2d25defb-acad-42e4-9458-215bcaaf27a7.jpeg"
+    },
+    {
+      "id": "2782234183",
+      "accessibilityLabel": "其他照片图片7",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/98692940-c35d-46a8-82c4-05b13bbf7eca.jpeg"
+    },
+    {
+      "id": "2782234185",
+      "accessibilityLabel": "其他照片图片8",
+      "baseUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/98551dce-e8d3-41f7-b562-e7df10d52608.jpeg"
+    },
+    {
+      "title": "圆顶屋 · Tsumagoi, Agatsuma District · ★4.57 · 2 间卧室 · 5 张床 · 1 间卫生间",
+      "imageUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/523d49b0-4fe7-4676-a143-7e2c72c2f580.jpeg"
+    },
+    {
+      "imageUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/523d49b0-4fe7-4676-a143-7e2c72c2f580.jpeg"
+    }
+  ],
+  "selected_photos": [
+    {
+      "role": "exterior",
+      "source_label": "房源外观图片1",
+      "source_photo_id": "2599879448",
+      "source_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/987c33fa-2160-40fb-803d-a7f5d23b2aeb.png",
+      "local_path": "content/partner-spaces/drafts/forest-private-camp/photos/exterior.png",
+      "format": "original photo from listing",
+      "downloaded_date_japan": "2026-10-12",
+      "bytes": 381136,
+      "sha256": "77168517fa91e5e18cd1d179cd1e159db2f5c72e8d805b8ae53e8adad5858681",
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "role": "white-tent-interior",
+      "source_label": "卧室 1图片1",
+      "source_photo_id": "2766865393",
+      "source_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/1647e11c-d066-45db-923d-beace965c23c.jpeg",
+      "local_path": "content/partner-spaces/drafts/forest-private-camp/photos/white-tent-interior.jpeg",
+      "format": "original photo from listing",
+      "downloaded_date_japan": "2026-10-12",
+      "bytes": 271591,
+      "sha256": "74c827c1f8c20bbac5b4dc8b976f2f575ed90127b7723f8be0d52a700d47d127",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "role": "pink-tent-interior",
+      "source_label": "卧室 2图片1",
+      "source_photo_id": "2811920071",
+      "source_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/3bccc453-9a9f-443b-9895-6eba050363b3.jpeg",
+      "local_path": "content/partner-spaces/drafts/forest-private-camp/photos/pink-tent-interior.jpeg",
+      "format": "original photo from listing",
+      "downloaded_date_japan": "2026-10-12",
+      "bytes": 388369,
+      "sha256": "45a47bab1077f398983572944d713f4edb150b3b4feb3ba9b180ab0d6ea93c09",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "role": "outdoor-space",
+      "source_label": "前院图片1",
+      "source_photo_id": "2599870083",
+      "source_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1613339157530929423/original/3b303c75-1f86-4257-bfbe-1db7871b144f.png",
+      "local_path": "content/partner-spaces/drafts/forest-private-camp/photos/outdoor-space.png",
+      "format": "original photo from listing",
+      "downloaded_date_japan": "2026-10-12",
+      "bytes": 305968,
+      "sha256": "da158631e78b950adf21c5b1254c685ead8bf107008e550151651c1285813214",
+      "width": 1200,
+      "height": 956
+    }
+  ]
+}

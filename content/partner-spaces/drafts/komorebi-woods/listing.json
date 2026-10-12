@@ -1,0 +1,44 @@
+{
+  "display_name": "北轻井泽 KOMOREBI WOODS",
+  "type": "villa",
+  "region": "北轻井泽／群马县嬬恋村",
+  "summary": {
+    "zh-Hans": "坐落于森林中的整栋木质别墅，客厅可望见林景，溪边设有木露台。可沟通安静住宿、阅读及小型团体的空间使用。",
+    "zh-Hant": "坐落於森林中的整棟木質別墅，客廳可望見林景，溪邊設有木露臺。可溝通安靜住宿、閱讀及小型團體的空間使用。",
+    "ja": "森に囲まれた一棟貸しの木のヴィラ。森を望むリビングと小川沿いのウッドデッキがあり、静かな滞在や読書、少人数の空間利用をご相談いただけます。",
+    "en": "A private woodland villa with forest views from the living room and a deck beside a stream. Quiet stays, reading and small-group use can be discussed."
+  },
+  "sleeping_capacity": {
+    "value": 6,
+    "status": "source_consistent",
+    "sources": [
+      "public listing heading",
+      "VacationRental structured data"
+    ]
+  },
+  "bedrooms": 2,
+  "sleeping_arrangement": "两间和室，公开照片与房源记录显示每间3张日式床垫",
+  "facilities": [
+    "客厅／餐厅",
+    "厨房",
+    "浴室",
+    "两个厕所",
+    "Wi-Fi",
+    "两个停车位",
+    "木露台"
+  ],
+  "practice_capacity": null,
+  "practice_capacity_status": "to_be_confirmed_by_site_layout",
+  "publication_notes": [
+    "具体档期、活动使用和费用需另行确认；照片不代表已配置课程或老师。"
+  ],
+  "listing_id": "1709830092777295689",
+  "source_url": "https://zh.airbnb.com/rooms/1709830092777295689",
+  "source_title": "与爱犬一起度过时光的私人别墅，坐落于自然资源丰富的森林之中：北轻井泽KOMOREBI WOODS",
+  "checked_date_japan": "2026-10-12",
+  "status": "draft_not_published",
+  "affiliation_basis": "User stated these three spaces have joined the retreat plan",
+  "photos_manifest": "source.json",
+  "rates_and_availability": "to_be_confirmed; not imported",
+  "activity_availability": "to_be_confirmed; no course or teacher assignment implied"
+}

@@ -1,0 +1,52 @@
+{
+  "display_name": "Rosewood Inn",
+  "type": "villa",
+  "region": "北轻井泽／群马县嬬恋村",
+  "summary": {
+    "zh-Hans": "森林中的两层独栋别墅，设挑高客厅、三间卧室和户外阳台。可沟通个人休整、阅读及团体安静入住的安排。",
+    "zh-Hant": "森林中的兩層獨棟別墅，設挑高客廳、三間臥室和戶外陽臺。可溝通個人休整、閱讀及團體安靜入住的安排。",
+    "ja": "森の中にある二階建ての貸切コテージ。吹き抜けのリビング、三つの寝室、屋外バルコニーがあり、静かな個人滞在やグループ滞在をご相談いただけます。",
+    "en": "A two-storey woodland cottage with a double-height living room, three bedrooms and an outdoor balcony. Quiet personal stays and group accommodation can be discussed."
+  },
+  "sleeping_capacity": {
+    "value": null,
+    "status": "source_conflict",
+    "sources": [
+      {
+        "field": "public listing heading and structured data",
+        "value": 8
+      },
+      {
+        "field": "listing narrative",
+        "value": 6
+      }
+    ],
+    "display_until_confirmed": "住宿人数待确认"
+  },
+  "bedrooms": 3,
+  "sleeping_arrangement": "房源正文列两张单人床、一张双人床及四张日式床垫；人数上限有冲突，不能据床位直接推算",
+  "facilities": [
+    "挑高客厅",
+    "厨房／用餐区",
+    "两间浴室",
+    "两处厕所",
+    "阳台",
+    "停车位"
+  ],
+  "practice_capacity": null,
+  "practice_capacity_status": "to_be_confirmed_by_site_layout",
+  "publication_notes": [
+    "房源明确注明薪炉及桑拿不可使用，不能作为禅修营设施宣传。",
+    "正文注明无空调及电视；照片中的设备不作为可用性承诺。",
+    "住宿人数与禅修活动人数均需确认。"
+  ],
+  "listing_id": "1728766554006075321",
+  "source_url": "https://zh.airbnb.com/rooms/1728766554006075321",
+  "source_title": "步行约 6 分钟即可抵达轻井泽玩具王国，带中庭起居室的小屋｜Rosewood Inn",
+  "checked_date_japan": "2026-10-12",
+  "status": "draft_not_published",
+  "affiliation_basis": "User stated these three spaces have joined the retreat plan",
+  "photos_manifest": "source.json",
+  "rates_and_availability": "to_be_confirmed; not imported",
+  "activity_availability": "to_be_confirmed; no course or teacher assignment implied"
+}

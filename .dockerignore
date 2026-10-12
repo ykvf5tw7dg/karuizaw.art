@@ -13,3 +13,4 @@ outputs
 dist
 *.tsbuildinfo
 backups
+content

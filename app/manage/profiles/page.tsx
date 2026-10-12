@@ -1,0 +1,6 @@
+import {requireAdmin} from '@/lib/admin';
+import {listProfiles} from '@/lib/server/profiles';
+import {AccessDenied} from '../access-denied';
+import {NewProfile} from './new-profile';
+export const dynamic='force-dynamic';
+export default async function ProfilesPage(){if(!await requireAdmin('/manage/profiles'))return <AccessDenied/>;const profiles=listProfiles();return <><div className="manage-title"><div><p>PUBLIC INTRODUCTIONS · 官网介绍</p><h1>空间与老师介绍</h1><span>申请资料不会自动公开；请核对照片和介绍后发布。</span></div><NewProfile/></div><div className="manage-profile-grid">{(['space','teacher'] as const).map(kind=><section className="manage-content" key={kind}><h2>{kind==='space'?'加盟空间':'带领老师'}</h2>{profiles.filter(p=>p.kind===kind).length?profiles.filter(p=>p.kind===kind).map(p=><article className="manage-profile-row" key={p.id}><div><strong>{p.names['zh-Hans']||'未命名资料'}</strong><p>{p.status==='public'?'已公开':'草稿'} · 排序 {p.sort}</p></div><a className="manage-detail-link" href={`/manage/profiles/${p.id}`}>编辑资料</a>{p.status==='public'&&<a href={`/${kind==='space'?'spaces':'teachers'}/${p.id}?lang=zh-Hans`} target="_blank" rel="noopener noreferrer">查看官网 ↗</a>}</article>):<p>尚无老师介绍；官网显示筹备与招募信息。</p>}</section>)}</div></>;}

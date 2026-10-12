@@ -2,6 +2,7 @@ import { applicationSchema } from "@/lib/application";
 import { applicationDb, applicationBucket } from "@/db/applications";
 import { MAX_PHOTO_BYTES, imageMime, validatePhotoSelection, type PhotoCategory } from '@/lib/space-photos';
 import { notifyApplication } from "@/lib/notifications";
+import {getProfile} from '@/lib/server/profiles';
 export const dynamic="force-dynamic";
 function json(data:unknown,status=200){return Response.json(data,{status,headers:{"Cache-Control":"no-store","X-Content-Type-Options":"nosniff"}});}
 async function sha(value:BufferSource){const digest=await crypto.subtle.digest('SHA-256',value);return Array.from(new Uint8Array(digest)).map(b=>b.toString(16).padStart(2,'0')).join('');}
@@ -56,10 +57,20 @@ export async function POST(request:Request){
    const hash=await sha(await photo.file.arrayBuffer());
    uploads.push({key:`applications/${data.id}/${index}-${hash}`,category:photo.category,name:photo.file.name.slice(0,255),size:photo.file.size,contentType:mime,sha256:hash,file:photo.file});
   }
-  const payload=JSON.stringify({...data,...(data.type==='space'?{photos:uploads.map(({file,...meta})=>meta)}:{})});
+  const photoPayload=data.type==='space'?{photos:uploads.map(({file,...meta})=>meta)}:{};
+  const prior=await db.prepare("SELECT payload_hash,payload FROM applications WHERE id = ?").bind(data.id).first<{payload_hash:string;payload:string}>();
+  if(prior){
+   // Keep original name snapshots when retrying a saved request after a profile changes or is hidden.
+   const original=JSON.parse(prior.payload) as Record<string,unknown>,snapshots:Record<string,unknown>={};
+   if(data.type==='meditation')for(const field of ['preferredSpace','preferredTeacher'] as const){if(data[field]&&data[field]===original[field]&&original[field+'Name'])snapshots[field+'Name']=original[field+'Name'];}
+   const candidate=await sha(new TextEncoder().encode(JSON.stringify({...data,...snapshots,...photoPayload})));
+   if(prior.payload_hash!==candidate)return json({error:"此提交编号已使用，请关闭表单后重新申请。"},409);
+   return json({reference:`KAV-${data.id}`,saved:true});
+  }
+  const preferences:Record<string,unknown>={};
+  if(data.type==='meditation'){for(const [field,kind] of [['preferredSpace','space'],['preferredTeacher','teacher']] as const){const id=data[field];if(!id)continue;const profile=getProfile(id,true);if(!profile||profile.kind!==kind)return json({error:'选择的空间或老师暂不可用，请重新选择。'},400);preferences[field+'Name']=profile.names;}}
+  const payload=JSON.stringify({...data,...preferences,...photoPayload});
   const hash=await sha(new TextEncoder().encode(payload));
-  const prior=await db.prepare("SELECT payload_hash FROM applications WHERE id = ?").bind(data.id).first<{payload_hash:string}>();
-  if(prior){if(prior.payload_hash!==hash)return json({error:"此提交编号已使用，请关闭表单后重新申请。"},409);return json({reference:`KAV-${data.id}`,saved:true});}
   const since=new Date(Date.now()-24*60*60*1000).toISOString();
   const count=await db.prepare("SELECT COUNT(*) AS total FROM applications WHERE email = ? AND created_at >= ?").bind(data.email,since).first<{total:number}>();
   if((count?.total??0)>=5)return json({error:"此邮箱今日提交次数较多，请明天再试。"},429);
