@@ -1,6 +1,15 @@
 export const MAX_PHOTO_BYTES = 30 * 1024 * 1024;
 export const PHOTO_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
-export type PhotoCategory = 'exterior' | 'interior';
+export const TEACHER_PHOTO_CATEGORIES=['portrait','work','teaching'] as const;
+export type PhotoCategory = 'exterior' | 'interior' | typeof TEACHER_PHOTO_CATEGORIES[number];
+export function validateTeacherPhotos(photos:{category:PhotoCategory;file:{size:number;type:string}}[]){
+ if(photos.length>6)return '老师照片最多6张。';
+ if(photos.some(p=>!TEACHER_PHOTO_CATEGORIES.includes(p.category as never)))return '请选择有效的老师照片类型。';
+ if(photos.some(p=>!PHOTO_TYPES.includes(p.file.type)||p.file.size===0))return '请选择有效的 JPG、PNG 或 WebP 图片。';
+ if(photos.some(p=>p.file.size>10*1024*1024))return '每张老师照片不得超过10MB。';
+ if(photos.reduce((sum,p)=>sum+p.file.size,0)>MAX_PHOTO_BYTES)return '老师照片合计不能超过30MB。';
+ return null;
+}
 export function validatePhotoSelection(photos: {category:PhotoCategory;file:{size:number;type:string}}[]){
  if(!photos.some(p=>p.category==='exterior'))return '请至少上传一张空间外观图片。';
  if(!photos.some(p=>p.category==='interior'))return '请至少上传一张内部设施图片。';

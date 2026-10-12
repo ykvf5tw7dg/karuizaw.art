@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { MAX_PHOTO_BYTES, PHOTO_TYPES, type PhotoCategory } from '@/lib/space-photos';
 export type SelectedPhoto={id:string;category:PhotoCategory;file:File};
-function Thumbnail({file}:{file:File}){
+export function Thumbnail({file}:{file:File}){
  const [url,setUrl]=useState('');
  useEffect(()=>{const src=URL.createObjectURL(file);setUrl(src);return()=>URL.revokeObjectURL(src);},[file]);
  return url?<img src={url} alt={file.name}/>:null;

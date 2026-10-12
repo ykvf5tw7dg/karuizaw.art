@@ -7,8 +7,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { Select,SelectTrigger,SelectValue,SelectContent,SelectItem } from "@/components/ui/select";
+import { TeacherPhotos } from "./teacher-photos";
 import { SpacePhotos, type SelectedPhoto } from "./space-photos";
-import { validatePhotoSelection } from "@/lib/space-photos";
+import { validatePhotoSelection,validateTeacherPhotos } from "@/lib/space-photos";
 import { applicationSchema } from "@/lib/application";
 import {TraditionFields} from "./tradition-fields";
 import {supportPlanNames} from "@/lib/meditation";
@@ -40,9 +41,9 @@ export function ApplicationDialog({kind,onClose,initialMode="individual",preferr
   if(!id.current)id.current=crypto.randomUUID();
   const parsed=applicationSchema.safeParse({...fields,...(kind==="teacher"?{subjects:selections}:{}),...(kind==="meditation"?{interests:selections}:{}),...(kind==="sponsor"?{portfolio:sponsorWebsite.trim()?websiteProtocol+sponsorWebsite.trim():""}:{}),...(kind==="sponsor"?{supportPlan}:{}),...(kind==="meditation"?{applicationMode,participants:applicationMode==="individual"?1:fields.participants}:{}),preferredSpace:spaceSelection||undefined,preferredTeacher:teacherSelection||undefined,id:id.current,locale,type:kind,category,consent,authority});
   if(!parsed.success){setError(parsed.error.issues[0]?.code==="invalid_enum_value"?t("请选择"):parsed.error.issues[0]?.message??t("请检查填写内容"));return;}
-  if(kind==="space"){const problem=validatePhotoSelection(photos);if(problem){setError(problem);return;}}
+  if(kind==="space"||kind==="teacher"){const problem=kind==="teacher"?validateTeacherPhotos(photos):validatePhotoSelection(photos);if(problem){setError(problem);return;}}
   setPending(true);
-  try{let body:BodyInit=JSON.stringify(parsed.data);let headers:HeadersInit|undefined={'Content-Type':'application/json'};if(kind==='space'){const form=new FormData();form.append('application',JSON.stringify(parsed.data));photos.forEach(photo=>form.append(photo.category,photo.file));body=form;headers=undefined;}const response=await fetch('/api/applications',{method:'POST',headers,body});const data=await response.json() as {error?:string;reference?:string};if(!response.ok)throw new Error(data.error??t("提交暂时不可用，请稍后重试。"));if(!data.reference)throw new Error(t("暂未确认保存成功，请重试。"));setReceipt(data.reference);}
+  try{let body:BodyInit=JSON.stringify(parsed.data);let headers:HeadersInit|undefined={'Content-Type':'application/json'};if(kind==='space'||(kind==='teacher'&&photos.length)){const form=new FormData();form.append('application',JSON.stringify(parsed.data));photos.forEach(photo=>form.append(photo.category,photo.file));body=form;headers=undefined;}const response=await fetch('/api/applications',{method:'POST',headers,body});const data=await response.json() as {error?:string;reference?:string};if(!response.ok)throw new Error(data.error??t("提交暂时不可用，请稍后重试。"));if(!data.reference)throw new Error(t("暂未确认保存成功，请重试。"));setReceipt(data.reference);}
   catch(err){setError(err instanceof Error?err.message:t("网络连接失败，填写内容已保留，请稍后重试。"));}
   finally{setPending(false);}
  }
@@ -68,7 +69,7 @@ export function ApplicationDialog({kind,onClose,initialMode="individual",preferr
  {kind==="meditation"&&<><div className="field full"><label htmlFor="application-mode">{t("申请方式")} *</label><Select value={applicationMode} onValueChange={value=>setApplicationMode(value as typeof applicationMode)}><SelectTrigger id="application-mode" className="form-select"><SelectValue/></SelectTrigger><SelectContent><SelectItem value="individual">{t("个人")}</SelectItem><SelectItem value="group">{t("团体")}</SelectItem></SelectContent></Select></div>
  {applicationMode==="group"&&<><label>{t("团体名称")} *<Input name="organization" required maxLength={120}/></label><label>{t("预计人数")} *<Input name="participants" type="number" min={2} step={1} required/></label><label className="full">{t("团体带领者")} *<Input name="leader" required maxLength={120}/></label><label className="full">{t("团体活动安排简介")} *<Textarea name="groupActivities" required maxLength={500} rows={3}/></label></>}
  <label className="full">{t("空间与配套需求")} *<Textarea name="spaceNeeds" required maxLength={1000} rows={3} placeholder={t("请介绍房间、安静活动空间、餐食及交通等需求……")}/></label><label className="full">{t("可接受的住宿预算")}{t("（选填）")}<Input name="budget" maxLength={120} placeholder={t("请注明币种，以及每人每晚或整体预算")}/></label></>}
- {kind==="teacher"&&<><ExperienceFields teacher names={teacherNames} value={selections} onChange={setSelections}/><label className="full">{t("教学或带领经历")} *<Textarea name="experience" required minLength={5} maxLength={2000} rows={3}/></label><label>{t("可使用的语言")} *<Input name="languages" required maxLength={120}/></label><label>{t("适合人数")}{t("（选填）")}<Input name="participantsGuidance" maxLength={300}/></label><label className="full">{t("空间、材料与设备需求")} *<Textarea name="spaceNeeds" required maxLength={1000} rows={3}/></label><label className="full">{t("费用与合作方式")}{t("（选填）")}<Textarea name="cooperation" maxLength={500} rows={3}/></label></>}
+ {kind==="teacher"&&<><TeacherPhotos photos={photos} onChange={setPhotos} disabled={pending}/><label className="full">{t("个人社交账户")}{t("（选填）")}<Textarea name="socialAccounts" maxLength={1000} rows={3} placeholder={t("每行填写平台名称及账户名称或链接")}/><span className="field-note">{t("仅供管理员评估与联络，不会自动公开。")}</span></label><ExperienceFields teacher names={teacherNames} value={selections} onChange={setSelections}/><label className="full">{t("教学或带领经历")} *<Textarea name="experience" required minLength={5} maxLength={2000} rows={3}/></label><label>{t("可使用的语言")} *<Input name="languages" required maxLength={120}/></label><label>{t("适合人数")}{t("（选填）")}<Input name="participantsGuidance" maxLength={300}/></label><label className="full">{t("空间、材料与设备需求")} *<Textarea name="spaceNeeds" required maxLength={1000} rows={3}/></label><label className="full">{t("费用与合作方式")}{t("（选填）")}<Textarea name="cooperation" maxLength={500} rows={3}/></label></>}
  {kind==="meditation"&&<ExperienceFields names={experienceNames} value={selections} onChange={setSelections}/>}
  {(kind==="meditation"||kind==="teacher"||(kind==="sponsor"&&supportPlan!==""&&supportPlan!=="artist"))&&<TraditionFields sponsor={kind==="sponsor"}/>}
  <label className="full">{t(content.message)} *<Textarea name="message" required minLength={5} maxLength={2000} rows={4} placeholder={t(content.placeholder)}/><span className="field-note">{t("5–2000 字。")}</span></label>
@@ -79,7 +80,7 @@ export function ApplicationDialog({kind,onClose,initialMode="individual",preferr
  <div className="consent-row"><Checkbox id="consent" checked={consent} onCheckedChange={v=>setConsent(v===true)}/><label htmlFor="consent">{t("我已阅读上述说明，同意保存申请资料并用于本次申请评估及联络。*")}</label></div>
  <p className="form-help">{t("提交登记不产生付款义务，也不代表参与确认、老师聘任或空间合作成立。具体条件另行协商。")}</p>
  {error&&<p className="form-error" role="alert">{t(error)}</p>}
- <Button type="submit" className="submit-button" disabled={pending}>{pending?(kind==="space"?t("正在上传图片并保存，请稍候…"):t("正在保存申请…")):t("提交意向登记")}<span aria-hidden="true">↗</span></Button>
+ <Button type="submit" className="submit-button" disabled={pending}>{pending?((kind==="space"||kind==="teacher"&&photos.length>0)?t("正在上传图片并保存，请稍候…"):t("正在保存申请…")):t("提交意向登记")}<span aria-hidden="true">↗</span></Button>
  </fieldset></form>}
  </DialogContent></Dialog>;
 }

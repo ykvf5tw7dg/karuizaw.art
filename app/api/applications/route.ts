@@ -1,6 +1,6 @@
 import { applicationSchema } from "@/lib/application";
 import { applicationDb, applicationBucket } from "@/db/applications";
-import { MAX_PHOTO_BYTES, imageMime, validatePhotoSelection, type PhotoCategory } from '@/lib/space-photos';
+import { MAX_PHOTO_BYTES, imageMime, validatePhotoSelection, validateTeacherPhotos, TEACHER_PHOTO_CATEGORIES, type PhotoCategory } from '@/lib/space-photos';
 import { notifyApplication } from "@/lib/notifications";
 import {getProfile} from '@/lib/server/profiles';
 export const dynamic="force-dynamic";
@@ -21,7 +21,8 @@ function boundedBody(request:Request,limit:number,contentType:string){
 }
 export async function POST(request:Request){
  const origin=request.headers.get("origin");
- if(origin&&origin!==new URL(process.env.SITE_ORIGIN||request.url).origin)return json({error:"请从本站申请入口提交。"},403);
+ const site=new URL(process.env.SITE_ORIGIN||request.url),allowed=new Set([site.origin]);if(site.hostname==='karuizawa.art'||site.hostname==='www.karuizawa.art'){allowed.add('https://karuizawa.art');allowed.add('https://www.karuizawa.art');}
+ if(origin&&!allowed.has(origin))return json({error:"请从本站申请入口提交。"},403);
  const contentType=request.headers.get('content-type')??'';
  const multipart=contentType.toLowerCase().startsWith('multipart/form-data;');
  if(!multipart&&!contentType.toLowerCase().includes('application/json'))return json({error:"不支持的提交格式。"},415);
@@ -38,15 +39,16 @@ export async function POST(request:Request){
    raw=JSON.parse(application);
    for(const [key,value] of form.entries()){
     if(key==='application')continue;
-    if((key!=='exterior'&&key!=='interior')||typeof value==='string')return json({error:'图片上传格式不正确。'},400);
-    photos.push({category:key,file:value});
+    if(!(['exterior','interior',...TEACHER_PHOTO_CATEGORIES] as string[]).includes(key)||typeof value==='string')return json({error:'图片上传格式不正确。'},400);
+    photos.push({category:key as PhotoCategory,file:value});
    }
   }else raw=JSON.parse(await body.text());
  }catch(error){return json({error:error instanceof Error&&error.message==='TOO_LARGE'?'提交内容过大，图片合计不得超过30MB。':'无法读取提交内容，请重试。'},error instanceof Error&&error.message==='TOO_LARGE'?413:400);}
  const parsed=applicationSchema.safeParse(raw);
  if(!parsed.success)return json({error:parsed.error.issues[0]?.message??"请检查填写内容。"},400);
  const data=parsed.data;
- if(data.type==='space'){const problem=validatePhotoSelection(photos);if(problem)return json({error:problem},400);}
+ if(data.type==='space'){if(photos.some(p=>p.category!=='exterior'&&p.category!=='interior'))return json({error:'请选择有效的空间照片分类。'},400);const problem=validatePhotoSelection(photos);if(problem)return json({error:problem},400);}
+ else if(data.type==='teacher'){const problem=validateTeacherPhotos(photos);if(problem)return json({error:problem},400);}
  else if(photos.length)return json({error:'此类申请不接收空间图片。'},400);
  try{
   const db=applicationDb();
@@ -57,7 +59,7 @@ export async function POST(request:Request){
    const hash=await sha(await photo.file.arrayBuffer());
    uploads.push({key:`applications/${data.id}/${index}-${hash}`,category:photo.category,name:photo.file.name.slice(0,255),size:photo.file.size,contentType:mime,sha256:hash,file:photo.file});
   }
-  const photoPayload=data.type==='space'?{photos:uploads.map(({file,...meta})=>meta)}:{};
+  const photoPayload=data.type==='space'||(data.type==='teacher'&&uploads.length)?{photos:uploads.map(({file,...meta})=>meta)}:{};
   const prior=await db.prepare("SELECT payload_hash,payload FROM applications WHERE id = ?").bind(data.id).first<{payload_hash:string;payload:string}>();
   if(prior){
    // Keep original name snapshots when retrying a saved request after a profile changes or is hidden.
